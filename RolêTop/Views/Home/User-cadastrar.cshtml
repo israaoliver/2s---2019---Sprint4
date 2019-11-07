@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro de Evento</title>
+    <link href="2-Imagens/logo do RolêTop.ico" rel="icon" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Carter+One|Itim|Limelight|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/User-Cadastro.css">
+    <link rel="stylesheet" type="text/css" href="css/User-Principal.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins|Vollkorn&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/349a64cb04.js"></script>
+</head>
+
+<body>
+    <header>
+
+        <div class="flex container-header">
+            <div class="logo">
+                <a href="Adm-eventos-princ.html"><img src="2-Imagens/logo do RolêTop.png" alt="logo Rolêtop" title="Logo RolêTop"></a>
+            </div>
+            <nav>
+
+                <ul>
+                    <li id="bt-mobile-menu">
+                        <a href="javascript:void(0);" class="icon" onclick="toggleMobileMenu()">
+                            <i class="fa fa-bars fa-2x "></i>
+                        </a>
+                    </li>                    
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href="User-home.html">Home</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href="User-Eventos.html">Meus Eventos</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href="User-cadastrar.html">Cadastrar Evento</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href="User-informacoes.html">Suas Informações</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href="User-suporte.html">Suporte</a></li>
+                </ul>
+            </nav>
+            <div class="user text"><img src="1-Icones/PNGs-Prontos/usuario.png">Daniel da silva neto</div>
+        </div>
+    </header>
+    <section>
+        <main class="cadastro flex">
+            <div class="flex user-container">
+                    <i class="icon fas fa-folder-plus fa-3x"></i>
+                <h1>Cadastrar Evento</h1>
+            </div>
+            <section id="cadastro">
+
+                <form method="GET" action="user-pagar.html">
+
+                    <div class="flex cad-box">
+
+                        <div>
+                            <label for="nome">Nome do Evento</label>
+                            <br>
+                            <input id="nome" type="text">
+                        </div>
+                        <div class="marg">
+                            <label for="data">Data do Evento</label>
+                            <br>
+                            <input id="data" type="date">
+                        </div>
+                    </div>
+                    <div class="flex cad-box-2">
+                        <div>
+                            <label for="tipo">Tipo de Evento</label>
+                            <br>
+                            <select id="tipo">
+                                <option value="" disabled selected>Selecione</option>
+                                <option>Aniversário</option>
+                                <option>Balada</option>
+                                <option>Casamento</option>
+                                <option>Chá de bebe</option>
+                                <option>Confraternizações</option>
+                                <option>Festas</option>
+                                <option>Formatura</option>
+                                <option>15 anos</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="opcional">Serviços Opcionais</label>
+                            <br>
+                            <select id="opcional">
+                                <option value="" disabled selected>Equipamentos</option>
+                                <option>Iluminação</option>
+                                <option>Som</option>
+                                <option>Iluminação e Som</option>
+                                <option>Simples</option>
+                            </select>
+                            <p>*Limpeza incluso em todos os planos.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="numero">Quantidade de Pessoas</label>
+                        <br>
+                        <div class="flex quant">
+
+                            <input id="numero" type="number" min="20" max="400">
+                            <p> (max:400)</p>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="pictures">Carrega a suas imagens</label>
+                        <br>
+                        <input id="pictures" type="file" name="arquivos"  accept="image/png, image/jpeg"  multiple />
+                        <p>*Obrigatorio imagen se o evento for publico</p>
+                    </div>
+                    <div class="descricao">
+                        <label for="descricao">Descrição</label>
+                        <br>
+                        <textarea id="descricao"></textarea>
+                    </div>
+                    <div>
+                        <label for="priv"> Público/Privado</label>
+                        <br>
+                        <div class="flex pub-priv">
+
+                            <input id="priv" type="radio" name="gender" value="priv" height="50%">
+                            <p>Privado</p>
+                        </div>
+                        <br>
+                        <div class="flex pub-priv">
+
+                            <input id="priv" type="radio" name="gender" value="pub">
+                            <p>Público</p>
+                        </div>
+                    </div>
+                    <div class="flex submit">
+
+                        <input type="submit" value="Pagar">
+                    </div>
+
+                </form>
+            </section>
+        </main>
+
+    </section>
+    <footer>
+        <div class="flex footer-container">
+                
+                <img class="footer-logo" src="2-Imagens/logo do RolêTop.png" alt="Logo do RoleTop">
+                <div class="end">
+                        <address>
+                                Avenida de Limeira, 539 - Campos Elíseos - SP
+                                <br />
+                                roletop@email.com
+                                <br />
+                                11 1234 6789
+                            </address>
+                </div>
+                <div class="flex social">
+                    <div class="flex foot">
+                        <p>Facebook:</p><br>
+                        <i class="social-icon fab fa-facebook-square fa-2x"></i>
+                    </div>
+                    <div class="flex foot">
+                        <p>Instagram:</p> <br>
+                        <i class="social-icon fab fa-instagram fa-2x"></i>
+                    </div>
+                    <div class="flex foot">
+                        <p>Acesso a Deficiente:</p>
+                        <i class=" social-icon fab fa-accessible-icon fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <script>
+            function toggleMobileMenu() {
+                var ul = document.querySelector("nav ul");
+                var commonButtons = document.querySelectorAll("nav .bt-common-menu");
+                var icon = document.querySelector(".icon > i");
+    
+                ul.classList.toggle("mobile-mode");
+    
+                if (icon.classList.contains("fa-bars")) {
+                    icon.classList.remove("fa-bars");
+                    icon.classList.remove("fa");
+    
+                    icon.classList.add("fas");
+                    icon.classList.add("fa-hand-middle-finger");
+                } else {
+                    icon.classList.remove("fas");
+                    icon.classList.remove("fa-hand-middle-finger");
+    
+                    icon.classList.add("fa");
+                    icon.classList.add("fa-bars");
+                }
+    
+                for (var button of commonButtons) {
+                    button.classList.toggle("active");
+                }
+    
+            }
+        </script>
+
+</body>
+
+</html>

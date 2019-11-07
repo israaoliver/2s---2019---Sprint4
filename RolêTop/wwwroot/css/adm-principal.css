@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+  height: 100%;
+  background-color: #111111;
+  background-image: linear-gradient(#4e015b,#44014f,#1e0023,#000000);
+
+}
+
+section{
+  text-align: center;
+}
+  
+.flex{
+  display: flex;
+}
+
+.back{
+  color: #000;
+}
+
+/*======================================================================================
+                                    HEADER
+======================================================================================*/
+.section-container{
+    margin: 0 auto;
+    max-width: 1500px;
+   
+}
+
+.logo{
+    width: 200px;
+    height: 150px;
+}
+
+.logo a > img{
+    width: 100%;
+}
+
+.container-header{
+    background-image: linear-gradient(#4e015b,#1e0023,#000000);
+    width: 100%;
+    height: 18%;
+    justify-content: space-evenly;
+}
+
+/*======================================================================================
+                             Nav
+======================================================================================*/
+nav{
+    width: 1000px;
+    height: 70px;
+    align-self: flex-end;
+}
+nav #bt-mobile-menu{
+  display: none;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;  
+    font-size: 1em;
+    font-family: 'Limelight', cursive;
+    align-items: flex-end;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-top: 1em;
+  }
+  nav ul > li{
+    width: 100%;
+    text-align: center;
+  }
+  nav ul > li > a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1em;
+  }
+  
+  nav ul > li > .sob:hover{
+    background-color: #fff;
+    color: #000;
+    border-radius: 15px;
+    box-shadow: 1px 5px black;
+  }
+
+ /*=====================================================
+                  RODAPÉ
+=======================================================*/
+footer{
+  background-image: linear-gradient(#44014f,#1e0023,#000);
+  width: 100%;
+  height: 20%;
+}
+footer p{
+  color: #fff;
+  font-size: 1.5em;
+}
+.footer-container{
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+.footer-logo{
+  width: 15%;
+  height: 100%;
+}
+
+.end{
+  color: #fff;
+  font-size: 1em;
+  align-self: flex-end;
+  text-align: center;
+
+}
+
+.social{
+  flex-flow: column wrap;
+  justify-content: space-around;
+  text-align: left;
+  align-items: flex-end;
+  margin-right: 2em;
+}
+.social-icon{
+  color: #fff;
+}
+.foot{
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+/*===================================================================================
+                          FIM DO RODAPÉ
+====================================================================================*/ 
+
+/*================================================================================================================================================================================
+                        MOBILE
+======================================================================================================================================================*/
+@media (max-width: 625px){
+  /*==============================================
+    NAV
+    =============================================*/           
+    nav{
+      z-index: 999;
+      height:1px;
+    }
+    nav #bt-mobile-menu {
+      display: block;
+    }
+
+    nav .bt-common-menu {
+      display: none;
+    }
+
+    nav .bt-common-menu.active {
+      display: block;
+    }
+
+    nav ul.mobile-mode {
+      display: flex;    
+      flex-direction: column;
+    }
+    nav ul > li > .sob:hover{
+      background-color: #fff;
+      color: #000;
+      border-radius: 0px;
+    }
+    nav ul > li > a{
+      padding: 1em;
+      background-color: #44014f;
+
+      
+    }
+
+    .icon{
+      width: 100%;
+      height: 68px;
+      margin-top: -1em; 
+      
+    }
+
+    /*===========================================================================*/
+    
+/*======================================================================================
+                                    HEADER
+======================================================================================*/
+.section-container{
+  margin: 0 auto;
+  width: 100%;
+ 
+}
+
+.logo{
+  display: none;
+}
+
+.flex.icon{
+  display: none;
+}
+/*=====================================================
+                  RODAPÉ
+=======================================================*/
+footer p {
+  font-size: 0.5em;
+}
+footer{
+  width: 100%;
+  height: 20%;
+}
+.footer-container{
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+.footer-logo{
+  display: none;
+}
+
+.end{
+  font-size: 0.8em;
+  align-self: center;
+
+}
+
+.social{
+  margin-right: 1em;
+}
+
+
+/*===================================================================================
+                          FIM DO RODAPÉ
+====================================================================================*/  
+
+
+
+}

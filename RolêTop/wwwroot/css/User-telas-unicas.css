@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+body{
+  width: 100%;
+  height: 1000px;
+  background-color: #111111;
+  background-image: linear-gradient(#4e015b,#44014f,#1e0023,#000000);
+
+}
+section{
+  text-align: center;
+}
+  
+.flex{
+  display: flex;
+}
+
+p {
+  color: #ffffff;
+  font-family: 'Itim', cursive; 
+  font-size: 1.6em;
+}
+
+/*=================================================================================
+                        HEADER
+=================================================================================*/
+header{
+    background-image: linear-gradient(#44014f,#1e0023,#000);
+    
+}
+header div #logo img{
+    width: 15%;
+    margin-top: 0.8em;
+    margin-left: 2em;
+}
+
+.container-header{
+    width: 100%;
+    height: 50;
+    align-items: flex-end;
+    justify-content: space-between;
+    
+    
+}
+
+/*==================================================================*/
+/*===============================================================
+                    MAIN
+ =============================================================*/
+ main{
+   width: 100%;
+   height: 800px;
+   background-image: linear-gradient(#4e015b,#44014f,#1e0023,#000000);
+ }
+.conf{
+    width: 50%;
+    height: 600px;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+.conf > img{
+    width: 50%;
+}
+button{
+    width: 7em;
+    height: 1.7em;
+    background-color: #000;
+    color: white;
+    font-size: 2em;
+    border-radius: 20px;   
+}
+button:hover{
+    background-color: #fff;
+    color: #000;
+    border: #000;
+}
+.margin{
+    margin-top: 2em;
+}
+
+/*=====================================================
+                  RODAPÉ
+=======================================================*/
+footer{
+  background-image: linear-gradient(#44014f,#1e0023,#000);
+  width: 100%;
+  height: 20%;
+}
+.footer-container{
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+.footer-logo{
+  width: 15%;
+  height: 100%;
+}
+
+.end{
+  color: #fff;
+  font-size: 1em;
+  align-self: flex-end;
+  text-align: center;
+
+}
+
+.social{
+  flex-flow: column wrap;
+  justify-content: space-around;
+  text-align: left;
+  align-items: flex-start;
+  margin-right: 2em;
+}
+.social-icon{
+  color: #fff;
+}
+.foot{
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+/*===================================================================================
+                          FIM DO RODAPÉ
+====================================================================================*/      
+
+
+/*==================================================================================================================================
+                        MOBILE
+==================================================================================================================================*/                        
+@media (max-width: 625px){
+
+  /*=================================================================================
+  HEADER
+=================================================================================*/
+header{
+  background-image: linear-gradient(#44014f,#1e0023,#000);
+  
+}
+header div #logo img{
+  width: 30%;
+  margin-top: 0.8em;
+  margin-left: 8em;
+}
+
+
+/*==================================================================*/
+.conf{
+  width: 100%;
+  height: 600px;
+  
+}
+main{
+  height: 700px;
+}
+/*=====================================================
+RODAPÉ
+=======================================================*/
+footer{
+  background-image: linear-gradient(#44014f,#1e0023,#000);
+  width: 100%;
+  height: 20%;
+}
+.footer-container{
+  width: 100%;
+  height: 70%;
+  justify-content: space-between;
+}
+.footer-logo{
+  width:  20%;
+  height: 40%;
+  align-self: flex-start;
+}
+
+.end{
+  font-size: 0.8em;
+}
+
+.social{
+  margin-right: 0em;
+}
+footer p {
+  font-size: 0.7em;
+}
+
+/*===================================================================================
+FIM DO RODAPÉ
+====================================================================================*/   
+}

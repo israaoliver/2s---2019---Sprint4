@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RolêTop</title>
+    <link href="2-Imagens/logo do RolêTop.ico" rel="icon" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Carter+One|Itim|Limelight|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/User-telas-unicas.css">
+    <link rel="stylesheet" type="text/css" href="css/user-pagamento.css">
+    <script src="https://kit.fontawesome.com/349a64cb04.js"></script>
+</head>
+<body>
+        <header>
+        
+                <div class="flex container-header">
+                    <div id="logo">
+                        <a href="index.html"><img src="2-Imagens/logo do RolêTop.png" title="Logo RolêTop"></a>
+                    </div>
+                </div>
+        </header>
+            <main class="flex">
+                <section class="flex">
+
+                    <div class="container">
+                        <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        
+                        
+                        
+                        <div class="panel panel-default credit-card-box">
+                            <div class="panel-heading display-table" >
+                                <div class="row display-tr" >
+                                    <h3 class="panel-title display-td" >Detalhes de Pagamento</h3>
+                                    <div class="display-td" >                            
+                                        <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                                    </div>
+                                </div>                    
+                            </div>
+                            <div class="panel-body">
+                                <form role="form" id="payment-form">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="cardNumber">NUMERO DO CARTÃO</label>
+                                                <div class="input-group">
+                                                    <input 
+                                                    type="tel"
+                                                    class="form-control"
+                                                    name="cardNumber"
+                                                    placeholder="Numero do cartão"
+                                                    autocomplete="cc-number"
+                                                    required autofocus 
+                                                    />
+                                                    <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                                </div>
+                                            </div>                            
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-7 col-md-7">
+                                            <div class="form-group">
+                                                <label for="cardExpiry"><span class="hidden-xs">DATA</span><span class="visible-xs-inline">DE</span> EVENCIMENTO</label>
+                                                <input 
+                                                type="tel" 
+                                                class="form-control" 
+                                                name="cardExpiry"
+                                                placeholder="MM / AA"
+                                                autocomplete="cc-exp"
+                                                required 
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-5 col-md-5 pull-right">
+                                            <div class="form-group">
+                    <label for="cardCVC">CVV</label>
+                    <input 
+                    type="tel" 
+                    class="form-control"
+                    name="cardCVC"
+                    placeholder="CVV"
+                    autocomplete="cc-csc"
+                    required
+                    />
+                </div>
+            </div>
+        </div>
+        
+    </div>                        
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success btn-lg btn-block" type="submit">Confirmar</button>
+    </div>
+                    </div>
+                    <div class="row" style="display:none;">
+                            <div class="col-xs-12">
+                                <p class="payment-errors"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>            
+            
+            
+        </div>            
+        
+        
+        
+    </div>
+</div>
+
+</div>
+
+</section>
+</main>
+<footer>
+    <div class="flex footer-container">
+                    
+                        <img class="footer-logo" src="2-Imagens/logo do RolêTop.png" alt="Logo do RoleTop">
+                        <div class="end">
+                                <address>
+                                        Avenida de Limeira, 539 - Campos Elíseos - SP
+                                        <br />
+                                        roletop@email.com
+                                        <br />
+                                        11 1234 6789
+                                    </address>
+                        </div>
+                        <div class=" flex social">
+                            <div class="flex foot">
+                                <p>Facebook:</p><br>
+                                <i class="social-icon fab fa-facebook-square fa-2x"></i>
+                            </div>
+                            <div class="flex foot">
+                                <p>Instagram:</p> <br>
+                                <i class="social-icon fab fa-instagram fa-2x"></i>
+                            </div>
+                            <div class="flex foot">
+                                <p>Acesso a Deficiente:</p>
+                                <i class=" social-icon fab fa-accessible-icon fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+    
+</body>
+</html>
