@@ -12,6 +12,7 @@ namespace McBonaldsMVC.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["NomeView"] = "Home";
             return View();
         }
 

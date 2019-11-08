@@ -193,9 +193,9 @@ a.active {
 #hamburgueres h2 {
     color: #ff9933; 
     text-shadow: -2px -2px 0 #a70000,
-                  2px -2px 0 #a70000,
-                 -2px  2px 0 #a70000,
-                  2px  2px 0 #a70000;
+                    2px -2px 0 #a70000,
+                -2px  2px 0 #a70000,
+                    2px  2px 0 #a70000;
 }
 
 #hamburgueres a {
@@ -207,7 +207,7 @@ a.active {
     text-shadow: 
     -1px -1px 0 #ff9933,
     1px -1px 0 #ff9933,
-   -1px  1px 0 #ff9933,
+    -1px  1px 0 #ff9933,
     1px  1px 0 #ff9933;
 }
 
@@ -235,66 +235,66 @@ a.active {
     max-width: 23%;
 }
 
- .flex-group > div {
+.flex-group > div {
     background-color: #ff9933;
- }
+}
 
- .flex-group.food-section > div:hover {
+.flex-group.food-section > div:hover {
     margin-top: -15px;
     box-shadow: -3px 10px rgba(0, 0, 0, 0.3);
     filter: grayscale(0);
- }
- 
- .flex-group > div > p {
+}
+
+.flex-group > div > p {
     height: 1.5em;
- }
- 
- .flex-group > div > p:nth-child(odd) {
+}
+
+.flex-group > div > p:nth-child(odd) {
     font-weight: bold;
     line-height: 0.5em;
     font-size: 2em;
- }
- 
- .flex-group > div > p:nth-child(even) {
+}
+
+.flex-group > div > p:nth-child(even) {
     font-weight: bold;
     font-size: 3.5em;
     margin-top: -0.5em;
     text-shadow: -3px -3px 0 #ff9933,
-                  3px -3px 0 #ff9933,
-                 -3px  3px 0 #ff9933,
-                  3px  3px 0 #ff9933;
- }
+                3px -3px 0 #ff9933,
+                -3px  3px 0 #ff9933,
+                3px  3px 0 #ff9933;
+}
 
- .food-container > img {
+.food-container > img {
     width: 100%;
- }
+}
 
- #historia {
-     background-color: #a70000;
-     text-align: left;
-     color: #fff;
-     vertical-align: top;
- }
+#historia {
+    background-color: #a70000;
+    text-align: left;
+    color: #fff;
+    vertical-align: top;
+}
 
- #historia p {
-     font-size: 1.2em;
- }
+#historia p {
+    font-size: 1.2em;
+}
 
- #historia h2 {
+#historia h2 {
     color: #361a0c;
     text-shadow: 
     -1px -1px 0 #ff9933,
     1px -1px 0 #ff9933,
-   -1px  1px 0 #ff9933,
+    -1px  1px 0 #ff9933,
     1px  1px 0 #ff9933;
     margin: 0 2em 0 0;
- }
+}
 
- #historia .flex-group {
-     justify-content: flex-start;
-     align-items: center;
-     vertical-align: top;
- }
+#historia .flex-group {
+    justify-content: flex-start;
+    align-items: center;
+    vertical-align: top;
+}
 
 #historia a {
     display: block;
@@ -345,19 +345,19 @@ address {
         font-weight: bold;
         line-height: 0.5em;
         font-size: 1em;
-     }
-     
-     .flex-group > div > p:nth-child(even) {
+    }
+    
+    .flex-group > div > p:nth-child(even) {
         font-weight: bold;
         font-size: 2.5em;
         margin-top: -0.5em;
         text-shadow: -3px -3px 0 #ff9933,
-                      3px -3px 0 #ff9933,
-                     -3px  3px 0 #ff9933,
-                      3px  3px 0 #ff9933;
-     }
+                        3px -3px 0 #ff9933,
+                    -3px  3px 0 #ff9933,
+                        3px  3px 0 #ff9933;
+    }
 
-     #banner p {
+    #banner p {
         font-size: 1.3em;
         font-weight: bold;
         padding-left: 2.5em;

@@ -28,3 +28,5 @@ C:\Users\44346823858\Documents\Sprint4-Senai\McBonaldsMVC\obj\Debug\netcoreapp2.
 C:\Users\44346823858\Documents\Sprint4-Senai\McBonaldsMVC\obj\Debug\netcoreapp2.2\McBonaldsMVC.dll
 C:\Users\44346823858\Documents\Sprint4-Senai\McBonaldsMVC\obj\Debug\netcoreapp2.2\McBonaldsMVC.pdb
 C:\Users\44346823858\Documents\Sprint4-Senai\McBonaldsMVC\obj\Debug\netcoreapp2.2\McBonaldsMVC.csproj.CopyComplete
+C:\Users\44346823858\Documents\Sprint4-Senai\McBonaldsMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\Login.g.cshtml.cs
+C:\Users\44346823858\Documents\Sprint4-Senai\McBonaldsMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_HeaderHomePage.g.cshtml.cs
