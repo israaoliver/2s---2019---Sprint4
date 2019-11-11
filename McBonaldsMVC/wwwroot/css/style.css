@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -19,6 +20,7 @@ h1,h2,h3,h4,h5,h6 {
 h1 {
     display: none;
 }
+
 
 h2 {
     font-size: 1.3em;
