@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RolêTop</title>
-    <link href="2-Imagens/logo do RolêTop.ico" rel="icon" type="image/x-icon" />
+    <link href="~/img/logo do RoleTop.ico" rel="icon" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Carter+One|Itim|Limelight|Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="~/css/styles.css">
@@ -27,33 +27,22 @@
                         </a>
                     </li>
                     <li class="bt-common-menu">
-                        <a href="index.html"><img class="logo" src="../img/logo do RolêTop.png" alt="logo Rolêtop" title="Logo RolêTop"></a>
+                        <a asp-controller="Home" asp-action="index"><img class="logo" src="../img/logo do RolêTop.png" alt="logo Rolêtop" title="Logo RolêTop"></a>
                     </li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href="index.html#Eventos">Eventos</a></li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href="index.html#servicos">Serviços</a></li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href="index.html#Infraestrutura-Galeria">Infraestrutura/Galeria</a></li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href="index.html#orçamento">Orçamento</a></li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href="index.html#calendario">Caléndario</a></li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href="index.html#FAQ">FAQ</a></li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href="index.html#Contatos">Contatos</a></li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href="index.html#Localizacao">Localização</a></li>
-                    <li><a id="bt-login" class="sob" href="login-cadastro.html"><i class="fas fa-user fa-5x"></i><br> Login/Cadastro </a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Eventos'>Eventos</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#servicos'>Serviços</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Infraestrutura-Galeria'>Infraestrutura/Galeria</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#orçamento'>Orçamento</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#calendario'>Caléndario</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#FAQ'>FAQ</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Contatos'>Contatos</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Localizacao'>Localização</a></li>
+                    <li><a id="bt-login" class="sob" asp-controller="Cliente" asp-action="Login"><i class="fas fa-user fa-5x"></i><br> Login/Cadastro </a></li>
                 </ul>
 
             </div>
         </nav>
-        <div>
-            <div id="banner-area" class="banner">
-                <h2>Espaco para festas Rolêtop</h2>
-                <h3>Festas Open Bar do seu jeito</h3>
-                <div class="bottom">
-                    <p>Festas de aniversários, Tenns, temáticas. Ambiente para qualquer idade 20,30,40,50,60,70 anos ou mais.
-                        <br> Faça seu evento aqui!!!</p>
-                </div>
 
-            </div>
-
-        </div>
     </header>
     @RenderBody()
     <footer>

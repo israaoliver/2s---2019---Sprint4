@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\44346823858\\Documents\\Sprint4-Senai\\RolêTopMVC\\RolêTopMVC.csproj": {}
+    "C:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RolêTopMVC\\RolêTopMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\44346823858\\Documents\\Sprint4-Senai\\RolêTopMVC\\RolêTopMVC.csproj": {
+    "C:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RolêTopMVC\\RolêTopMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\44346823858\\Documents\\Sprint4-Senai\\RolêTopMVC\\RolêTopMVC.csproj",
+        "projectUniqueName": "C:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RolêTopMVC\\RolêTopMVC.csproj",
         "projectName": "RolêTopMVC",
-        "projectPath": "C:\\Users\\44346823858\\Documents\\Sprint4-Senai\\RolêTopMVC\\RolêTopMVC.csproj",
+        "projectPath": "C:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RolêTopMVC\\RolêTopMVC.csproj",
         "packagesPath": "C:\\Users\\44346823858\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\44346823858\\Documents\\Sprint4-Senai\\RolêTopMVC\\obj\\",
+        "outputPath": "C:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RolêTopMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

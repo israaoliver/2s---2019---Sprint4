@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\44346823858\\Documents\\Sprint4-Senai\\RolêTopMVC\\RolêTopMVC.csproj",
+  "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RolêTopMVC\\RolêTopMVC.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2956,7 +2956,7 @@
         }
       }
     ],
-    "CSharpLanguageVersion": 800
+    "CSharpLanguageVersion": 703
   },
   "RootNamespace": "RolêTopMVC",
   "Documents": [
@@ -2993,6 +2993,11 @@
     {
       "FilePath": "Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Cliente\\Login.cshtml",
+      "TargetPath": "Views\\Cliente\\Login.cshtml",
       "FileKind": "mvc"
     },
     {

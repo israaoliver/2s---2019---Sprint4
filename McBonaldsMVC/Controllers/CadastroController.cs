@@ -1,5 +1,6 @@
 using System;
 using McBonaldsMVC.Models;
+using McBonaldsMVC.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +8,8 @@ namespace McBonaldsMVC.Controllers
 {
     public class CadastroController : Controller
     {
+
+        ClienteRepository clienteRepository = new ClienteRepository();
         public IActionResult Index()
         {    
             return View();
@@ -26,6 +29,7 @@ namespace McBonaldsMVC.Controllers
                     DateTime.Parse(form["data-nascimento"])
                     );
 
+                    clienteRepository.Inserir(cliente);
                     return View("Sucesso");
                 
 
