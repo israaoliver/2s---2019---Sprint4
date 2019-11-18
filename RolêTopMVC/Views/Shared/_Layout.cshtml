@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var nomeView = (string) ViewData["NomeView"];
+}
+
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -6,10 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RolêTop</title>
-    <link href="~/img/logo do RoleTop.ico" rel="icon" type="image/x-icon" />
+    <link href="~/img/logo_roletop.png" rel="icon" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Carter+One|Itim|Limelight|Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="~/css/styles.css">
+    @if("LoginCadastro".Equals(nomeView))
+    {
+        <link rel="stylesheet" type="text/css" href="~/css/login_cadastro.css">
+    }
     <script src="https://kit.fontawesome.com/349a64cb04.js"></script>
 
 </head>
@@ -27,7 +35,7 @@
                         </a>
                     </li>
                     <li class="bt-common-menu">
-                        <a asp-controller="Home" asp-action="index"><img class="logo" src="../img/logo do RolêTop.png" alt="logo Rolêtop" title="Logo RolêTop"></a>
+                        <a asp-controller="Home" asp-action="Index"><img class="logo" src="../img/logo_roletop.png" alt="logo Rolêtop" title="Logo RolêTop"></a>
                     </li>
                     <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Eventos'>Eventos</a></li>
                     <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#servicos'>Serviços</a></li>
@@ -37,7 +45,7 @@
                     <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#FAQ'>FAQ</a></li>
                     <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Contatos'>Contatos</a></li>
                     <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Localizacao'>Localização</a></li>
-                    <li><a id="bt-login" class="sob" asp-controller="Cliente" asp-action="Login"><i class="fas fa-user fa-5x"></i><br> Login/Cadastro </a></li>
+                    <li><a id="bt-login" class="sob" asp-controller="LoginCadastro" asp-action="Index"><i class="fas fa-user fa-5x"></i><br> Login/Cadastro </a></li>
                 </ul>
 
             </div>
@@ -47,8 +55,9 @@
     @RenderBody()
     <footer>
         <div class="flex footer-container">
-
-            <img class="footer-logo" src="Img/logo do RolêTop.png" alt="Logo do RoleTop">
+            <div class="flex footer-logo">
+            <img  src="../img/logo_roletop.png" alt="Logo do RoleTop">
+            </div>
             <div class=" flex social">
                 <div class="flex foot">
                     <p>Facebook:</p>
@@ -62,7 +71,7 @@
                 </div>
                 <div class="flex foot">
                     <p>Acesso a Deficiente:</p>
-                    <i class=" social-icon fab fa-accessible-icon fa-2x"></i>
+                    <i class="social-icon fab fa-accessible-icon fa-2x"></i>
                 </div>
             </div>
         </div>

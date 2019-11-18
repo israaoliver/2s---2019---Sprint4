@@ -12,6 +12,7 @@ namespace RolêTopMVC.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["NomeView"] = "Home";
             return View();
         }
 

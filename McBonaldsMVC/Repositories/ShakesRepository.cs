@@ -8,6 +8,22 @@ namespace McBonaldsMVC.Repositories
     {
         private const string PATH = "Database/Shake.csv";
 
+        public double ObterPrecoDe(string nomeShake)
+        {
+            var lista = ObterTodos();
+            var preco = 0.0;
+
+            foreach (var item in lista)
+            {
+
+                if(item.Nome.Equals(nomeShake))
+                {
+                    preco = item.Preco;
+                    break;
+                }
+            }
+                return preco;
+        }
         public List<Shake> ObterTodos()
         {
             List<Shake> shakes = new List<Shake>();
