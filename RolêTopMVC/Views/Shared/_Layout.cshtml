@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Carter+One|Itim|Limelight|Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="~/css/styles.css">
-    @if("LoginCadastro".Equals(nomeView))
+    @if(("Login".Equals(nomeView)) || ("Cadastro".Equals(nomeView)))
     {
         <link rel="stylesheet" type="text/css" href="~/css/login_cadastro.css">
     }
@@ -23,8 +23,11 @@
 </head>
 
 <body>
-    <header>
+    
 
+    <header>
+    @if(("Login".Equals(nomeView)) || ("Cadastro".Equals(nomeView)) || ("Home".Equals(nomeView)))
+    {
         <nav>
             <div class="section-container">
 
@@ -45,13 +48,14 @@
                     <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#FAQ'>FAQ</a></li>
                     <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Contatos'>Contatos</a></li>
                     <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Localizacao'>Localização</a></li>
-                    <li><a id="bt-login" class="sob" asp-controller="LoginCadastro" asp-action="Index"><i class="fas fa-user fa-5x"></i><br> Login/Cadastro </a></li>
+                    <li><a id="bt-login" class="sob" asp-controller="Cliente" asp-action="Login"><i class="fas fa-user fa-5x"></i><br> Login/Cadastro </a></li>
                 </ul>
 
             </div>
         </nav>
-
+    }
     </header>
+
     @RenderBody()
     <footer>
         <div class="flex footer-container">

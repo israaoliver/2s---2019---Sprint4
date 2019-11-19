@@ -1,0 +1,29 @@
+<main class="flex" >
+    <section id="login">
+
+
+            <h2>Login</h2>
+            <form method="GET" action="User-home.html">
+                <div>
+                    <label for="email">E-mail</label>
+                    <br>
+                    <input id="email" type="email" name="email">
+                </div>
+
+                <div>
+                    <label for="senha">Senha</label>
+                    <br>
+                    <input id="senha" required type="password" maxlength="15" minlength="8">
+                </div>
+                <input type="submit" value="LOGIN" name="senha">
+                <br>
+                <div>
+                    <input type="checkbox" name="lembrar" value="Lembre-se">Lembre-se de Mim
+                </div>
+                <a href='@Url.Action("Index", "Cadastro")'>Não tem conta? Cadastre-se!</a>
+
+            </form>
+
+    </section>
+
+    </main>
