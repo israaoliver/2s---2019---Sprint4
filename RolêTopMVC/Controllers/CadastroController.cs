@@ -31,7 +31,7 @@ namespace RolêTopMVC.Controllers
             catch (Exception e)
             {
                 System.Console.WriteLine(e.StackTrace);
-                return View("Erro");
+                return View("Cad_Erro");
             }
             
         }
