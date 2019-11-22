@@ -14,10 +14,12 @@
     <link href="https://fonts.googleapis.com/css?family=Carter+One|Itim|Limelight|Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="~/css/styles.css">
+    @if("Home".Equals(nomeView) || ("Login".Equals(nomeView)) || ("Cadastro".Equals(nomeView)))
+    {<link rel="stylesheet" type="text/css" href="~/css/Home.css">}
     @if(("Login".Equals(nomeView)) || ("Cadastro".Equals(nomeView)))
-    {
-        <link rel="stylesheet" type="text/css" href="~/css/login_cadastro.css">
-    }
+    {<link rel="stylesheet" type="text/css" href="~/css/login_cadastro.css">}
+    @if("User_Home".Equals(nomeView))
+    {<link rel="stylesheet" type="text/css" href="~/css/User_home.css">}
     <script src="https://kit.fontawesome.com/349a64cb04.js"></script>
 
 </head>
@@ -53,6 +55,22 @@
 
             </div>
         </nav>
+    }
+    @if("Usuario".Equals(nomeView)){
+
+
+    }
+    @if("User_Home".Equals(nomeView)){
+
+    <div class="flex container-header">
+    <div id="logo">
+        <a asp-controller="Home" asp-action="Index"><img src="~/img/logo_roletop.png" title="Logo RolêTop"></a>
+    </div>
+    <div class="flex user">
+        <p>Daniel da silva neto</p>
+        <img src="~/img/icones/PNGs-Prontos/usuario.png" >
+    </div>
+    </div>
     }
     </header>
 

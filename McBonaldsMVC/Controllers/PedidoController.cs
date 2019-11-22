@@ -9,9 +9,10 @@ using Microsoft.Extensions.Primitives;
 
 namespace McBonaldsMVC.Controllers
 {
-    public class PedidoController : Controller
+    public class PedidoController : AbstractController
     {
 
+        ClienteRepository clienteRepository = new ClienteRepository();
         PedidoRepository pedidoRepository = new PedidoRepository();
         HamburguerRepository hamburguerRepository = new HamburguerRepository();
 
@@ -25,6 +26,18 @@ namespace McBonaldsMVC.Controllers
             pvm.Hamburgueres = hamburguerRepository.ObterTodos();
             pvm.Shakes = shakesRepository.ObterTodos();
 
+            var emailCliente = ObterUsuarioSession();
+            if(!string.IsNullOrEmpty(emailCliente))
+            {
+                pvm.Cliente = clienteRepository.ObterPor(emailCliente);
+            }
+
+            var nomeUsuario = ObterUsuarioNomeSession();
+            if(!string.IsNullOrEmpty(nomeUsuario))
+            {
+                pvm.NomeCliente = nomeUsuario;
+            }
+            
 
             return View(pvm);
         }

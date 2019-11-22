@@ -26,12 +26,12 @@ namespace RolêTopMVC.Controllers
                 Cliente c = new Cliente(form["nome"],form["email"],form["telefone"],form["senha"],form["cpf"]);
 
                 clienteRepository.Inserir(c);
-                return View("Cad_Sucesso");
+                return View("Sucesso");
             }
             catch (Exception e)
             {
                 System.Console.WriteLine(e.StackTrace);
-                return View("Cad_Erro");
+                return View("Erro");
             }
             
         }
