@@ -18,9 +18,9 @@ namespace RolêTopMVC.Controllers
         
         public IActionResult CadastrarCliente(IFormCollection form)
         {
-
-            ViewData["Action"] = "Cadastro";
+            
             ViewData["NomeView"] = "Cadastro";
+            ViewData["NomeView"] = "Sucesso";
             try
             {
                 Cliente c = new Cliente(form["nome"],form["email"],form["telefone"],form["senha"],form["cpf"]);

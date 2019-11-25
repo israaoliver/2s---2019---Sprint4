@@ -12,9 +12,15 @@ namespace McBonaldsMVC.Controllers
         private ClienteRepository clienteRepository = new ClienteRepository();
         private PedidoRepository pedidoRepository = new PedidoRepository();
 
+        [HttpGet]
         public IActionResult Login()
         {
-            return View();
+            return View(new BaseViewModel(){
+
+                NomeView = "Login",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+            });
         }
 
         [HttpPost]

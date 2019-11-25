@@ -61,3 +61,6 @@ C:\Users\44346823858\Documents\2s---2019---Sprint4\RolêTopMVC\obj\Debug\netcore
 C:\Users\44346823858\Documents\2s---2019---Sprint4\RolêTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Erro.g.cshtml.cs
 C:\Users\44346823858\Documents\2s---2019---Sprint4\RolêTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Sucesso.g.cshtml.cs
 C:\Users\44346823858\Documents\2s---2019---Sprint4\RolêTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\Index.g.cshtml.cs
+C:\Users\44346823858\Documents\2s---2019---Sprint4\RolêTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\Eventos.g.cshtml.cs
+C:\Users\44346823858\Documents\2s---2019---Sprint4\RolêTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\EventoCadastro.g.cshtml.cs
+C:\Users\44346823858\Documents\2s---2019---Sprint4\RolêTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\Suporte.g.cshtml.cs

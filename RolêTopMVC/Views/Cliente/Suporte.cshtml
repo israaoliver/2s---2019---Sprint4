@@ -1,0 +1,32 @@
+<main class="sup flex">
+            <div class="flex user-container">
+                <i class="icon fas fa-headset fa-3x"></i>
+                <h1>Suporte</h1>
+            </div>
+            <section id="suporte">
+                <div class=" suporte flex">
+
+                    
+                        <form method="POST" action = '@Url.Action("SuporteMensagem", "Cliente")'>
+                            
+                                <label for="problema">Tipo de Problema</label>
+                            <br>
+                            <select id="problema" name="problema">
+                                <option value="" disabled selected>Selecione</option>
+                                <option value="Site Bugado">Site bugado</option>
+                                <option value="Não conssigo cadastrar">Não conssigo cadastrar</option>
+                                <option value="Pagamento dando erro">Pagamento dando erro</option>
+                                <option value="Um plano fora dos orçamento">Um plano fora dos orçamento</option>
+                                <option value="Posso fazer uma visita">Posso fazer uma visita</option>
+                            </select>
+                            <div class="descricao">
+                                <label for="descricao">Descrição</label>
+                                <br>
+                                <textarea id="descricao" name="descricao"></textarea>
+                            </div>
+                            <input type="submit" value="Enviar">
+                        </form>
+                </div>
+            </section>
+
+        </main>

@@ -2,13 +2,21 @@
     var nV = (string) ViewData["NomeView"];
 }
 <main>
+    
+    <section class="flex conf">
     @if("Cadastro".Equals(nV))
     {
-    <section class="flex conf">
         <img src="~/img/icones/Suc_cadastro.png">
+
+    }
+    @if("Suporte".Equals(nV))
+    {
+        <img src="~/img/icones/Suporte.png">
+    }
         <br>
         <p>Obrigado!!!! <br> Você concluiu seu cadastro, <br> siga para o seu perfil.</p>
         <a href='@Url.Action("Index", "Cadastro")'><button class="margin">Continuar</button></a>
     </section>
-    }
+    
+
 </main>
