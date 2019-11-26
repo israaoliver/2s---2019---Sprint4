@@ -25,6 +25,10 @@ namespace RolêTopMVC.Controllers
                 Cliente c = new Cliente(form["nome"],form["email"],form["telefone"],form["senha"],form["cpf"]);
 
                 clienteRepository.Inserir(c);
+
+                HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, c.Email);
+                HttpContext.Session.SetString(SESSION_CLIENTE_NOME, c.Nome);
+
                 return View("Sucesso");
             }
             catch (Exception e)

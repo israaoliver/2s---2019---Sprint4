@@ -6,7 +6,7 @@ namespace RoleTopMVC.Models
         public string Problema {get;set;}
         public string Mensagem {get;set;}
 
-        public Suporte(string problema, string mensagem)
+        public Suporte(Cliente usuario,string problema, string mensagem)
         {
             this.Problema = problema;
             this.Mensagem = mensagem;

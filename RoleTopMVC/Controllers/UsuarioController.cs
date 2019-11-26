@@ -10,6 +10,9 @@ namespace RoleTopMVC.Controllers
 {
     public class UsuarioController : AbstractController
     {
+
+        private SuporteRepository  suporteRepository = new SuporteRepository();
+
         public IActionResult Index()
         {
             ViewData["NomeView"] = "User_Home";
@@ -40,7 +43,8 @@ namespace RoleTopMVC.Controllers
             ViewData["NomeView"] = "Suporte";
 
             Suporte msg = new Suporte(form["problema"],form["descricao"]);
-
+            
+            suporteRepository.Inserir(msg);
             return View("Sucesso");
 
 
