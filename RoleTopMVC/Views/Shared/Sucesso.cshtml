@@ -1,0 +1,25 @@
+﻿@{
+    var nV = (string) ViewData["NomeView"];
+}
+<main>
+    
+    <section class="flex conf">
+    @if("Cadastro".Equals(nV))
+    {
+        <img src="~/img/icones/Suc_cadastro.png">
+        <br>
+        <p>Obrigado!!!! <br> Você concluiu seu cadastro, <br> siga para o seu perfil.</p>
+        <a href='@Url.Action("Index", "Usuario")'><button class="margin">Continuar</button></a>
+
+    }
+    @if("Suporte".Equals(nV))
+    {
+        <img src="~/img/icones/Suport.png">
+        <p>Sua mensagem foi enviada com sucesso! <br> Responderemos em até 48hr</p>
+        <a href='@Url.Action("Index", "Cliente")'><button class="margin">Voltar</button></a>
+    }
+
+    </section>
+    
+
+</main>

@@ -1,0 +1,24 @@
+@{
+    var nV = (string) ViewData["NomeView"];
+}
+@model RoleTopMVC.ViewModels.MensagemViewModel
+<main>
+    @if("Cadastro".Equals(nV)){
+    <section class="flex conf">
+        <img src="~/img/icones/Erro_cadastro.png">
+        <br>
+        <p>Falha em @ViewData["Action"]! Tente Novamente!</p>
+        <a href='@Url.Action("Index", "Cadastro")'><button class="margin">Voltar</button></a>
+    </section>
+    }
+    @if("Login".Equals(nV)){
+        <section class="flex conf">
+        <img src="~/img/icones/Erro_cadastro.png">
+        <br>
+        <p><strong>@Model.Mensagem<strong> . <br> Tente Novamente!</p>
+        <a href='@Url.Action("Login", "Cliente")'><button class="margin">Voltar</button></a>
+    </section>
+
+    }
+
+</main>
