@@ -26,7 +26,7 @@ namespace RoleTopMVC.Repositories
 
         public Cliente ObterInfo(string email)
         {
-            var linhas = File.ReadLines(PATH);
+            var linhas = File.ReadAllLines(PATH);
             foreach (var item in linhas)
             {
                 if(ExtrairValorDoCampo("email", item).Equals(email))

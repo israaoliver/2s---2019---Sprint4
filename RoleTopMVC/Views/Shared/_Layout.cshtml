@@ -1,6 +1,4 @@
-﻿@{
-    var nomeView = (string) ViewData["NomeView"];
-}
+﻿@model RoleTopMVC.ViewModels.MensagemViewModel
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,15 +12,15 @@
     <link href="https://fonts.googleapis.com/css?family=Carter+One|Itim|Limelight|Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="~/css/styles.css">
-    @if("Usuario".Equals(nomeView))
+    @if("Usuario".Equals(Model.NomeView))
     {<link rel="stylesheet" type="text/css" href="~/css/userPrincipal.css">}
-    @if("Home".Equals(nomeView) || ("Login".Equals(nomeView)) || ("Cadastro".Equals(nomeView)))
+    @if("Home".Equals(Model.NomeView) || ("Login".Equals(Model.NomeView)) || ("Cadastro".Equals(Model.NomeView)))
     {<link rel="stylesheet" type="text/css" href="~/css/Home.css">}
-    @if(("Login".Equals(nomeView)) || ("Cadastro".Equals(nomeView)))
+    @if(("Login".Equals(Model.NomeView)) || ("Cadastro".Equals(Model.NomeView)))
     {<link rel="stylesheet" type="text/css" href="~/css/login_cadastro.css">}
-    @if("User_Home".Equals(nomeView))
+    @if("User_Home".Equals(Model.NomeView))
     {<link rel="stylesheet" type="text/css" href="~/css/userHome.css">}
-    @if(("Cadastro".Equals(nomeView)) || ("Suporte".Equals(nomeView)) || ("Login".Equals(nomeView))){
+    @if(("Cadastro".Equals(Model.NomeView)) || ("Usuario".Equals(Model.NomeView)) || ("Login".Equals(Model.NomeView))){
         <link rel="stylesheet" type="text/css" href="~/css/SucessoFalha.css">
     }
     <script src="https://kit.fontawesome.com/349a64cb04.js"></script>
@@ -33,7 +31,7 @@
     
 
     <header>
-    @if(("Login".Equals(nomeView)) || ("Cadastro".Equals(nomeView)) || ("Home".Equals(nomeView)))
+    @if(("Login".Equals(Model.NomeView)) || ("Cadastro".Equals(Model.NomeView)) || ("Home".Equals(Model.NomeView)))
     {
         <nav>
             <div class="section-container">
@@ -61,10 +59,10 @@
             </div>
         </nav>
     }
-    @if("Usuario".Equals(nomeView)){
+    @if("Usuario".Equals(Model.NomeView)){
         <div class="flex container-header">
             <div class="logo">
-                <a href="index.html"><img src="~/img/logo_roletop.png" title="Logo RolêTop"></a>
+                <a asp-controller="Home" asp-action="Index"><img src="~/img/logo_roletop.png" title="Logo RolêTop"></a>
             </div>
             <nav>
 
@@ -81,17 +79,17 @@
                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" asp-controller="Usuario" asp-action="Suporte">Suporte</a></li>
                     </ul>
                 </nav>
-            <div class="user text" href="login-cadastro.html"><img src="~/img/icones/PNGs-Prontos/usuario.png" >Daniel da silva neto</div>
+            <div class="user text" href="login-cadastro.html"><img src="~/img/icones/PNGs-Prontos/usuario.png" >@Model.UsuarioNome</div>
         </div>
     }
-    @if("User_Home".Equals(nomeView)){
+    @if("User_Home".Equals(Model.NomeView)){
 
     <div class="flex container-header">
     <div id="logo">
         <a asp-controller="Home" asp-action="Index"><img src="~/img/logo_roletop.png" title="Logo RolêTop"></a>
     </div>
     <div class="flex user">
-        <p>Daniel da silva neto</p>
+        <p>@Model.UsuarioNome</p>
         <img src="~/img/icones/PNGs-Prontos/usuario.png" >
     </div>
     </div>

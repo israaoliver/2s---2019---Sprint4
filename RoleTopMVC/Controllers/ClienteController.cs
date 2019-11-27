@@ -15,15 +15,18 @@ namespace RoleTopMVC.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            ViewData["NomeView"] = "Login";
-            return View();
+            return View(new MensagemViewModel(){
+
+                NomeView = "Login",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+                });
         }
 
         [HttpPost]
         public IActionResult Login(IFormCollection form)
         {
 
-            ViewData["NomeView"] = "Login";
             try
             {
                 System.Console.WriteLine("====================================");
@@ -37,31 +40,43 @@ namespace RoleTopMVC.Controllers
                 var c = clienteRepository.ObterInfo(user);
                 if (c != null)
                 {
-                    if (!c.Senha.Equals(senha))
-                    {
-                        return View("Erro", new MensagemViewModel("Senha Incorreta!"));
-
-                        
-                    }
-                    else
+                    if (c.Senha.Equals(senha))
                     {
                         HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, user);
                         HttpContext.Session.SetString(SESSION_CLIENTE_NOME, c.Nome);
                         
-                        return RedirectToAction("Index", "Usuario");
+                        return RedirectToAction("Index", "Usuario");                        
+                    }
+                    else
+                    {
+                        return View("Erro", new MensagemViewModel("Senha Incorreta!"){
+                    NomeView = "Login",
+                    UsuarioNome = ObterUsuarioNomeSession(),
+                    UsuarioEmail = ObterUsuarioSession(),
 
+                });
                     }
                 }
                 else
                 {
-                    return View("Erro", new MensagemViewModel($"Usuario {user} não encontrado."));
+                    return View("Erro", new MensagemViewModel($"Usuario {user} não encontrado."){
+                    NomeView = "Login",
+                    UsuarioNome = ObterUsuarioNomeSession(),
+                    UsuarioEmail = ObterUsuarioSession(),
+
+                });
                 }
 
             }
             catch (Exception e)
             {
                 System.Console.WriteLine(e.StackTrace);
-                return View("Erro");
+                return View("Erro", new MensagemViewModel(){
+                    NomeView = "Login",
+                    UsuarioNome = ObterUsuarioNomeSession(),
+                    UsuarioEmail = ObterUsuarioSession(),
+
+                });
                 
             }
         }

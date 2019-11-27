@@ -1,10 +1,8 @@
-﻿@{
-    var nV = (string) ViewData["NomeView"];
-}
+﻿@model RoleTopMVC.ViewModels.MensagemViewModel
 <main>
     
     <section class="flex conf">
-    @if("Cadastro".Equals(nV))
+    @if("Cadastro".Equals(Model.NomeView))
     {
         <img src="~/img/icones/Suc_cadastro.png">
         <br>
@@ -12,7 +10,7 @@
         <a href='@Url.Action("Index", "Usuario")'><button class="margin">Continuar</button></a>
 
     }
-    @if("Suporte".Equals(nV))
+    @if("Usuario".Equals(Model.NomeView))
     {
         <img src="~/img/icones/Suport.png">
         <p>Sua mensagem foi enviada com sucesso! <br> Responderemos em até 48hr</p>

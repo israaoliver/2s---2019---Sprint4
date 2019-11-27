@@ -75,8 +75,21 @@ namespace McBonaldsMVC.Controllers
             var pedidosCliente = pedidoRepository.ObterTodosPorCliente(emailCliente);
 
             return View(new HistoricoViewModel(){
-                Pedidos = pedidosCliente
+
+                Pedidos = pedidosCliente,
+                NomeView = "Historico",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession() 
+
             });
+        }
+
+        public IActionResult Logoff()
+        {
+            HttpContext.Session.Remove(SESSION_CLIENTE_EMAIL);
+            HttpContext.Session.Remove(SESSION_CLIENTE_NOME);
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

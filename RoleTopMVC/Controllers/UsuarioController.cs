@@ -1,3 +1,4 @@
+using System.Net.Http;
 using System;
 using RoleTopMVC.Repositories;
 using RoleTopMVC.ViewModels;
@@ -15,37 +16,53 @@ namespace RoleTopMVC.Controllers
 
         public IActionResult Index()
         {
-            ViewData["NomeView"] = "User_Home";
-            return View();
+            return View(new MensagemViewModel(){
+                NomeView ="User_Home",
+                UsuarioNome = ObterUsuarioNomeSession(),
+                UsuarioEmail = ObterUsuarioSession()
+            });
         }
         public IActionResult EventoCadastro()
         {
-            ViewData["NomeView"] = "Usuario";
-            return View();
+            return View(new MensagemViewModel(){
+                NomeView ="Usuario",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+            });
         }
 
 
         public IActionResult Eventos()
         {
-            ViewData["NomeView"] = "Usuario";
-            return View();
+            return View(new MensagemViewModel(){
+                NomeView ="Usuario",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+            });
         }
 
         public IActionResult Suporte()
         {
-            ViewData["NomeView"] = "Usuario";
-            return View();
+            return View(new MensagemViewModel(){
+                NomeView ="Usuario",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+            });
         }
+        
 
         public IActionResult SuporteMensagem(IFormCollection form)
         {
-            ViewData["NomeView"] = "Usuario";
-            ViewData["NomeView"] = "Suporte";
+            HttpContext.Session.GetString(SESSION_CLIENTE_EMAIL);
 
             Suporte msg = new Suporte(form["problema"],form["descricao"]);
             
             suporteRepository.Inserir(msg);
-            return View("Sucesso");
+            return View("Sucesso", new MensagemViewModel(){
+                NomeView ="Usuario",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+            });
 
 
         }

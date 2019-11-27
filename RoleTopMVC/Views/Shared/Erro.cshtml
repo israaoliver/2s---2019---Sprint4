@@ -1,9 +1,6 @@
-@{
-    var nV = (string) ViewData["NomeView"];
-}
 @model RoleTopMVC.ViewModels.MensagemViewModel
 <main>
-    @if("Cadastro".Equals(nV)){
+    @if("Cadastro".Equals(Model.NomeView)){
     <section class="flex conf">
         <img src="~/img/icones/Erro_cadastro.png">
         <br>
@@ -11,11 +8,11 @@
         <a href='@Url.Action("Index", "Cadastro")'><button class="margin">Voltar</button></a>
     </section>
     }
-    @if("Login".Equals(nV)){
+    @if("Login".Equals(Model.NomeView)){
         <section class="flex conf">
         <img src="~/img/icones/Erro_cadastro.png">
         <br>
-        <p><strong>@Model.Mensagem<strong> . <br> Tente Novamente!</p>
+        <p> @Model.Mensagem . <br> Tente Novamente!</p>
         <a href='@Url.Action("Login", "Cliente")'><button class="margin">Voltar</button></a>
     </section>
 
