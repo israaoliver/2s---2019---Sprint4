@@ -20,6 +20,11 @@ namespace McBonaldsMVC.Repositories
 
         public bool Inserir(Pedido pedido)
         {
+            /** 
+            var linhas = File.ReadAllLines(PAHT);
+            var quantidadePedidos = linhas.Length */ // todo: forma alternativa e detalhada de medir o tamanho da linha especifica
+            var quantidadePedidos = File.ReadAllLines(PATH).Length; // todo : forma direta de fazer
+            pedido.Id = (ulong) ++quantidadePedidos;
             var linha = new string[] {PrepararPedidoCSV(pedido)};
             File.AppendAllLines(PATH, linha);
             return true;
@@ -48,7 +53,9 @@ namespace McBonaldsMVC.Repositories
             foreach (var l in linhas)
             {
                 Pedido p = new Pedido();
-
+                
+                p.Id = ulong.Parse(ExtrairValorDoCampo("id", l));
+                p.Status = uint.Parse(ExtrairValorDoCampo("status_pedido", l));
                 p.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", l);
                 p.Cliente.Endereco = ExtrairValorDoCampo("cliente_endereco", l);
                 p.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", l);
@@ -73,7 +80,7 @@ namespace McBonaldsMVC.Repositories
             Hamburguer h = p.Hamburguer;
             Shake s = p.Shake;
 
-            return $"cliente_nome={c.Nome};cliente_endereco={c.Endereco};cliente_telefone={c.Telefone};cliente_email={c.Email};hamburguer_nome={h.Nome};hamburguer_preco={h.Preco};shake_nome={s.Nome};shake_preco={s.Preco};data_pedido={p.DataDoPedido};preco_total={p.PrecoTotal}";
+            return $"id={p.Id};status_pedido={p.Status};cliente_nome={c.Nome};cliente_endereco={c.Endereco};cliente_telefone={c.Telefone};cliente_email={c.Email};hamburguer_nome={h.Nome};hamburguer_preco={h.Preco};shake_nome={s.Nome};shake_preco={s.Preco};data_pedido={p.DataDoPedido};preco_total={p.PrecoTotal}";
         }
     }
 }

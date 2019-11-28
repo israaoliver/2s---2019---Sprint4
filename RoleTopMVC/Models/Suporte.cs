@@ -1,3 +1,4 @@
+using System;
 namespace RoleTopMVC.Models
 {
     public class Suporte
@@ -5,11 +6,13 @@ namespace RoleTopMVC.Models
         public Cliente Usuario {get;set;}
         public string Problema {get;set;}
         public string Mensagem {get;set;}
-
-        public Suporte(string problema, string mensagem)
+        public DateTime DataDoEnvio {get;set;}
+        public Suporte(Cliente usuario,string problema, string mensagem,DateTime dataDoEnvio)
         {
+            this.Usuario = usuario;
             this.Problema = problema;
             this.Mensagem = mensagem;
+            this.DataDoEnvio = dataDoEnvio;
         }
     }
 }

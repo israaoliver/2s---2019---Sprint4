@@ -2986,6 +2986,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_NavUserPages.cshtml",
+      "TargetPath": "Views\\Shared\\_NavUserPages.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\Suporte.cshtml",
       "TargetPath": "Views\\Usuario\\Suporte.cshtml",
       "FileKind": "mvc"
@@ -2998,6 +3003,11 @@
     {
       "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\Index.cshtml",
       "TargetPath": "Views\\Usuario\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_HeaderUserHome.cshtml",
+      "TargetPath": "Views\\Shared\\_HeaderUserHome.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3018,6 +3028,11 @@
     {
       "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\Eventos.cshtml",
       "TargetPath": "Views\\Usuario\\Eventos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_NavHomePages.cshtml",
+      "TargetPath": "Views\\Shared\\_NavHomePages.cshtml",
       "FileKind": "mvc"
     },
     {

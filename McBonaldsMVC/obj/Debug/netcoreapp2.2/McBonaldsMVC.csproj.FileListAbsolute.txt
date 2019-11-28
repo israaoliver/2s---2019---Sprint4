@@ -66,3 +66,4 @@ C:\Users\44346823858\Documents\2s---2019---Sprint4\McBonaldsMVC\obj\Debug\netcor
 C:\Users\44346823858\Documents\2s---2019---Sprint4\McBonaldsMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Sucesso.g.cshtml.cs
 C:\Users\44346823858\Documents\2s---2019---Sprint4\McBonaldsMVC\obj\Debug\netcoreapp2.2\Razor\Views\Pedido\Index.g.cshtml.cs
 C:\Users\44346823858\Documents\2s---2019---Sprint4\McBonaldsMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\Historico.g.cshtml.cs
+C:\Users\44346823858\Documents\2s---2019---Sprint4\McBonaldsMVC\obj\Debug\netcoreapp2.2\Razor\Views\Administrador\Dashboard.g.cshtml.cs

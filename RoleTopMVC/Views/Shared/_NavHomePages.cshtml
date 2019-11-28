@@ -1,0 +1,25 @@
+        <nav>
+            <div class="section-container">
+
+                <ul>
+                    <li id="bt-mobile-menu">
+                        <a href="javascript:void(0);" class="icon" onclick="toggleMobileMenu()">
+                            <i class="fa fa-bars fa-2x "></i>
+                        </a>
+                    </li>
+                    <li class="bt-common-menu">
+                        <a asp-controller="Home" asp-action="Index"><img class="logo" src="../img/logo_roletop.png" alt="logo Rolêtop" title="Logo RolêTop"></a>
+                    </li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Eventos'>Eventos</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#servicos'>Serviços</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Infraestrutura-Galeria'>Infraestrutura/Galeria</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#orçamento'>Orçamento</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#calendario'>Caléndario</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#FAQ'>FAQ</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Contatos'>Contatos</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Localizacao'>Localização</a></li>
+                    <li><a id="bt-login" class="sob" asp-controller="Cliente" asp-action="Login"><i class="fas fa-user fa-5x"></i><br> Login/Cadastro </a></li>
+                </ul>
+
+            </div>
+        </nav>

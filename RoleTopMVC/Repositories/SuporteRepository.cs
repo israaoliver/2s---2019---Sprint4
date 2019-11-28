@@ -18,7 +18,8 @@ namespace RoleTopMVC.Repositories
 
         public bool Inserir(Suporte msg)
         {
-            var l = new string[] { Preparar(msg)};
+            msg.Mensagem = msg.Mensagem.Replace("\r\n", "§"); // todo: tira a quebra de linha que o "enter" que o usuario aperta
+            var l = new string[] {Preparar(msg)};
             File.AppendAllLines(PATH, l);
 
             return true;
@@ -26,7 +27,8 @@ namespace RoleTopMVC.Repositories
 
         private string Preparar(Suporte msg)
         {
-            return $"problema={msg.Problema};mensagem={msg.Mensagem}";
+            Cliente c = msg.Usuario; 
+            return $"nome={c.Nome};problema={msg.Problema};telefone={c.Telefone};email={c.Email};mensagem={msg.Mensagem};dataDoEnvio={msg.DataDoEnvio}";
         }
 }
 }

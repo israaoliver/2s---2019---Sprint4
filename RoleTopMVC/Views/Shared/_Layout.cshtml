@@ -33,66 +33,14 @@
     <header>
     @if(("Login".Equals(Model.NomeView)) || ("Cadastro".Equals(Model.NomeView)) || ("Home".Equals(Model.NomeView)))
     {
-        <nav>
-            <div class="section-container">
-
-                <ul>
-                    <li id="bt-mobile-menu">
-                        <a href="javascript:void(0);" class="icon" onclick="toggleMobileMenu()">
-                            <i class="fa fa-bars fa-2x "></i>
-                        </a>
-                    </li>
-                    <li class="bt-common-menu">
-                        <a asp-controller="Home" asp-action="Index"><img class="logo" src="../img/logo_roletop.png" alt="logo Rolêtop" title="Logo RolêTop"></a>
-                    </li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Eventos'>Eventos</a></li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#servicos'>Serviços</a></li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Infraestrutura-Galeria'>Infraestrutura/Galeria</a></li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#orçamento'>Orçamento</a></li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#calendario'>Caléndario</a></li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#FAQ'>FAQ</a></li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Contatos'>Contatos</a></li>
-                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" href='@Url.Action("index", "Home")#Localizacao'>Localização</a></li>
-                    <li><a id="bt-login" class="sob" asp-controller="Cliente" asp-action="Login"><i class="fas fa-user fa-5x"></i><br> Login/Cadastro </a></li>
-                </ul>
-
-            </div>
-        </nav>
+        Html.RenderPartial("_NavHomePages");
     }
     @if("Usuario".Equals(Model.NomeView)){
-        <div class="flex container-header">
-            <div class="logo">
-                <a asp-controller="Home" asp-action="Index"><img src="~/img/logo_roletop.png" title="Logo RolêTop"></a>
-            </div>
-            <nav>
+        Html.RenderPartial("_NavUserPages");
 
-                    <ul>
-                        <li id="bt-mobile-menu">
-                            <a href="javascript:void(0);" class="icon" onclick="toggleMobileMenu()">
-                                <i class="fa fa-bars fa-2x "></i>
-                            </a>
-                        </li>                    
-                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" asp-controller="Usuario" asp-action="Index">Home</a></li>
-                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" asp-controller="Usuario" asp-action="Eventos">Meus Eventos</a></li>
-                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" asp-controller="Usuario" asp-action="EventoCadastro">Cadastrar Evento</a></li>
-                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" asp-controller="Usuario" asp-action="Eventos">Suas Informações</a></li>
-                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" class="sob" asp-controller="Usuario" asp-action="Suporte">Suporte</a></li>
-                    </ul>
-                </nav>
-            <div class="user text" href="login-cadastro.html"><img src="~/img/icones/PNGs-Prontos/usuario.png" >@Model.UsuarioNome</div>
-        </div>
     }
     @if("User_Home".Equals(Model.NomeView)){
-
-    <div class="flex container-header">
-    <div id="logo">
-        <a asp-controller="Home" asp-action="Index"><img src="~/img/logo_roletop.png" title="Logo RolêTop"></a>
-    </div>
-    <div class="flex user">
-        <p>@Model.UsuarioNome</p>
-        <img src="~/img/icones/PNGs-Prontos/usuario.png" >
-    </div>
-    </div>
+        Html.RenderPartial("_HeaderUserHome");
     }
 </header>
 

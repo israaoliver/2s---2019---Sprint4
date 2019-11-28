@@ -13,6 +13,7 @@ namespace RoleTopMVC.Controllers
     {
 
         private SuporteRepository  suporteRepository = new SuporteRepository();
+        private ClienteRepository clienteRepository = new ClienteRepository();
 
         public IActionResult Index()
         {
@@ -53,9 +54,8 @@ namespace RoleTopMVC.Controllers
 
         public IActionResult SuporteMensagem(IFormCollection form)
         {
-            HttpContext.Session.GetString(SESSION_CLIENTE_EMAIL);
-
-            Suporte msg = new Suporte(form["problema"],form["descricao"]);
+            
+            Suporte msg = new Suporte(clienteRepository.ObterInfo(ObterUsuarioSession()),form["problema"],form["descricao"], DateTime.Now);
             
             suporteRepository.Inserir(msg);
             return View("Sucesso", new MensagemViewModel(){
