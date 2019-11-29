@@ -32,6 +32,34 @@ namespace RoleTopMVC.Controllers
             });
         }
 
+        public IActionResult CadastrarEvento(IFormCollection form)
+        {
+            try
+            {
+                Evento e = new Evento(
+                clienteRepository.ObterInfo(ObterUsuarioSession()),
+                form["nomeEvento"],
+                form["tipo"],
+                form["opcional"],
+                form["numero"],
+                form["descricao"],
+                DateTime.Parse(form["dataDoEvento"])
+            );
+            }
+            catch (Exception e)
+            {
+                System.Console.WriteLine(e.StackTrace);
+                return View("Erro", new MensagemViewModel("Erro em cadastrar evento"){
+                    NomeView = "Usuario",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+
+            }
+
+            return View();
+        }
+
 
         public IActionResult Eventos()
         {
@@ -58,7 +86,7 @@ namespace RoleTopMVC.Controllers
             Suporte msg = new Suporte(clienteRepository.ObterInfo(ObterUsuarioSession()),form["problema"],form["descricao"], DateTime.Now);
             
             suporteRepository.Inserir(msg);
-            return View("Sucesso", new MensagemViewModel(){
+            return View("Sucesso", new MensagemViewModel("Falha em enviar a mensagem"){
                 NomeView ="Usuario",
                 UsuarioEmail = ObterUsuarioSession(),
                 UsuarioNome = ObterUsuarioNomeSession()

@@ -12,39 +12,39 @@
                         <div>
                             <label for="nome">Nome do Evento</label>
                             <br>
-                            <input id="nome" type="text">
+                            <input id="nome" name="nomeEvento" type="text">
                         </div>
                         <div class="marg">
                             <label for="data">Data do Evento</label>
                             <br>
-                            <input id="data" type="date">
+                            <input id="data" name="dataDoEvento" type="date">
                         </div>
                     </div>
                     <div class="flex cad-box-2">
                         <div>
                             <label for="tipo">Tipo de Evento</label>
                             <br>
-                            <select id="tipo">
+                            <select id="tipo" name="tipo">
                                 <option value="" disabled selected>Selecione</option>
-                                <option>Aniversário</option>
-                                <option>Balada</option>
-                                <option>Casamento</option>
-                                <option>Chá de bebe</option>
-                                <option>Confraternizações</option>
-                                <option>Festas</option>
-                                <option>Formatura</option>
-                                <option>15 anos</option>
+                                <option value="Aniversario">Aniversário</option>
+                                <option value="Balada">Balada</option>
+                                <option value="Casamento">Casamento</option>
+                                <option value="Cha_de_bebe">Chá de bebe</option>
+                                <option value="Confraternizações">Confraternizações</option>
+                                <option value="Festas">Festas</option>
+                                <option value="Formatura">Formatura</option>
+                                <option value="15_anos">15 anos</option>
                             </select>
                         </div>
                         <div>
                             <label for="opcional">Serviços Opcionais</label>
                             <br>
-                            <select id="opcional">
+                            <select id="opcional" name="opcional">
                                 <option value="" disabled selected>Equipamentos</option>
-                                <option>Iluminação</option>
-                                <option>Som</option>
-                                <option>Iluminação e Som</option>
-                                <option>Simples</option>
+                                <option value="Iluminacao">Iluminação</option>
+                                <option value="Som">Som</option>
+                                <option value="Iluminação_e_Som">Iluminação e Som</option>
+                                <option value="Simples">Simples</option>
                             </select>
                             <p>*Limpeza incluso em todos os planos.</p>
                         </div>
@@ -54,7 +54,7 @@
                         <br>
                         <div class="flex quant">
 
-                            <input id="numero" type="number" min="20" max="400">
+                            <input id="numero" name="numero" type="number" min="20" max="400">
                             <p> (max:400)</p>
                         </div>
                     </div>
@@ -67,22 +67,7 @@
                     <div class="descricao">
                         <label for="descricao">Descrição</label>
                         <br>
-                        <textarea id="descricao"></textarea>
-                    </div>
-                    <div>
-                        <label for="priv"> Público/Privado</label>
-                        <br>
-                        <div class="flex pub-priv">
-
-                            <input id="priv" type="radio" name="pub_priv" value="priv" height="50%">
-                            <p>Privado</p>
-                        </div>
-                        <br>
-                        <div class="flex pub-priv">
-
-                            <input id="priv" type="radio" name="pub_priv" value="pub">
-                            <p>Público</p>
-                        </div>
+                        <textarea id="descricao" name="descricao"></textarea>
                     </div>
                     <div class="flex submit">
 

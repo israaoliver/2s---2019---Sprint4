@@ -71,7 +71,7 @@ namespace RoleTopMVC.Controllers
             catch (Exception e)
             {
                 System.Console.WriteLine(e.StackTrace);
-                return View("Erro", new MensagemViewModel(){
+                return View("Erro", new MensagemViewModel("Falha em Logar!"){
                     NomeView = "Login",
                     UsuarioNome = ObterUsuarioNomeSession(),
                     UsuarioEmail = ObterUsuarioSession(),

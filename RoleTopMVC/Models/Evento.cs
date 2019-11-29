@@ -3,22 +3,26 @@ namespace RoleTopMVC.Models
 {
     public class Evento
     {
-        public string Nome {get;set;}
+        public ulong Id {get;set;}
+        public Cliente Cliente {get;set;}
+        public string NomeEvento {get;set;}
         public string TipoEvento {get;set;}
         public string Servicos {get;set;}
         public string Quantidade {get;set;}
         public string Descricao{get;set;}
-        public string PublicoPrivado{get;set;}
         public DateTime DiaDoEvento{get;set;}
-
-        public Evento(string nome, string tipoEvento, string servicos, string quantidade, string descricao, string publicoPrivado, DateTime diaDoEvento)
+        public uint Status {get;set;}
+        public Evento(Cliente cliente,string nomeEvento, string tipoEvento, string servicos, string quantidade, string descricao, DateTime diaDoEvento)
         {
-            this.Nome = nome;
+            this.Cliente = cliente;
+            this.NomeEvento = nomeEvento;
+            this.TipoEvento = tipoEvento;
             this.Servicos = servicos;
             this.Quantidade = quantidade;
             this.Descricao = descricao;
-            this.PublicoPrivado = publicoPrivado;
             this.DiaDoEvento = diaDoEvento;
+            this.Id = 0;
+            this.Status = 0;
         }
     }
 }

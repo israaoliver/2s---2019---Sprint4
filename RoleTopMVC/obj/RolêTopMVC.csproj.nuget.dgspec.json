@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\RolêTopMVC.csproj": {}
+    "C:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\RolêTopMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\RolêTopMVC.csproj": {
+    "C:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\RolêTopMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\RolêTopMVC.csproj",
+        "projectUniqueName": "C:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\RolêTopMVC.csproj",
         "projectName": "RolêTopMVC",
-        "projectPath": "C:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\RolêTopMVC.csproj",
-        "packagesPath": "C:\\Users\\Junior\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\obj\\",
+        "projectPath": "C:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\RolêTopMVC.csproj",
+        "packagesPath": "C:\\Users\\44346823858\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\44346823858\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,16 +60,10 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     }

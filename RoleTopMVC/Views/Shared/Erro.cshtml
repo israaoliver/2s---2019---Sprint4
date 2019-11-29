@@ -1,21 +1,18 @@
 @model RoleTopMVC.ViewModels.MensagemViewModel
 <main>
-    @if("Cadastro".Equals(Model.NomeView)){
     <section class="flex conf">
         <img src="~/img/icones/Erro_cadastro.png">
         <br>
-        <p>Falha em @ViewData["Action"]! Tente Novamente!</p>
+        <p> @Model.Mensagem! Tente Novamente!</p>
+    @if("Cadastro".Equals(Model.NomeView)){
         <a href='@Url.Action("Index", "Cadastro")'><button class="margin">Voltar</button></a>
-    </section>
     }
     @if("Login".Equals(Model.NomeView)){
-        <section class="flex conf">
-        <img src="~/img/icones/Erro_cadastro.png">
-        <br>
-        <p> @Model.Mensagem . <br> Tente Novamente!</p>
         <a href='@Url.Action("Login", "Cliente")'><button class="margin">Voltar</button></a>
-    </section>
-
     }
+    @if("Usuario".Equals(Model.NomeView)){
+        <a href='@Url.Action("EventoCadastro", "Usuario")'><button class="margin">Voltar</button></a>
+    }
+    </section>
 
 </main>

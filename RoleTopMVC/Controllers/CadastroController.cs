@@ -23,7 +23,6 @@ namespace RoleTopMVC.Controllers
         
         public IActionResult CadastrarCliente(IFormCollection form)
         {
-            
 
             try
             {
@@ -43,7 +42,7 @@ namespace RoleTopMVC.Controllers
             catch (Exception e)
             {
                 System.Console.WriteLine(e.StackTrace);
-                return View("Erro", new MensagemViewModel(){
+                return View("Erro", new MensagemViewModel("Erro em cadastrar usuario"){
                     NomeView = "Cadastro",
                     UsuarioEmail = ObterUsuarioSession(),
                     UsuarioNome = ObterUsuarioNomeSession()

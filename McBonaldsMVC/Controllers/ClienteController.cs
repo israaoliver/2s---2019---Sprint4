@@ -1,4 +1,5 @@
 using System;
+using McBonaldsMVC.Enums;
 using McBonaldsMVC.Repositories;
 using McBonaldsMVC.ViewModels;
 using Microsoft.AspNetCore.Http;
@@ -43,11 +44,28 @@ namespace McBonaldsMVC.Controllers
                 {
                     if(c.Senha.Equals(senha))
                     {
-                        HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario);
-                        HttpContext.Session.SetString(SESSION_CLIENTE_NOME, c.Nome);
+                        switch (c.TipoUsuario)
+                        {
+                            case (uint) TipoUsuario.CLIENTE:
 
+                                HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario);
+                                HttpContext.Session.SetString(SESSION_CLIENTE_NOME, c.Nome);
+                                HttpContext.Session.SetString(SESSION_CLIENTE_TIPO, c.TipoUsuario.ToString());
+                                return RedirectToAction("Historico", "Cliente");
+                            
+                            case (uint) TipoUsuario.ADMINISTRADOR:
+                                
+                                HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario);
+                                HttpContext.Session.SetString(SESSION_CLIENTE_NOME, c.Nome);
+                                HttpContext.Session.SetString(SESSION_CLIENTE_TIPO, c.TipoUsuario.ToString());
+                                return RedirectToAction("Dashboard", "Administrador");
+                            
+                            default:
 
-                        return RedirectToAction("Historico", "Cliente");
+                                return View("Erro", new RespostaViewModel("Erro de TIPO no codigo"));
+                            
+                        }
+
                     }
                     else
                     {
