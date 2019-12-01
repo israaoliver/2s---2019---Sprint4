@@ -12,8 +12,10 @@ namespace RoleTopMVC.Controllers
     public class UsuarioController : AbstractController
     {
 
-        private SuporteRepository  suporteRepository = new SuporteRepository();
+        private SuporteRepository suporteRepository = new SuporteRepository();
+        private EventoRepository eventoRepository = new EventoRepository();
         private ClienteRepository clienteRepository = new ClienteRepository();
+        private ServicosRepository servicosRepository = new ServicosRepository();
 
         public IActionResult Index()
         {
@@ -23,9 +25,15 @@ namespace RoleTopMVC.Controllers
                 UsuarioEmail = ObterUsuarioSession()
             });
         }
+        
+        // todo : Comesso do Cadastro de evento ==================================================================
+
         public IActionResult EventoCadastro()
         {
-            return View(new MensagemViewModel(){
+
+            var servicos = servicosRepository.ObterTodos();
+
+            return View(new ServicoViewModel(servicos){
                 NomeView ="Usuario",
                 UsuarioEmail = ObterUsuarioSession(),
                 UsuarioNome = ObterUsuarioNomeSession()
@@ -36,15 +44,32 @@ namespace RoleTopMVC.Controllers
         {
             try
             {
-                Evento e = new Evento(
-                clienteRepository.ObterInfo(ObterUsuarioSession()),
-                form["nomeEvento"],
-                form["tipo"],
-                form["opcional"],
-                form["numero"],
-                form["descricao"],
-                DateTime.Parse(form["dataDoEvento"])
-            );
+                Evento e = new Evento();
+                e.Cliente = clienteRepository.ObterInfo(ObterUsuarioSession());
+                e.NomeEvento = form["nomeEvento"];
+                e.TipoEvento = form["tipo"];
+                e.Quantidade = form["numero"];
+                e.Descricao = form["descricao"];
+                e.DiaDoEvento = DateTime.Parse(form["dataDoEvento"]);
+
+                var nomeServico = form["servico"];
+                Servicos servico = new Servicos(nomeServico, servicosRepository.ObterPrecoDe(nomeServico));
+                e.Servicos = servico;
+
+                if (eventoRepository.Inserir(e))
+                {
+                    return View("Sucesso", new MensagemViewModel(){
+                        NomeView = "Usuario"
+                    });
+                }else
+                {
+                    return View ("Erro", new MensagemViewModel("Falha em Cadastrar seu Evento"){
+                        NomeView = "Usuario",
+                        UsuarioNome = ObterUsuarioNomeSession(),
+                        UsuarioEmail = ObterUsuarioSession()
+                    });
+                }
+
             }
             catch (Exception e)
             {
@@ -57,10 +82,9 @@ namespace RoleTopMVC.Controllers
 
             }
 
-            return View();
         }
 
-
+            // todo: Fim do Cadastro de Evento ==============================================================================
         public IActionResult Eventos()
         {
             return View(new MensagemViewModel(){
@@ -88,6 +112,7 @@ namespace RoleTopMVC.Controllers
             suporteRepository.Inserir(msg);
             return View("Sucesso", new MensagemViewModel("Falha em enviar a mensagem"){
                 NomeView ="Usuario",
+                NomeView2 = "Suporte",
                 UsuarioEmail = ObterUsuarioSession(),
                 UsuarioNome = ObterUsuarioNomeSession()
             });

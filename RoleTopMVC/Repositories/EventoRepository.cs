@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.IO;
 using RoleTopMVC.Models;
 
@@ -27,11 +29,89 @@ namespace RoleTopMVC.Repositories
             return true;
         }
 
+        public List<Evento> ObeterEventoPorCliente(string emailCliente)
+        {
+            var eventos = ObterTodos();
+            List<Evento> eventosCliente = new List<Evento>();
+
+            foreach (var e in eventos)
+            {
+                if(e.Cliente.Email.Equals(emailCliente))
+                {
+                    eventosCliente.Add(e);
+                }
+            }
+            return eventosCliente;
+        }
+
+        public List<Evento> ObterTodos()
+        {
+            var linhas = File.ReadAllLines(PATH);
+            List<Evento> eventos = new List<Evento>();
+
+            foreach (var l in linhas)
+            {
+                Evento e = new Evento();
+
+                e.Id = ulong.Parse(ExtrairValorDoCampo("id", l));
+                e.Status = uint.Parse(ExtrairValorDoCampo("status_evento", l));
+                e.NomeEvento = ExtrairValorDoCampo("nomeEvento", l);
+                e.DiaDoEvento = DateTime.Parse(ExtrairValorDoCampo("dataEvento", l));
+                e.Servicos.Nome = ExtrairValorDoCampo("servicoNome", l);
+                e.Servicos.Preco = double.Parse(ExtrairValorDoCampo("servicoPreco", l));
+                e.Quantidade = ExtrairValorDoCampo("qtde", l);
+                e.Descricao = ExtrairValorDoCampo("descricao", l);
+
+                eventos.Add(e);
+            }
+            return eventos;
+        }
+
+        public Evento ObterPor(ulong id)
+        {
+            var eTotais = ObterTodos();
+            foreach (var e in eTotais)
+            {
+                if(id.Equals(e.Id))
+                {
+                    return e;
+                }
+            }
+            return null;
+        }
+
+        public bool Atualizar(Evento e)
+        {
+            var eTotais = File.ReadAllLines(PATH);
+            var eCSV = PrepararEventoCSV(e);
+            var linhaEvento = -1;
+            var resultado = false;
+
+            for (int i = 0; i > eTotais.Length ; i++)
+            {
+                var IdConvertido = ulong.Parse(ExtrairValorDoCampo("id", eTotais[i]));
+                if(e.Id.Equals(IdConvertido))
+                {
+                    linhaEvento = i;
+                    resultado = true;
+                    break;
+                }
+            }
+            
+            if (resultado)
+            {
+                eTotais[linhaEvento] = eCSV;
+                File.WriteAllLines(PATH, eTotais);
+            }
+            return resultado;
+        
+        }
         public string PrepararEventoCSV(Evento e)
         {
+            Servicos s = e.Servicos;
             Cliente c = e.Cliente;
 
-            return $"id={e.Id};status={e.Status}nomeEvento={e.NomeEvento};dataEvento={e.DiaDoEvento};servicos={e.Servicos};qtde={e.Quantidade};descricao={e.Descricao}";
+            return $"id={e.Id};status_evento={e.Status};emailCliente={c.Email};nomeEvento={e.NomeEvento};dataEvento={e.DiaDoEvento};servicoNome={s.Nome};servicoPreco={s.Preco};qtde={e.Quantidade};descricao={e.Descricao}";
         }
     }
 }

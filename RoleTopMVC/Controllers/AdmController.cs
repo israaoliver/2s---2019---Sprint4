@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using RoleTopMVC.Enums;
 using RoleTopMVC.Repositories;
+using RoleTopMVC.ViewModels;
 
 namespace RoleTopMVC.Controllers
 {
@@ -11,21 +12,21 @@ namespace RoleTopMVC.Controllers
         public IActionResult Dashboard()
         {
             var eventos = eventoRepository.ObterTodos();
-           // DashboardViewModel dashboardViewModel = new DashboardViewModel();
+            DashboardViewModel dashboardViewModel = new DashboardViewModel();
 
             foreach (var evento in eventos)
             {
                 switch (evento.Status)
                 {
                     case (uint) StatusEvento.APROVADO:
-                        dashboardViewModel.PedidosAprovados++;
+                        dashboardViewModel.EventosAprovados++;
                     break;
                     case (uint) StatusEvento.REPROVADO:
-                        dashboardViewModel.PedidosReprovados++;
+                        dashboardViewModel.EventosReprovados++;
                     break;
                     default:
-                        dashboardViewModel.PedidosPendentes++;
-                        dashboardViewModel.Pedidos.Add(evento);
+                        dashboardViewModel.EventosPendentes++;
+                        dashboardViewModel.Eventos.Add(evento);
                     break;
 
                 }

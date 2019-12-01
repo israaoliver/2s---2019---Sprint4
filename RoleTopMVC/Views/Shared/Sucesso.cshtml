@@ -10,12 +10,19 @@
         <a href='@Url.Action("Index", "Usuario")'><button class="margin">Continuar</button></a>
 
     }
-    @if("Usuario".Equals(Model.NomeView))
+    @if("Suporte".Equals(Model.NomeView2))
     {
         <img src="~/img/icones/Suport.png">
         <p>Sua mensagem foi enviada com sucesso! <br> Responderemos em até 48hr</p>
         <a href='@Url.Action("Index", "Usuario")'><button class="margin">Voltar</button></a>
     }
+    @if("Usuario".Equals(Model.NomeView))
+    {
+        <img src="~/img/icones/Suc_cadastro.png">
+        <p>Voce conclui o cadastro do seu evento Obrigado! </p>
+        <a href='@Url.Action("Eventos", "Usuario")'><button class="margin">Voltar</button></a>
+    }
+
 
     </section>
     

@@ -1,3 +1,4 @@
+@model RoleTopMVC.ViewModels.ServicoViewModel
         <main class="ex cadastro flex">
             <div class="flex user-container">
                     <i class="icon fas fa-folder-plus fa-3x"></i>
@@ -5,7 +6,7 @@
             </div>
             <section id="cadastro">
 
-                <form method="GET" action="user-pagar.html">
+                <form method="POST" action='@Url.Action("CadastrarEvento","Usuario")'>
 
                     <div class="flex cad-box">
 
@@ -37,14 +38,14 @@
                             </select>
                         </div>
                         <div>
-                            <label for="opcional">Serviços Opcionais</label>
+                            <label for="servico">Serviços Opcionais</label>
                             <br>
-                            <select id="opcional" name="opcional">
+                            <select id="servico" name="servico">
                                 <option value="" disabled selected>Equipamentos</option>
-                                <option value="Iluminacao">Iluminação</option>
-                                <option value="Som">Som</option>
-                                <option value="Iluminação_e_Som">Iluminação e Som</option>
-                                <option value="Simples">Simples</option>
+                                @foreach (var s in Model.Servicos)
+                                {
+                                    <option value="@s.Nome">@s.Nome por @s.Preco</option>
+                                }
                             </select>
                             <p>*Limpeza incluso em todos os planos.</p>
                         </div>
@@ -71,7 +72,7 @@
                     </div>
                     <div class="flex submit">
 
-                        <input type="submit" value="Pagar">
+                        <input type="submit" value="Finalizar pedido!">
                     </div>
 
                 </form>
