@@ -55,8 +55,10 @@ namespace RoleTopMVC.Controllers
                 e.DataRegistro = DateTime.Now;
 
                 var nomeServico = form["servico"];
-                Servicos servico = new Servicos(nomeServico, servicosRepository.ObterPrecoDe(nomeServico));
-                e.Servicos = servico;
+                Servicos s = new Servicos();
+                s.Nome = nomeServico;
+                s.Preco = servicosRepository.ObterPrecoDe(nomeServico);
+                e.Servicos = s;
 
                 if (eventoRepository.Inserir(e))
                 {

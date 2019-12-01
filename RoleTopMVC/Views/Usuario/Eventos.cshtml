@@ -1,5 +1,5 @@
 @model RoleTopMVC.ViewModels.EventoViewModel
-<main class="ex flex">
+<main class="ex event flex">
     <div class="flex user-container">
             <i class="icon far fa-folder-open fa-3x"></i>
         <h1>Meus Eventos</h1>
@@ -8,17 +8,17 @@
         <div>
             @if(!string.IsNullOrEmpty(Model.Vazio))
             {
-                foreach (var evento in Model.Eventos)
+                foreach (var e in Model.Eventos)
                 {
-                    @if (evento.Status == 0)
+                    @if (e.Status == 0)
                     {
                         Model.Stats = "Pendente";
                     }
-                    if (evento.Status == 1)
+                    if (e.Status == 1)
                     {
                         Model.Stats = "Aprovado";
                     }
-                    if (evento.Status == 2)
+                    if (e.Status == 2)
                     {
                         Model.Stats = "Reprovado";
                     }
@@ -38,17 +38,17 @@
                         <tfoot>
                             <tr>
                                 <td colspan="7">
-                                    <p>Esse evento foi atualizado em @evento.DataRegistro</p>
+                                    <p>Esse evento foi atualizado em @e.DataRegistro</p>
                                 </td>
                             </tr>
                         </tfoot>
                         <tbody>
                             <tr>
-                                <td>@evento.NomeEvento</td>
-                                <td>@evento.DiaDoEvento</td>
-                                <td>@evento.Servicos</td>
-                                <td>@evento.TipoEvento</td>
-                                <td>@evento.Quantidade</td>
+                                <td>@e.NomeEvento</td>
+                                <td>@e.DiaDoEvento</td>
+                                <td>""</td>
+                                <td>@e.TipoEvento</td>
+                                <td>@e.Quantidade</td>
                                 <td>@Model.Stats</td>
                             </tr>
                         </tbody>
@@ -62,7 +62,7 @@
                             <div class="flex descricao">
                                 <p> Descrição</p>
 
-                                <textarea id="descricao">@evento.Descricao</textarea>
+                                <textarea id="descricao">@e.Descricao</textarea>
                             </div>
                         </div>
                         <div class="flex edit-container">
@@ -87,7 +87,7 @@
             
             <div class="local">
 
-            <p>Nenhum Evento encontrado aqui!!</p>
+            <p>@Model.UsuarioNome você não tem nenhum evento cadastrado</p>
             <br />
             <i class="icon far fa-grin-beam-sweat fa-8x"></i>
             <p>Clique abaixo e cadastre!</p>

@@ -9,8 +9,5 @@ namespace RoleTopMVC.ViewModels
         public string Vazio  {get;set;}
         public string Stats {get;set;}
 
-        public EventoViewModel()
-        {
-        }
     }
 }

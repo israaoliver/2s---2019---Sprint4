@@ -64,14 +64,14 @@ namespace RoleTopMVC.Repositories
 
                 e.Id = ulong.Parse(ExtrairValorDoCampo("id", l));
                 e.Status = uint.Parse(ExtrairValorDoCampo("status_evento", l));
-                e.NomeEvento = ExtrairValorDoCampo("nomeEvento", l);
-                e.TipoEvento = ExtrairValorDoCampo("tipoEvento", l);
-                e.Cliente.Email = ExtrairValorDoCampo("emailCliente", l);
-                e.DiaDoEvento = DateTime.Parse(ExtrairValorDoCampo("dataEvento", l));
+                e.NomeEvento = ExtrairValorDoCampo("nome_evento", l);
+                e.TipoEvento = ExtrairValorDoCampo("tipo_evento", l);
+                e.Cliente.Email = ExtrairValorDoCampo("email_cliente", l);
+                e.DiaDoEvento = DateTime.Parse(ExtrairValorDoCampo("data_evento", l));
                 e.Quantidade = ExtrairValorDoCampo("qtde", l);
                 e.Descricao = ExtrairValorDoCampo("descricao", l);
                 e.Descricao = e.Descricao.Replace("§", "\r\n");
-                e.DataRegistro = DateTime.Parse(ExtrairValorDoCampo("dataRegistro", l));
+                e.DataRegistro = DateTime.Parse(ExtrairValorDoCampo("data_registro", l));
 
                 eventos.Add(e);
             }
@@ -122,7 +122,7 @@ namespace RoleTopMVC.Repositories
             Servicos s = e.Servicos;
             Cliente c = e.Cliente;
 
-            return $"id={e.Id};status_evento={e.Status};dataRegistro={e.DataRegistro};emailCliente={c.Email};nomeEvento={e.NomeEvento};tipoEvento={e.TipoEvento};dataEvento={e.DiaDoEvento};servicoNome={s.Nome};servicoPreco={s.Preco};qtde={e.Quantidade};descricao={e.Descricao}";
+            return $"id={e.Id};status_evento={e.Status};data_registro={e.DataRegistro};email_cliente={c.Email};nome_evento={e.NomeEvento};tipo_evento={e.TipoEvento};data_evento={e.DiaDoEvento};servico_nome={s.Nome};servicos_preco={s.Preco};qtde={e.Quantidade};descricao={e.Descricao};";
         }
     }
 }
