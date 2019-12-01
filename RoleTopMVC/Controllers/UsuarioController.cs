@@ -5,6 +5,7 @@ using RoleTopMVC.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RoleTopMVC.Models;
+using System.Collections.Generic;
 
 namespace RoleTopMVC.Controllers
 
@@ -51,6 +52,7 @@ namespace RoleTopMVC.Controllers
                 e.Quantidade = form["numero"];
                 e.Descricao = form["descricao"];
                 e.DiaDoEvento = DateTime.Parse(form["dataDoEvento"]);
+                e.DataRegistro = DateTime.Now;
 
                 var nomeServico = form["servico"];
                 Servicos servico = new Servicos(nomeServico, servicosRepository.ObterPrecoDe(nomeServico));
@@ -58,7 +60,7 @@ namespace RoleTopMVC.Controllers
 
                 if (eventoRepository.Inserir(e))
                 {
-                    return View("Sucesso", new MensagemViewModel(){
+                    return View("Sucesso", new BaseViewModel(){
                         NomeView = "Usuario"
                     });
                 }else
@@ -87,10 +89,27 @@ namespace RoleTopMVC.Controllers
             // todo: Fim do Cadastro de Evento ==============================================================================
         public IActionResult Eventos()
         {
-            return View(new MensagemViewModel(){
+            
+            var eventoCliente = eventoRepository.ObeterEventoPorCliente(ObterUsuarioSession());
+            string vazio ;
+
+            if (eventoCliente == null)
+            {
+                vazio = "" ;
+            }else
+            {
+                vazio = "tem";
+            }
+
+
+            return View(new EventoViewModel()
+            {
+                Stats = "",
+                Vazio = vazio,
+                Eventos = eventoCliente,
                 NomeView ="Usuario",
                 UsuarioEmail = ObterUsuarioSession(),
-                UsuarioNome = ObterUsuarioNomeSession()
+                UsuarioNome = ObterUsuarioNomeSession(),
             });
         }
 
@@ -110,7 +129,7 @@ namespace RoleTopMVC.Controllers
             Suporte msg = new Suporte(clienteRepository.ObterInfo(ObterUsuarioSession()),form["problema"],form["descricao"], DateTime.Now);
             
             suporteRepository.Inserir(msg);
-            return View("Sucesso", new MensagemViewModel("Falha em enviar a mensagem"){
+            return View("Sucesso", new MensagemViewModel(){
                 NomeView ="Usuario",
                 NomeView2 = "Suporte",
                 UsuarioEmail = ObterUsuarioSession(),

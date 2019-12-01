@@ -11,6 +11,7 @@ namespace RoleTopMVC.Models
         public string Quantidade {get;set;}
         public string Descricao{get;set;}
         public DateTime DiaDoEvento{get;set;}
+        public DateTime DataRegistro{get;set;}
         public uint Status {get;set;}
 
         public Evento()

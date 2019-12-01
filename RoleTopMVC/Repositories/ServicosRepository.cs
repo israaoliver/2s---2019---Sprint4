@@ -29,10 +29,10 @@ namespace RoleTopMVC.Repositories
             List<Servicos> servicos = new List<Servicos>();
             string[] linhas = File.ReadAllLines(PATH);
 
-            foreach (var l in linhas)
+            foreach (var linha in linhas)
             {
                 Servicos s = new Servicos();
-                string[] dados = l.Split(";");
+                string[] dados = linha.Split(";");
                 s.Nome = dados[0];
                 s.Preco = double.Parse(dados[1]);
                 servicos.Add(s);

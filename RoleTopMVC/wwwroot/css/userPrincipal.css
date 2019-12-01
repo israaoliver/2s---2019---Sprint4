@@ -178,7 +178,7 @@ h1{
 
 .ex{
   width: 100%;
-  height: 1300px;
+  height: 1200px;
   margin: 0 auto;
   justify-content: space-around;
   align-items: center;
@@ -360,6 +360,14 @@ label{
 
 .last{
   justify-content: space-between;
+}
+
+.local{
+
+  margin-top: -20em;
+}
+.local p {
+  font-size: 1.8em;
 }
 
 

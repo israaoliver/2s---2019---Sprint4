@@ -3,7 +3,7 @@ using RoleTopMVC.Models;
 
 namespace RoleTopMVC.ViewModels
 {
-    public class ServicoViewModel : MensagemViewModel
+    public class ServicoViewModel : BaseViewModel
     {
         public List<Servicos> Servicos {get;set;}
 

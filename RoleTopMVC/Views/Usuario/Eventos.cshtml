@@ -1,3 +1,4 @@
+@model RoleTopMVC.ViewModels.EventoViewModel
 <main class="ex flex">
     <div class="flex user-container">
             <i class="icon far fa-folder-open fa-3x"></i>
@@ -5,131 +6,99 @@
     </div>
     <section>
         <div>
+            @if(!string.IsNullOrEmpty(Model.Vazio))
+            {
+                foreach (var evento in Model.Eventos)
+                {
+                    @if (evento.Status == 0)
+                    {
+                        Model.Stats = "Pendente";
+                    }
+                    if (evento.Status == 1)
+                    {
+                        Model.Stats = "Aprovado";
+                    }
+                    if (evento.Status == 2)
+                    {
+                        Model.Stats = "Reprovado";
+                    }
 
-            <table>
+                        <table>
 
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Data</th>
-                        <th>Serviços</th>
-                        <th>Tipo</th>
-                        <th>Publi./Priv</th>
-                        <th>Quantidade de Pessoas</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <td colspan="7">
-                            <p>Seu ultimo evento registrado foi 03/09/2019 às 10:23</p>
-                        </td>
-                    </tr>
-                </tfoot>
-                <tbody>
-                    <tr>
-                        <td>Eletrotec</td>
-                        <td>10/10/2019</td>
-                        <td>Completo</td>
-                        <td>Balada</td>
-                        <td>Publico</td>
-                        <td>300</td>
-                        <td>Confirmado</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br>
-            <br>
-            <br>
-            <div class="flex last">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Data</th>
+                                <th>Serviços</th>
+                                <th>Tipo</th>
+                                <th>Quantidade de Pessoas</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7">
+                                    <p>Esse evento foi atualizado em @evento.DataRegistro</p>
+                                </td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td>@evento.NomeEvento</td>
+                                <td>@evento.DiaDoEvento</td>
+                                <td>@evento.Servicos</td>
+                                <td>@evento.TipoEvento</td>
+                                <td>@evento.Quantidade</td>
+                                <td>@Model.Stats</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <br>
+                    <div class="flex last">
 
-                <div>
+                        <div>
 
-                    <div class="flex descricao">
-                        <p> Descrição</p>
+                            <div class="flex descricao">
+                                <p> Descrição</p>
 
-                        <textarea id="descricao"></textarea>
+                                <textarea id="descricao">@evento.Descricao</textarea>
+                            </div>
+                        </div>
+                        <div class="flex edit-container">
+                            <div class="flex">
+                                    <i class="icon fas fa-edit fa-2x"></i>
+                                <p>Editar Informações.</p>
+                            </div>
+                            <div class="flex">
+                                    <i class="icon fas fa-trash-alt fa-2x"></i>
+                                <p>Remover Evento</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="flex edit-container">
-                    <div class="flex">
-                            <i class="icon fas fa-edit fa-2x"></i>
-                        <p>Editar Informações.</p>
-                    </div>
-                    <div class="flex">
-                            <i class="icon fas fa-trash-alt fa-2x"></i>
-                        <p>Remover Evento</p>
-                    </div>
-                </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <hr />
+                }
+            }else
+            {
+            
+            <div class="local">
+
+            <p>Nenhum Evento encontrado aqui!!</p>
+            <br />
+            <i class="icon far fa-grin-beam-sweat fa-8x"></i>
+            <p>Clique abaixo e cadastre!</p>
+            <br />
+            <a href='@Url.Action("EventoCadastro", "Usuario")'><button class="margin">Cadastrar</button></a>
             </div>
+            }
+            
+                    
 
-            <br>
-            <br>
-            <br>
-            <hr>
-            <br>
-            <br>
-            <br>
-            <!--Inicio da segunda sessão-->
-            <section>
-        </div>
-        <table>
 
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Data</th>
-                    <th>Serviços</th>
-                    <th>Tipo</th>
-                    <th>Publi./Priv</th>
-                    <th>Quantidade de Pessoas</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tfoot>
-                <tr>
-                    <td colspan="7">
-                        <p>Seu ultimo evento registrado foi 03/09/2019 às 10:23</p>
-                    </td>
-                </tr>
-            </tfoot>
-            <tbody>
-                <tr>
-                    <td>Eletrotec</td>
-                    <td>10/10/2019</td>
-                    <td>Completo</td>
-                    <td>Balada</td>
-                    <td>Publico</td>
-                    <td>300</td>
-                    <td>Confirmado</td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-        <br>
-        <br>
-        <div class="flex last">
-
-            <div>
-
-                <div class="flex descricao">
-                    <p> Descrição</p>
-
-                    <textarea id="descricao"></textarea>
-                </div>
-            </div>
-            <div class="flex edit-container">
-                <div class="flex">
-                        <i class=" icon fas fa-edit fa-2x"></i>
-                    <p>Editar Informações.</p>
-                </div>
-                <div class="flex">
-                        <i class=" icon fas fa-trash-alt fa-2x"></i>
-                    <p>Remover Evento</p>
-                </div>
-            </div>
-        </div>
-        </section>
     </section>
 
 </main>

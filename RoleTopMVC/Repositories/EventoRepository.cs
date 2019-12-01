@@ -34,14 +34,23 @@ namespace RoleTopMVC.Repositories
             var eventos = ObterTodos();
             List<Evento> eventosCliente = new List<Evento>();
 
+            int nenhumEvento = 0;
             foreach (var e in eventos)
             {
                 if(e.Cliente.Email.Equals(emailCliente))
                 {
                     eventosCliente.Add(e);
+                    nenhumEvento ++;
                 }
             }
-            return eventosCliente;
+            if (nenhumEvento > 0)
+            {
+                return eventosCliente;
+            }else
+            {
+                return null;
+            }
+            
         }
 
         public List<Evento> ObterTodos()
@@ -56,11 +65,13 @@ namespace RoleTopMVC.Repositories
                 e.Id = ulong.Parse(ExtrairValorDoCampo("id", l));
                 e.Status = uint.Parse(ExtrairValorDoCampo("status_evento", l));
                 e.NomeEvento = ExtrairValorDoCampo("nomeEvento", l);
+                e.TipoEvento = ExtrairValorDoCampo("tipoEvento", l);
+                e.Cliente.Email = ExtrairValorDoCampo("emailCliente", l);
                 e.DiaDoEvento = DateTime.Parse(ExtrairValorDoCampo("dataEvento", l));
-                e.Servicos.Nome = ExtrairValorDoCampo("servicoNome", l);
-                e.Servicos.Preco = double.Parse(ExtrairValorDoCampo("servicoPreco", l));
                 e.Quantidade = ExtrairValorDoCampo("qtde", l);
                 e.Descricao = ExtrairValorDoCampo("descricao", l);
+                e.Descricao = e.Descricao.Replace("§", "\r\n");
+                e.DataRegistro = DateTime.Parse(ExtrairValorDoCampo("dataRegistro", l));
 
                 eventos.Add(e);
             }
@@ -111,7 +122,7 @@ namespace RoleTopMVC.Repositories
             Servicos s = e.Servicos;
             Cliente c = e.Cliente;
 
-            return $"id={e.Id};status_evento={e.Status};emailCliente={c.Email};nomeEvento={e.NomeEvento};dataEvento={e.DiaDoEvento};servicoNome={s.Nome};servicoPreco={s.Preco};qtde={e.Quantidade};descricao={e.Descricao}";
+            return $"id={e.Id};status_evento={e.Status};dataRegistro={e.DataRegistro};emailCliente={c.Email};nomeEvento={e.NomeEvento};tipoEvento={e.TipoEvento};dataEvento={e.DiaDoEvento};servicoNome={s.Nome};servicoPreco={s.Preco};qtde={e.Quantidade};descricao={e.Descricao}";
         }
     }
 }
