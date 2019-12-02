@@ -1,0 +1,45 @@
+@model RoleTopMVC.ViewModels.BaseViewModel
+<main class="informa flex" id="" >
+<div class="flex user-container">
+    <i class="icon fas fa-address-card fa-3x"></i>
+<h1>   Minhas Informações</h1>
+</div>
+<section id="informacao">
+
+<h2>Suas Informações</h2>
+<form >
+
+<div class="info2">
+
+    <div>
+        <label class="info" for="name">Nome Completo</label>
+        <br>
+        <input class="info lab" id="name" value="@Model.Cliente.Nome" disabled >
+    </div>
+    <div>
+        <label class="info" for="email">E-mail</label>
+        <br>
+        <input class="info lab" id="email" value="@Model.Cliente.Email" disabled >
+    </div>
+    <div>
+        <label class="info" for="telefone">Telefone</label>
+        <br>
+        <input class="info lab" id="telefone" value="@Model.Cliente.Telefone" disabled  >
+
+    </div>
+
+    <div>
+        <label class="info"for="cpf">CPF/CNPJ</label>
+        <br>
+        <input class="info lab" id="cpf" value="@Model.Cliente.CPF"  disabled >
+    </div>
+    <br />
+    <p class="">Quer alterar a Senha ou aluma outra informação? <br /> Clique abaixo</p>
+    <a class="alt-info" asp-controller="Usuario" asp-action="MudarInfo" >Alterar alguma informação?</a>
+</div>
+
+
+
+</form>
+</section>
+</main>

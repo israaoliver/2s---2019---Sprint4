@@ -16,6 +16,7 @@ namespace RoleTopMVC.Models
 
         public Evento()
         {
+            this.Servicos = new Servicos();
             this.Cliente =  new Cliente();
             this.Id = 0;
             this.Status = 0;

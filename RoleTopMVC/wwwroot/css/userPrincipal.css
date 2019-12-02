@@ -26,11 +26,6 @@ form p {
   font-family: 'Itim', cursive; 
   font-size: 0.7em;
 }
-.ex main{
-
-  height: 1350px;
-
-}
 main{
   width: 100%;
   margin: 0 auto;
@@ -377,6 +372,50 @@ label{
 .local p {
   font-size: 1.8em;
 }
+
+/*===============================================================================================
+                        INFORMAÇOES
+==============================================================================================*/
+
+
+.informa
+{
+  height:850px;
+}
+.info2 label{
+  text-align: center;
+}
+.info
+{
+  margin-left: 10em;
+  text-align: center;
+}
+
+.lab {
+  width: 300px;
+  height: 20px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+#informacao p {
+  font-size: 1em;
+  text-align: center;
+}
+
+#informacao 
+{
+  height: 500px;
+  width: 600px;
+  align-items: center;
+  justify-content: center;
+  border: 9px double #fff;
+  margin-top: 15em;
+  margin-left: -10em;
+
+}
+
+
 
 
 /*================================================================================================================================================================================

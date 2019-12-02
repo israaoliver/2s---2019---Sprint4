@@ -22,7 +22,7 @@ namespace RoleTopMVC.Repositories
             var qtdeEvento = File.ReadAllLines(PATH).Length;
             evento.Id = (ulong) ++ qtdeEvento;
 
-            evento.Descricao = evento.Descricao.Replace("\r\n", "§");
+            evento.Descricao = evento.Descricao.Replace("\r\n", "#αßπΣ#");
 
             var linha = new string[]{PrepararEventoCSV(evento)};
             File.AppendAllLines(PATH, linha);
@@ -70,8 +70,9 @@ namespace RoleTopMVC.Repositories
                 e.DiaDoEvento = DateTime.Parse(ExtrairValorDoCampo("data_evento", l));
                 e.Quantidade = ExtrairValorDoCampo("qtde", l);
                 e.Descricao = ExtrairValorDoCampo("descricao", l);
-                e.Descricao = e.Descricao.Replace("§", "\r\n");
+                e.Descricao = e.Descricao.Replace("#αßπΣ#", "\r\n");
                 e.DataRegistro = DateTime.Parse(ExtrairValorDoCampo("data_registro", l));
+                e.Servicos.Nome = ExtrairValorDoCampo("servico_nome", l);
 
                 eventos.Add(e);
             }

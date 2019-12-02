@@ -114,7 +114,22 @@ namespace RoleTopMVC.Controllers
                 UsuarioNome = ObterUsuarioNomeSession(),
             });
         }
+        // todo: Informações do usuario ======================
 
+        public IActionResult Informacoes()
+        {
+            var c = clienteRepository.ObterInfo(ObterUsuarioSession());
+
+            return View(new BaseViewModel(){
+                Cliente = c,
+                NomeView ="Usuario",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession(),
+
+            });
+        }
+
+        // todo: Suporte =====================
         public IActionResult Suporte()
         {
             return View(new MensagemViewModel(){
