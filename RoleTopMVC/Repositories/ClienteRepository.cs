@@ -24,6 +24,31 @@ namespace RoleTopMVC.Repositories
             return true;
         }
 
+        public bool Atualizar(Cliente c, string email)
+        {
+            var clienteTotais = File.ReadAllLines(PATH);
+            var clienteCSV = Preparar(c);
+            var linhaCliente = -1;
+            var resultado = false;
+
+            for (int i = 0; i < clienteTotais.Length; i++)
+            {
+                var emailConvertido = ExtrairValorDoCampo("email", clienteTotais[i]);
+                if (email.Equals(emailConvertido))
+                {
+                    linhaCliente = i;
+                    resultado = true;
+                    break;
+                }
+            }
+            if (resultado)
+            {
+                clienteTotais[linhaCliente] = clienteCSV;
+                File.WriteAllLines(PATH, clienteTotais);
+            }
+            return resultado;
+        }
+
         public Cliente ObterInfo(string email)
         {
             var linhas = File.ReadAllLines(PATH);
@@ -34,6 +59,7 @@ namespace RoleTopMVC.Repositories
                     
                     Cliente c = new Cliente();      
                     c.Nome = ExtrairValorDoCampo("nome", item);
+                    c.TipoUsuario = uint.Parse(ExtrairValorDoCampo("tipo_usuario", item));
                     c.Email = ExtrairValorDoCampo("email", item);
                     c.Senha = ExtrairValorDoCampo("senha", item);
                     c.Telefone = ExtrairValorDoCampo("telefone", item);
@@ -46,7 +72,7 @@ namespace RoleTopMVC.Repositories
 
         private string Preparar(Cliente c)
         {
-            return $"nome={c.Nome};email={c.Email};senha={c.Senha};telefone={c.Telefone};cpf={c.CPF}";
+            return $"tipo_usuario={c.TipoUsuario};nome={c.Nome};email={c.Email};senha={c.Senha};telefone={c.Telefone};cpf={c.CPF}";
         }
 }
 }

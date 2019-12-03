@@ -2981,6 +2981,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\InfoAlterar.cshtml",
+      "TargetPath": "Views\\Usuario\\InfoAlterar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_CookieConsentPartial.cshtml",
       "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
       "FileKind": "mvc"

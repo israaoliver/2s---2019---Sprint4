@@ -8,6 +8,7 @@ namespace RoleTopMVC.Models
         public string Senha {get;set;}
         public string Telefone {get;set;}
         public string CPF {get;set;}
+        public uint TipoUsuario {get;set;}
 
         public Cliente()
         {

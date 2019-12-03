@@ -73,8 +73,6 @@ namespace RoleTopMVC.Controllers
                 System.Console.WriteLine(e.StackTrace);
                 return View("Erro", new MensagemViewModel("Falha em Logar!"){
                     NomeView = "Login",
-                    UsuarioNome = ObterUsuarioNomeSession(),
-                    UsuarioEmail = ObterUsuarioSession(),
 
                 });
                 

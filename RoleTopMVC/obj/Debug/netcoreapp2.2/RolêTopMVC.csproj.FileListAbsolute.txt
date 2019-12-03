@@ -183,3 +183,4 @@ C:\Users\Junior\Documents\Docs\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcorea
 C:\Users\Junior\Documents\Docs\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcoreapp2.2\RolêTopMVC.pdb
 C:\Users\Junior\Documents\Docs\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcoreapp2.2\RolêTopMVC.csproj.CopyComplete
 C:\Users\44346823858\Documents\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Usuario\Informacoes.g.cshtml.cs
+C:\Users\44346823858\Documents\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Usuario\InfoAlterar.g.cshtml.cs

@@ -1,0 +1,38 @@
+@model RoleTopMVC.ViewModels.BaseViewModel
+<main class="informa flex" >
+<div class="flex user-container">
+    <i class="icon fas fa-address-card fa-3x"></i>
+<h1>   Minhas Informações</h1>
+</div>
+<section id="informacao">
+<div class="flex form-info">
+
+<form method="POST" action='@Url.Action("AlterarInforamacoUsuario", "Usuario")'>
+    <div>
+        <label for="nome">Nome Completo</label>
+        <br>
+        <input class="lab" id="nome" type="text" maxlength="30" minlength="5" name="nome" value="@Model.Cliente.Nome">
+    </div>
+    <div>
+        <label for="email">E-mail</label>
+        <br>
+        <input class="lab" id="email" type="email" name="email" value="@Model.Cliente.Email">
+    </div>
+    <div>
+        <label for="telefone">Telefone</label>
+        <br>
+        <input class="lab" id="telefone" type="text" name="telefone" value="@Model.Cliente.Telefone" minlength="10" maxlength="11" >
+
+    </div>
+    <div>
+        <label for="cpf">CPF/CNPJ</label>
+        <br>
+        <input class="lab" id="cpf" name="cpf" type="text" maxlength="11" minlength="11" value="@Model.Cliente.CPF">
+    </div>
+    <input type="submit" value="Mudar">
+
+</form>
+</div>
+
+</section>
+</main>

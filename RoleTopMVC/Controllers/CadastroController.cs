@@ -2,6 +2,7 @@ using System;
 using System.Net.NetworkInformation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RoleTopMVC.Enums;
 using RoleTopMVC.Models;
 using RoleTopMVC.Repositories;
 using RoleTopMVC.ViewModels;
@@ -28,6 +29,7 @@ namespace RoleTopMVC.Controllers
             {
                 Cliente c = new Cliente(form["nome"],form["email"],form["senha"],form["telefone"],form["cpf"]);
 
+                c.TipoUsuario = (uint) TipoUsuario.CLIENTE;
                 clienteRepository.Inserir(c);
 
                 HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, c.Email);

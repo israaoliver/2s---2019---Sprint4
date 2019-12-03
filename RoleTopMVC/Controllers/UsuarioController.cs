@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RoleTopMVC.Models;
 using System.Collections.Generic;
+using RoleTopMVC.Enums;
 
 namespace RoleTopMVC.Controllers
 
@@ -63,7 +64,12 @@ namespace RoleTopMVC.Controllers
                 if (eventoRepository.Inserir(e))
                 {
                     return View("Sucesso", new BaseViewModel(){
-                        NomeView = "Usuario"
+                        NomeView = "Usuario",
+                        NomeView2 = "Suporte",
+                        UsuarioEmail = ObterUsuarioSession(),
+                        UsuarioNome = ObterUsuarioNomeSession()
+
+
                     });
                 }else
                 {
@@ -125,6 +131,48 @@ namespace RoleTopMVC.Controllers
                 NomeView ="Usuario",
                 UsuarioEmail = ObterUsuarioSession(),
                 UsuarioNome = ObterUsuarioNomeSession(),
+
+            });
+        }
+
+        public IActionResult InfoAlterar()
+        {
+            var c = clienteRepository.ObterInfo(ObterUsuarioSession());
+
+            return View(new BaseViewModel(){
+                Cliente = c,
+                NomeView ="Usuario",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession(),
+
+            });
+        }
+
+        public IActionResult AlterarInforamacoUsuario(IFormCollection form)
+        {
+            var C2 = clienteRepository.ObterInfo(ObterUsuarioSession());
+            Cliente c = new Cliente();
+            c.TipoUsuario = (uint) TipoUsuario.CLIENTE;
+            c.Nome = form["nome"];
+            c.Email = form["email"];
+            c.Senha = C2.Senha;
+            c.Telefone = form["telefone"];
+            c.CPF = form["cpf"];
+            
+
+            if (clienteRepository.Atualizar(c, ObterUsuarioSession()))
+            {
+                HttpContext.Session.Remove(SESSION_CLIENTE_EMAIL);
+                HttpContext.Session.Remove(SESSION_CLIENTE_NOME);
+
+                HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, c.Email);
+                HttpContext.Session.SetString(SESSION_CLIENTE_NOME, c.Nome);
+            }
+            return View ("Sucesso", new MensagemViewModel("Informações Alteradas"){
+                NomeView = "Usuario",
+                NomeView2 = "Informacao",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
 
             });
         }

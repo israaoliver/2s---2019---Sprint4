@@ -6,40 +6,36 @@
 </div>
 <section id="informacao">
 
-<h2>Suas Informações</h2>
-<form >
 
-<div class="info2">
-
-    <div>
-        <label class="info" for="name">Nome Completo</label>
-        <br>
-        <input class="info lab" id="name" value="@Model.Cliente.Nome" disabled >
+<div class=" flex info">
+    <div >
+        <h4>Nome</h4>
+        <p>@Model.Cliente.Nome
+            </p>
     </div>
     <div>
-        <label class="info" for="email">E-mail</label>
-        <br>
-        <input class="info lab" id="email" value="@Model.Cliente.Email" disabled >
+        <h4>Email</h4>
+        <p>@Model.Cliente.Email
+            </p>
     </div>
     <div>
-        <label class="info" for="telefone">Telefone</label>
-        <br>
-        <input class="info lab" id="telefone" value="@Model.Cliente.Telefone" disabled  >
+        <h4>Telefone</h4>
+        <p>@Model.Cliente.Telefone
+            </p>
 
     </div>
 
     <div>
-        <label class="info"for="cpf">CPF/CNPJ</label>
-        <br>
-        <input class="info lab" id="cpf" value="@Model.Cliente.CPF"  disabled >
+        <h4>CPF/CNPJ</h4>
+        <p>@Model.Cliente.CPF
+            </p>
     </div>
-    <br />
-    <p class="">Quer alterar a Senha ou aluma outra informação? <br /> Clique abaixo</p>
-    <a class="alt-info" asp-controller="Usuario" asp-action="MudarInfo" >Alterar alguma informação?</a>
+    <div class="info-button flex">
+
+    <a asp-controller="Usuario" asp-action="InfoAlterar"><u>Alterar Informações.</u></a>
+    <a><u>Mudar Senha.</u></a>
+    </div>
 </div>
 
-
-
-</form>
 </section>
 </main>

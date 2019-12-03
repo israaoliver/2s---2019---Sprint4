@@ -1,4 +1,4 @@
-﻿@model RoleTopMVC.ViewModels.BaseViewModel
+﻿@model RoleTopMVC.ViewModels.MensagemViewModel
 <main>
     
     <section class="flex conf">
@@ -16,11 +16,17 @@
         <p>Sua mensagem foi enviada com sucesso! <br> Responderemos em até 48hr</p>
         <a href='@Url.Action("Index", "Usuario")'><button class="margin">Voltar</button></a>
     }
-    @if("Usuario".Equals(Model.NomeView))
+    @if("Cadastro".Equals(Model.NomeView2))
     {
         <img src="~/img/icones/Suc_cadastro.png">
         <p>Voce conclui o cadastro do seu evento Obrigado! </p>
         <a href='@Url.Action("Eventos", "Usuario")'><button class="margin">Continuar</button></a>
+    }
+    @if("Informacao".Equals(Model.NomeView2))
+    {
+        <img src="~/img/icones/Suc_cadastro.png">
+        <p>@Model.Mensagem com sucesso!</p>
+        <a href='@Url.Action("Informacoes", "Usuario")'><button class="margin">Continuar</button></a>
     }
 
 
