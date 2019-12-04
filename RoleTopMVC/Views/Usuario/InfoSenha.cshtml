@@ -1,0 +1,33 @@
+@model RoleTopMVC.ViewModels.BaseViewModel
+<main class="informa flex" >
+<div class="flex user-container">
+    <i class="icon fas fa-address-card fa-3x"></i>
+<h1>   Minhas Informações</h1>
+</div>
+<section id="informacao">
+<div class="flex form-info">
+
+<form method="POST" action='@Url.Action("AlterarSenha", "Usuario")'>
+    <div>
+        <label for="senhaAtual">Senha Atual</label>
+        <br>
+        <input class="lab" id="senhaAtual" type="password" maxlength="15" minlength="3" name="senhaAtual" required>
+    </div>
+    <div>
+        <label for="senha">Nova Senha</label>
+        <br>
+        <input class="lab" id="senha" type="password" maxlength="15" minlength="3" name="senha" required>
+    </div>
+    <div>
+        <label for="repSenha">Repetir nova senha</label>
+        <br>
+        <input class="lab" id="repSenha" type="password" name="repSenha" maxlength="15" minlength="3" required >
+
+    </div>
+    <input type="submit" value="Mudar">
+
+</form>
+</div>
+
+</section>
+</main>

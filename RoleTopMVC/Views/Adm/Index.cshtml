@@ -1,0 +1,38 @@
+@model RoleTopMVC.ViewModels.DashboardViewModel
+
+<main class="flex geral">
+            <h1>DashBoard</h1>
+        <section class="flex central-container">
+
+            <div class="flex event-container">
+                <a asp-controller="Adm" asp-action="Pendentes">
+                    <div class="flex pend-container">
+                        <img src="../img/icones/Adm/copy.png" alt="">
+                    </div>
+                </a>
+                <h2>Pendentes</h2>
+                <br>
+                <p>@Model.EventosPendentes</p>
+            </div>
+            <div class="flex event-container">
+                <a asp-controller="Adm" asp-action="Aprovados">
+                    <div class="flex check-container">
+                        <img src="../img/icones/Adm/check_box_black_192x192.png" alt="">
+                    </div>
+                </a>
+                <h2>Aprovados</h2>
+                <br>
+                <p>@Model.EventosAprovados</p>
+            </div>
+            <div class="flex event-container">
+                <a asp-controller="Adm" asp-action="Recusados">
+                    <div class="flex recuse-container">
+                        <img src="../img/icones/Adm/recuse.png" alt="">
+                    </div>
+                </a>
+                <h2>Recusados</h2>
+                <br>
+                <p>@Model.EventosReprovados</p>
+            </div>
+        </section>
+    </main>

@@ -1,0 +1,79 @@
+@model RoleTopMVC.ViewModels.DashboardViewModel
+<main class="flex geral">
+        <div class="flex icon-2"><a asp-controller="Adm" asp-action="Index"><i class="back fas fa-backward fa-2x"></i></a></div>
+        <div class="flex cima ">
+            <h1>DashBoard</h1>
+        </div>
+        <section class="flex central-container">
+
+            <div class="flex event-container">
+                <a asp-controller="Adm" asp-action="Pendentes">
+                    <div class="flex pend-container">
+                        <img src="../img/icones/Adm/copy.png" alt="">
+                    </div>
+                </a>
+                <h2>Pendentes</h2>
+                <br>
+                <p>@Model.EventosPendentes
+                </p>
+            </div>
+            <div class="flex event-container">
+                <a asp-controller="Adm" asp-action="Aprovados">
+                    <div class="flex check-container">
+                        <img src="../img/icones/Adm/check_box_black_192x192.png" alt="">
+                    </div>
+                </a>
+                <h2>Aprovados</h2>
+                <br>
+                <p>@Model.EventosAprovados
+                </p>
+            </div>
+            <div class="flex event-container">
+                <a asp-controller="Adm" asp-action="Recusados">
+                    <div class="flex black-container">
+                        <img src="../img/icones/Adm/recuse.png" alt="">
+                    </div>
+                </a>
+                <h2>Recusados</h2>
+                <br>
+                <p>@Model.EventosReprovados
+                </p>
+            </div>
+        </section>
+        <section>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome do Evento</th>
+                        <th>Data</th>
+                        <th>Serviços</th>
+                        <th>Tipo</th>
+                        <th>Priv./Publi.</th>
+                        <th>Quantidade</th>
+                        <th>Pagamento</th>
+                        <th colspan="2">Readimitir</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="8">
+                            <p>Eventos atualizados em 23/09/2026 às 8h41</p>
+                        </td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>SteamPunk</td>
+                        <td>10/10/2019</td>
+                        <td>Completo</td>
+                        <td>Confraternização</td>
+                        <td>Publico</td>
+                        <td>300</td>
+                        <td>Confirmado</td>
+                        <td class="read"><a href="#"><i class="fas fa-reply"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>

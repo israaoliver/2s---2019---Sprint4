@@ -49,6 +49,7 @@ namespace McBonaldsMVC.Controllers
                     Mensagem = "Você não tem permissão de acessar o Dashboad"
                 });
             }
+
         }
     }
 }

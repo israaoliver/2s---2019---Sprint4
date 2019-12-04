@@ -167,14 +167,79 @@ namespace RoleTopMVC.Controllers
 
                 HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, c.Email);
                 HttpContext.Session.SetString(SESSION_CLIENTE_NOME, c.Nome);
-            }
-            return View ("Sucesso", new MensagemViewModel("Informações Alteradas"){
+
+
+                return View ("Sucesso", new MensagemViewModel("Informações Alteradas"){
                 NomeView = "Usuario",
                 NomeView2 = "Informacao",
                 UsuarioEmail = ObterUsuarioSession(),
                 UsuarioNome = ObterUsuarioNomeSession()
 
             });
+            }else
+            {
+                return View ("Erro", new MensagemViewModel("Falha em alterar informações!"){
+                NomeView = "Usuario",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+
+            });
+            }
+
+        }
+
+        public IActionResult InfoSenha()
+        {
+            return View(new BaseViewModel()
+            {
+                NomeView="Usuario",
+                UsuarioNome = ObterUsuarioNomeSession(),
+                UsuarioEmail = ObterUsuarioSession(),
+            });
+        }
+
+        public IActionResult AlterarSenha(IFormCollection form)
+        {
+            var c = clienteRepository.ObterInfo(ObterUsuarioSession());
+            string senhaAtual = form["senhaAtual"];
+            string senha = form["senha"];
+            string repSenha = form["repSenha"];
+
+            if (c.Senha == senhaAtual)
+            {
+                if (senha == repSenha)
+                {
+                    c.Senha = senha;
+                    clienteRepository.Atualizar(c, ObterUsuarioSession());
+                    return View("Sucesso", new  MensagemViewModel("Senha Alterada")
+                    {
+                        NomeView = "Usuario",
+                        NomeView2 = "Informacao",
+                        UsuarioEmail = ObterUsuarioSession(),
+                        UsuarioNome = ObterUsuarioNomeSession()
+
+                    });
+                }
+                else
+                {
+                    return View("Erro", new MensagemViewModel("Senhas diferentes")
+                    {
+                        NomeView = "Usuario",
+                        UsuarioEmail = ObterUsuarioSession(),
+                        UsuarioNome = ObterUsuarioNomeSession(),
+                    });
+                }
+            }
+            else
+            {
+                return View("Erro", new MensagemViewModel("Senha atual incorreta")
+                {
+                    NomeView = "Usuario",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession(),
+                });
+            }
+
         }
 
         // todo: Suporte =====================

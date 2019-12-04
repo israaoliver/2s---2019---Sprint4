@@ -9,7 +9,8 @@ namespace RoleTopMVC.Controllers
     {
 
         EventoRepository eventoRepository = new EventoRepository();
-        public IActionResult Dashboard()
+
+        public DashboardViewModel DashboardEvento()
         {
             var eventos = eventoRepository.ObterTodos();
             DashboardViewModel dashboardViewModel = new DashboardViewModel();
@@ -32,9 +33,41 @@ namespace RoleTopMVC.Controllers
                 }
             }
 
-            dashboardViewModel.NomeView = "Dashboard";
-            dashboardViewModel.UsuarioEmail = ObterUsuarioSession();
-            return View(dashboardViewModel);
+
+                dashboardViewModel.NomeView ="Adm";
+                dashboardViewModel.NomeView2 = "dashboard";
+                dashboardViewModel.UsuarioNome = ObterUsuarioNomeSession();
+                dashboardViewModel.UsuarioEmail = ObterUsuarioSession();
+
+                return dashboardViewModel;
         }
+        public IActionResult Index()
+        {
+            var dashboard = DashboardEvento(); 
+
+            return View(dashboard);
+        }
+
+        
+        public IActionResult Pendentes()
+        {
+            var dashboard = DashboardEvento(); 
+
+            return View(dashboard);        
+        }
+
+        public IActionResult Aprovados()
+        {
+            var dashboard = DashboardEvento();
+            return View(dashboard);
+        }
+
+        public IActionResult Recusados()
+        {
+            var dashboard = DashboardEvento();
+            return View(dashboard);
+        }
+	
     }
+
 }

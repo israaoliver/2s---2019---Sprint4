@@ -15,6 +15,10 @@
     <link rel="stylesheet" type="text/css" href="~/css/styles.css">
     @if("Usuario".Equals(Model.NomeView))
     {<link rel="stylesheet" type="text/css" href="~/css/userPrincipal.css">}
+    @if("Adm".Equals(Model.NomeView))
+    {<link rel="stylesheet" type="text/css" href="~/css/admPrincipal.css">}
+    @if("dashboard".Equals(Model.NomeView2))
+    {<link rel="stylesheet" type="text/css" href="~/css/Dashboard.css">}
     @if("Home".Equals(Model.NomeView) || ("Login".Equals(Model.NomeView)) || ("Cadastro".Equals(Model.NomeView)))
     {<link rel="stylesheet" type="text/css" href="~/css/Home.css">}
     @if(("Login".Equals(Model.NomeView)) || ("Cadastro".Equals(Model.NomeView)))
@@ -32,6 +36,10 @@
     
 
     <header>
+    @if("Adm".Equals(Model.NomeView))
+    {
+        Html.RenderPartial("_NavAdmPages");
+    }
     @if(("Login".Equals(Model.NomeView)) || ("Cadastro".Equals(Model.NomeView)) || ("Home".Equals(Model.NomeView)))
     {
         Html.RenderPartial("_NavHomePages");
@@ -47,28 +55,34 @@
 
 @RenderBody()
     <footer>
-        <div class="flex footer-container">
-            <div class="flex footer-logo">
-            <img  src="../img/logo_roletop.png" alt="Logo do RoleTop">
+            <div class="flex footer-container">
+            
+                <img class="footer-logo" src="~/img/logo_roletop.png" alt="Logo do RoleTop">
+                <div class="end">
+                        <address>
+                                Avenida de Limeira, 539 - Campos Elíseos - SP
+                                <br />
+                                roletop@email.com
+                                <br />
+                                11 1234 6789
+                            </address>
+                </div>
+                <div class=" flex social">
+                    <div class="flex foot">
+                        <p>Facebook:</p><br>
+                        <i class="social-icon fab fa-facebook-square fa-2x"></i>
+                    </div>
+                    <div class="flex foot">
+                        <p>Instagram:</p> <br>
+                        <i class="social-icon fab fa-instagram fa-2x"></i>
+                    </div>
+                    <div class="flex foot">
+                        <p>Acesso a Deficiente:</p>
+                        <i class=" social-icon fab fa-accessible-icon fa-2x"></i>
+                    </div>
+                </div>
             </div>
-            <div class=" flex social">
-                <div class="flex foot">
-                    <p>Facebook:</p>
-                    <br>
-                    <i class="social-icon fab fa-facebook-square fa-2x"></i>
-                </div>
-                <div class="flex foot">
-                    <p>Instagram:</p>
-                    <br>
-                    <i class="social-icon fab fa-instagram fa-2x"></i>
-                </div>
-                <div class="flex foot">
-                    <p>Acesso a Deficiente:</p>
-                    <i class="social-icon fab fa-accessible-icon fa-2x"></i>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </footer>
     <script>
         function toggleMobileMenu() {
             var ul = document.querySelector("nav ul");
