@@ -47,6 +47,7 @@
                     <tr>
                         <th>Nome do Evento</th>
                         <th>Data</th>
+                        <th>Email CLiente</th>
                         <th>Serviços</th>
                         <th>Tipo</th>
                         <th>Quantidade</th>
@@ -64,11 +65,13 @@
                 <tbody>
                     @foreach (var e in Model.Eventos)
                     {
+        
                         if (e.Status == 0)
                         {
                             <tr>
                                 <td>@e.NomeEvento</td>
                                 <td>@e.DiaDoEvento</td>
+                                <td>@e.Cliente.Email</td>
                                 <td>@e.Servicos.Nome</td>
                                 <td>@e.TipoEvento</td>
                                 <td>@e.Quantidade</td>

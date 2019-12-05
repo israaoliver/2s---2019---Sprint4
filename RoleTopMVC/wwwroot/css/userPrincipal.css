@@ -183,10 +183,11 @@ h1{
 }
 .event
 {
-  height: 1400px;
+  height: 100%;
+  margin-top: 20em;
+  margin-bottom: 10em;
 }
-
-#nome{
+.nome{
   width: 200px;
 }
 #data{
@@ -362,11 +363,6 @@ label{
 .last{
   justify-content: space-between;
 }
-
-.local{
-
-  margin-top: -20em;
-}
 .local p {
   font-size: 1.8em;
 }
@@ -434,9 +430,6 @@ h4{
 
 }
 
-#nome{
-  width: 300px;
-}
 
 .form-info{
   height: 450px;

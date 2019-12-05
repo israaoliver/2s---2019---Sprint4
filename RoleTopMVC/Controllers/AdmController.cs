@@ -1,6 +1,7 @@
 using System.Data;
 using Microsoft.AspNetCore.Mvc;
 using RoleTopMVC.Enums;
+using RoleTopMVC.Models;
 using RoleTopMVC.Repositories;
 using RoleTopMVC.ViewModels;
 
@@ -10,6 +11,7 @@ namespace RoleTopMVC.Controllers
     {
 
         EventoRepository eventoRepository = new EventoRepository();
+        
 
         public DashboardViewModel DashboardEvento()
         {
@@ -33,8 +35,7 @@ namespace RoleTopMVC.Controllers
 
                 }
             }
-
-
+                dashboardViewModel.Eventos = eventos;
                 dashboardViewModel.NomeView ="Adm";
                 dashboardViewModel.NomeView2 = "dashboard";
                 dashboardViewModel.UsuarioEmail = ObterUsuarioSession();
@@ -115,10 +116,10 @@ namespace RoleTopMVC.Controllers
 
         public IActionResult Aprovar(ulong id)
         {
-            var evento = eventoRepository.ObterPor(id);
-            evento.Status = (uint) StatusEvento.APROVADO;
+            var e = eventoRepository.ObterPor(id); 
+            e.Status = (uint) StatusEvento.APROVADO;
 
-            if (eventoRepository.Atualizar(evento))
+            if (eventoRepository.Atualizar(e))
             {
                 return RedirectToAction ("Pendentes", "Adm");
             }
@@ -136,10 +137,10 @@ namespace RoleTopMVC.Controllers
 
         public IActionResult Reprovar(ulong id)
         {
-            var evento = eventoRepository.ObterPor(id);
-            evento.Status = (uint) StatusEvento.REPROVADO;
+            var e = eventoRepository.ObterPor(id);
+            e.Status = (uint) StatusEvento.REPROVADO;
 
-            if (eventoRepository.Atualizar(evento))
+            if (eventoRepository.Atualizar(e))
             {
                 return RedirectToAction ("Pendentes", "Adm");
             }

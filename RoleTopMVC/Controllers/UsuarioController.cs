@@ -100,6 +100,18 @@ namespace RoleTopMVC.Controllers
             
             var eventoCliente = eventoRepository.ObeterEventoPorCliente(ObterUsuarioSession());
             string vazio ;
+            uint stats = 0 ;
+            var numeroStatus = 0;
+            foreach (var e in eventoCliente)
+            {
+                if (e.Status == 3)
+                {
+                    stats = e.Status;
+                    numeroStatus ++;
+                }
+            }
+
+
 
             if (eventoCliente == null)
             {
@@ -112,6 +124,8 @@ namespace RoleTopMVC.Controllers
 
             return View(new EventoViewModel()
             {
+                Status = stats,
+                NumeroDeStatus = numeroStatus,
                 Stats = "",
                 Vazio = vazio,
                 Eventos = eventoCliente,

@@ -13,19 +13,19 @@
                         <div>
                             <label for="nome">Nome do Evento</label>
                             <br>
-                            <input id="nome" name="nomeEvento" type="text">
+                            <input class="nome" id="nome" name="nomeEvento" type="text" required>
                         </div>
                         <div class="marg">
                             <label for="data">Data do Evento</label>
                             <br>
-                            <input id="data" name="dataDoEvento" type="datetime-local">
+                            <input id="data" name="dataDoEvento" type="datetime-local" required>
                         </div>
                     </div>
                     <div class="flex cad-box-2">
                         <div>
                             <label for="tipo">Tipo de Evento</label>
                             <br>
-                            <select id="tipo" name="tipo">
+                            <select id="tipo" name="tipo" required>
                                 <option value="" disabled selected>Selecione</option>
                                 <option value="Aniversário">Aniversário</option>
                                 <option value="Balada">Balada</option>
@@ -40,7 +40,7 @@
                         <div>
                             <label for="servico">Serviços Opcionais</label>
                             <br>
-                            <select id="servico" name="servico">
+                            <select id="servico" name="servico" required>
                                 <option value="" disabled selected>Equipamentos</option>
                                 @foreach (var s in Model.Servicos)
                                 {
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div>
-                        <label for="numero">Quantidade de Pessoas</label>
+                        <label for="numero" required>Quantidade de Pessoas</label>
                         <br>
                         <div class="flex quant">
 
@@ -59,13 +59,7 @@
                             <p> (max:400)</p>
                         </div>
                     </div>
-                    <div>
-                        <label for="pictures">Carrega a suas imagens</label>
-                        <br>
-                        <input id="pictures" type="file" name="arquivos"  accept="image/png, image/jpeg"  multiple />
-                        <p>*Obrigatorio imagen se o evento for publico</p>
-                    </div>
-                    <div class="descricao">
+                    <div class="descricao" >
                         <label for="descricao">Descrição</label>
                         <br>
                         <textarea id="descricao" name="descricao"></textarea>

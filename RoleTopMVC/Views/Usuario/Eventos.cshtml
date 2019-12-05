@@ -1,88 +1,101 @@
 @model RoleTopMVC.ViewModels.EventoViewModel
-<main class="ex event flex">
+<main class="flex">
     <div class="flex user-container">
             <i class="icon far fa-folder-open fa-3x"></i>
         <h1>Meus Eventos</h1>
     </div>
-    <section>
+    <section class="event " >
         <div>
             @if(!string.IsNullOrEmpty(Model.Vazio))
             {
                 foreach (var e in Model.Eventos)
                 {
-                    @if (e.Status == 0)
+                    if (!(e.Status == 3))
                     {
-                        Model.Stats = "Pendente";
-                    }
-                    if (e.Status == 1)
-                    {
-                        Model.Stats = "Aprovado";
-                    }
-                    if (e.Status == 2)
-                    {
-                        Model.Stats = "Reprovado";
-                    }
 
-                        <table>
+                        
+                    
+                            @if (e.Status == 0)
+                            {
+                                Model.Stats = "Pendente";
+                            }
+                            if (e.Status == 1)
+                            {
+                                Model.Stats = "Aprovado";
+                            }
+                            if (e.Status == 2)
+                            {
+                                Model.Stats = "Reprovado";
+                            }
 
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Data</th>
-                                <th>Serviços</th>
-                                <th>Tipo</th>
-                                <th>Quantidade de Pessoas</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <td colspan="7">
-                                    <p>Esse evento foi atualizado em @e.DataRegistro</p>
-                                </td>
-                            </tr>
-                        </tfoot>
-                        <tbody>
-                            <tr>
-                                <td>@e.NomeEvento</td>
-                                <td>@e.DiaDoEvento</td>
-                                <td>@e.Servicos.Nome</td>
-                                <td>@e.TipoEvento</td>
-                                <td>@e.Quantidade</td>
-                                <td>@Model.Stats</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <br>
-                    <div class="flex last">
+                                <table>
 
-                        <div>
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Data</th>
+                                        <th>Serviços</th>
+                                        <th>Tipo</th>
+                                        <th>Quantidade de Pessoas</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="7">
+                                            <p>Esse evento foi atualizado em @e.DataRegistro</p>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <td>@e.NomeEvento</td>
+                                        <td>@e.DiaDoEvento</td>
+                                        <td>@e.Servicos.Nome</td>
+                                        <td>@e.TipoEvento</td>
+                                        <td>@e.Quantidade</td>
+                                        <td>@Model.Stats</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            <br>
+                            <div class="flex last">
 
-                            <div class="flex descricao">
-                                <p> Descrição</p>
+                                <div>
 
-                                <textarea id="descricao" disabled>@e.Descricao</textarea>
+                                    <div class="flex descricao">
+                                        <p> Descrição</p>
+
+                                        <textarea id="descricao" disabled>@e.Descricao</textarea>
+                                    </div>
+                                </div>
+                                <div class="flex edit-container">
+                                    <a>
+                                    <div class="flex">
+                                            <i class="icon fas fa-edit fa-2x"></i>
+                                        <p>Editar Informações.</p>
+                                    </div>
+                                    </a>
+                                    <a href='@Url.Action("Remover", "Cliente", new {id = @e.Id})'>
+                                        <div class="flex">
+                                                <i class="icon fas fa-trash-alt fa-2x"></i>
+                                            <p>Remover Evento</p>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex edit-container">
-                            <div class="flex">
-                                    <i class="icon fas fa-edit fa-2x"></i>
-                                <p>Editar Informações.</p>
-                            </div>
-                            <div class="flex">
-                                    <i class="icon fas fa-trash-alt fa-2x"></i>
-                                <p>Remover Evento</p>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <hr />
-                }
-            }else
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <hr />
+                        }
+                    }
+            
+                    
+            }
+            @if((string.IsNullOrEmpty(Model.Vazio)) || (Model.Status == 3))
             {
             
             <div class="local">

@@ -47,6 +47,7 @@
                     <tr>
                         <th>Nome do Evento</th>
                         <th>Data</th>
+                        <th>Email CLiente</th>
                         <th>Serviços</th>
                         <th>Tipo</th>
                         <th>Quantidade</th>
@@ -69,7 +70,8 @@
                             <tr>
                                 <td>@e.NomeEvento</td>
                                 <td>@e.DiaDoEvento</td>
-                                <td>@e.Servicos</td>
+                                <td>@e.Cliente.Email</td>
+                                <td>@e.Servicos.Nome</td>
                                 <td>@e.TipoEvento</td>
                                 <td>@e.Quantidade</td>
                                 <td>  </td>

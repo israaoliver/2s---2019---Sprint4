@@ -95,15 +95,17 @@ namespace RoleTopMVC.Repositories
         public bool Atualizar(Evento e)
         {
             var eTotais = File.ReadAllLines(PATH);
+            e.Descricao = e.Descricao.Replace("\r\n","#αßπΣ#");
             var eCSV = PrepararEventoCSV(e);
             var linhaEvento = -1;
             var resultado = false;
 
-            for (int i = 0; i > eTotais.Length ; i++)
+            for (int i = 0; i < eTotais.Length ; i++)
             {
                 var idConvertido = ulong.Parse(ExtrairValorDoCampo("id", eTotais[i]));
                 if(e.Id.Equals(idConvertido))
                 {
+                    
                     linhaEvento = i;
                     resultado = true;
                     break;

@@ -10,7 +10,7 @@ namespace RoleTopMVC.Controllers
 {
     public class ClienteController : AbstractController
     {
-        
+        private EventoRepository eventoRepository = new EventoRepository();        
         private ClienteRepository clienteRepository = new ClienteRepository();
 
         [HttpGet]
@@ -97,6 +97,27 @@ namespace RoleTopMVC.Controllers
                 });
                 
             }
+        }
+
+        public IActionResult Remover(ulong id)
+        {
+            var e = eventoRepository.ObterPor(id); 
+            e.Status = (uint) StatusEvento.APAGADO;
+
+            if (eventoRepository.Atualizar(e))
+            {
+                return RedirectToAction ("Eventos", "Usuario");
+            }
+            else
+            {
+                return View ("Erro", new MensagemViewModel("Não foi possivel Remover esse evento")
+                {
+                    NomeView = "Usuario",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
+            
         }
 
         public IActionResult Logoff()
