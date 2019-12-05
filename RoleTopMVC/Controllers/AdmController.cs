@@ -1,3 +1,4 @@
+using System.Data;
 using Microsoft.AspNetCore.Mvc;
 using RoleTopMVC.Enums;
 using RoleTopMVC.Repositories;
@@ -36,36 +37,142 @@ namespace RoleTopMVC.Controllers
 
                 dashboardViewModel.NomeView ="Adm";
                 dashboardViewModel.NomeView2 = "dashboard";
-                dashboardViewModel.UsuarioNome = ObterUsuarioNomeSession();
                 dashboardViewModel.UsuarioEmail = ObterUsuarioSession();
 
                 return dashboardViewModel;
         }
         public IActionResult Index()
         {
-            var dashboard = DashboardEvento(); 
 
-            return View(dashboard);
+            if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.ADMINISTRADOR == uint.Parse(ObterUsuarioTipoSession()))
+            {
+                
+                var dashboard = DashboardEvento(); 
+                return View(dashboard);
+
+            }else
+            {
+                return View("Erro", new MensagemViewModel("Você não possui permissão")
+                {
+                    NomeView = "Login"
+                });
+            }
         }
 
         
         public IActionResult Pendentes()
         {
+            if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.ADMINISTRADOR == uint.Parse(ObterUsuarioTipoSession()))
+            {
             var dashboard = DashboardEvento(); 
 
             return View(dashboard);        
+            }
+            else{
+                
+                return View("Erro", new MensagemViewModel("Você não possui permissão")
+                {
+                    NomeView = "Login"
+                });
+            }
         }
 
         public IActionResult Aprovados()
         {
-            var dashboard = DashboardEvento();
-            return View(dashboard);
+            if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.ADMINISTRADOR == uint.Parse(ObterUsuarioTipoSession()))
+            {
+            var dashboard = DashboardEvento(); 
+
+            return View(dashboard);        
+            }
+            else{
+                
+                return View("Erro", new MensagemViewModel("Você não possui permissão")
+                {
+                    NomeView = "Login"
+                });
+            }
         }
 
         public IActionResult Recusados()
         {
-            var dashboard = DashboardEvento();
-            return View(dashboard);
+            if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.ADMINISTRADOR == uint.Parse(ObterUsuarioTipoSession()))
+            {
+            var dashboard = DashboardEvento(); 
+
+            return View(dashboard);        
+            }
+            else{
+                
+                return View("Erro", new MensagemViewModel("Você não possui permissão")
+                {
+                    NomeView = "Login"
+                });
+            }
+        }
+
+        // todo : Metodos do Aprovar,Reprovar ou readimitir 
+
+        public IActionResult Aprovar(ulong id)
+        {
+            var evento = eventoRepository.ObterPor(id);
+            evento.Status = (uint) StatusEvento.APROVADO;
+
+            if (eventoRepository.Atualizar(evento))
+            {
+                return RedirectToAction ("Pendentes", "Adm");
+            }
+            else
+            {
+                return View ("Erro", new MensagemViewModel("Não foi possivel Aprovar esse evento")
+                {
+                    NomeView = "Adm",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
+            
+        }
+
+        public IActionResult Reprovar(ulong id)
+        {
+            var evento = eventoRepository.ObterPor(id);
+            evento.Status = (uint) StatusEvento.REPROVADO;
+
+            if (eventoRepository.Atualizar(evento))
+            {
+                return RedirectToAction ("Pendentes", "Adm");
+            }
+            else
+            {
+                return View ("Erro", new MensagemViewModel("Não foi possivel Reprovar esse evento")
+                {
+                    NomeView = "Adm",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
+            
+        }
+        public IActionResult Readimitir(ulong id)
+        {
+            var evento = eventoRepository.ObterPor(id);
+            evento.Status = (uint) StatusEvento.PENDENTE;
+
+            if (eventoRepository.Atualizar(evento))
+            {
+                return RedirectToAction ("Recusados", "Adm");
+            }
+            else
+            {
+                return View ("Erro", new MensagemViewModel("Não foi possivel Readimitir esse evento")
+                {
+                    NomeView = "Adm",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
+            
         }
 	
     }

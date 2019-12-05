@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\RoleTopMVC.csproj",
+  "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\RoleTopMVC.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2961,128 +2961,128 @@
   "RootNamespace": "RoleTopMVC",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\Erro.cshtml",
-      "TargetPath": "Views\\Shared\\Erro.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\Informacoes.cshtml",
-      "TargetPath": "Views\\Usuario\\Informacoes.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_NavAdmPages.cshtml",
-      "TargetPath": "Views\\Shared\\_NavAdmPages.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\EventoCadastro.cshtml",
-      "TargetPath": "Views\\Usuario\\EventoCadastro.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\InfoSenha.cshtml",
-      "TargetPath": "Views\\Usuario\\InfoSenha.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\InfoAlterar.cshtml",
-      "TargetPath": "Views\\Usuario\\InfoAlterar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_CookieConsentPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Adm\\Aprovados.cshtml",
-      "TargetPath": "Views\\Adm\\Aprovados.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Adm\\Recusados.cshtml",
-      "TargetPath": "Views\\Adm\\Recusados.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Adm\\Index.cshtml",
-      "TargetPath": "Views\\Adm\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_NavUserPages.cshtml",
-      "TargetPath": "Views\\Shared\\_NavUserPages.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\Suporte.cshtml",
-      "TargetPath": "Views\\Usuario\\Suporte.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\Sucesso.cshtml",
-      "TargetPath": "Views\\Shared\\Sucesso.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\Index.cshtml",
-      "TargetPath": "Views\\Usuario\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_HeaderUserHome.cshtml",
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_HeaderUserHome.cshtml",
       "TargetPath": "Views\\Shared\\_HeaderUserHome.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Cliente\\Login.cshtml",
-      "TargetPath": "Views\\Cliente\\Login.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Adm\\Pendentes.cshtml",
-      "TargetPath": "Views\\Adm\\Pendentes.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Cadastro\\Index.cshtml",
-      "TargetPath": "Views\\Cadastro\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\_ViewImports.cshtml",
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\Eventos.cshtml",
-      "TargetPath": "Views\\Usuario\\Eventos.cshtml",
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\InfoSenha.cshtml",
+      "TargetPath": "Views\\Usuario\\InfoSenha.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_NavHomePages.cshtml",
-      "TargetPath": "Views\\Shared\\_NavHomePages.cshtml",
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_NavUserPages.cshtml",
+      "TargetPath": "Views\\Shared\\_NavUserPages.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Cadastro\\Index.cshtml",
+      "TargetPath": "Views\\Cadastro\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\InfoAlterar.cshtml",
+      "TargetPath": "Views\\Usuario\\InfoAlterar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\44346823858\\Documents\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\EventoCadastro.cshtml",
+      "TargetPath": "Views\\Usuario\\EventoCadastro.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\Informacoes.cshtml",
+      "TargetPath": "Views\\Usuario\\Informacoes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\Sucesso.cshtml",
+      "TargetPath": "Views\\Shared\\Sucesso.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Adm\\Recusados.cshtml",
+      "TargetPath": "Views\\Adm\\Recusados.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\Eventos.cshtml",
+      "TargetPath": "Views\\Usuario\\Eventos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Cliente\\Login.cshtml",
+      "TargetPath": "Views\\Cliente\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_CookieConsentPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\Suporte.cshtml",
+      "TargetPath": "Views\\Usuario\\Suporte.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Adm\\Pendentes.cshtml",
+      "TargetPath": "Views\\Adm\\Pendentes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Adm\\Aprovados.cshtml",
+      "TargetPath": "Views\\Adm\\Aprovados.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\Erro.cshtml",
+      "TargetPath": "Views\\Shared\\Erro.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_NavAdmPages.cshtml",
+      "TargetPath": "Views\\Shared\\_NavAdmPages.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Adm\\Index.cshtml",
+      "TargetPath": "Views\\Adm\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Usuario\\Index.cshtml",
+      "TargetPath": "Views\\Usuario\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Junior\\Documents\\Docs\\2s---2019---Sprint4\\RoleTopMVC\\Views\\Shared\\_NavHomePages.cshtml",
+      "TargetPath": "Views\\Shared\\_NavHomePages.cshtml",
       "FileKind": "mvc"
     }
   ],

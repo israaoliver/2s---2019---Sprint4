@@ -63,9 +63,9 @@ namespace RoleTopMVC.Controllers
 
                 if (eventoRepository.Inserir(e))
                 {
-                    return View("Sucesso", new BaseViewModel(){
+                    return View("Sucesso", new MensagemViewModel(){
                         NomeView = "Usuario",
-                        NomeView2 = "Suporte",
+                        NomeView2 = "Cadastro",
                         UsuarioEmail = ObterUsuarioSession(),
                         UsuarioNome = ObterUsuarioNomeSession()
 
@@ -120,7 +120,7 @@ namespace RoleTopMVC.Controllers
                 UsuarioNome = ObterUsuarioNomeSession(),
             });
         }
-        // todo: Informações do usuario ======================
+        // todo: Informações do usuario ============================================
 
         public IActionResult Informacoes()
         {

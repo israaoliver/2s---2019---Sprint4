@@ -13,6 +13,10 @@
     @if("Usuario".Equals(Model.NomeView)){
         <a href='@Url.Action("Index", "Usuario")'><button class="margin">Voltar</button></a>
     }
+    @if("Adm".Equals(Model.NomeView))
+    {
+        <a href='@Url.Action("Index", "Adm")'><button class="margin">Voltar</button></a>
+    }
     </section>
 
 </main>

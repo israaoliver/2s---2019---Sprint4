@@ -50,7 +50,6 @@
                         <th>Data</th>
                         <th>Serviços</th>
                         <th>Tipo</th>
-                        <th>Priv./Publi.</th>
                         <th>Quantidade</th>
                         <th>Pagamento</th>
                         <th>Cancelar</th>
@@ -59,21 +58,26 @@
                 <tfoot>
                     <tr>
                         <td colspan="8">
-                            <p>Eventos atualizados em 23/09/2026 às 8h41</p>
+                            <p>Eventos atualizados em @DateTime.Now</p>
                         </td>
                     </tr>
                 </tfoot>
                 <tbody>
-                    <tr>
-                        <td>SteamPunk</td>
-                        <td>10/10/2019</td>
-                        <td>Completo</td>
-                        <td>Confraternização</td>
-                        <td>Publico</td>
-                        <td>300</td>
-                        <td>Confirmado</td>
-                        <td class="rec"><a href="#"><i class="fas fa-times"></i></a></td>
-                    </tr>                    
+                    @foreach (var e in Model.Eventos)
+                    {
+                        if (e.Status == 1)
+                        {
+                            <tr>
+                                <td>@e.NomeEvento</td>
+                                <td>@e.DiaDoEvento</td>
+                                <td>@e.Servicos</td>
+                                <td>@e.TipoEvento</td>
+                                <td>@e.Quantidade</td>
+                                <td>  </td>
+                                <td class="rec"><a href='@Url.Action("Reprovar", "Adm", new {id = @e.Id})'><i class="fas fa-times"></i></a></td>
+                            </tr>                    
+                        }
+                    }
                 </tbody>
             </table>
         </section>
