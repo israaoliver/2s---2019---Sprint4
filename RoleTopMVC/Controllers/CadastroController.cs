@@ -27,7 +27,14 @@ namespace RoleTopMVC.Controllers
 
             try
             {
-                Cliente c = new Cliente(form["nome"],form["email"],form["senha"],form["telefone"],form["cpf"]);
+                Cliente c = new Cliente();
+
+                c.Nome = form["nome"];
+                c.Email = form["email"];
+                c.Senha = ClienteRepository.ComputeSha256Hash(form["senha"]);
+                c.Telefone = form["telefone"];
+                c.CPF = form["cpf"];
+
 
                 c.TipoUsuario = (uint) TipoUsuario.CLIENTE;
                 clienteRepository.Inserir(c);

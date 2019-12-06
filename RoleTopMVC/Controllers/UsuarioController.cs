@@ -120,11 +120,14 @@ namespace RoleTopMVC.Controllers
                 string vazio ;
                 uint numeroApagado = 0;
                 uint numeroEventos = 0;
-                foreach (var e in eventoCliente){
-                    if (e.Status == 3){
-                        numeroApagado ++;
+                if(!(eventoCliente == null))
+                {
+                    foreach (var e in eventoCliente){
+                        if (e.Status == 3){
+                            numeroApagado ++;
+                        }
+                        numeroEventos ++;
                     }
-                    numeroEventos ++;
                 }
                 if (eventoCliente == null){
                     vazio = "" ;

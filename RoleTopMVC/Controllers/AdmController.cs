@@ -61,6 +61,24 @@ namespace RoleTopMVC.Controllers
             }
         }
 
+        public IActionResult Historico()
+        {
+            if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.ADMINISTRADOR == uint.Parse(ObterUsuarioTipoSession()))
+            {
+                
+                var dashboard = DashboardEvento(); 
+                return View(dashboard);
+
+            }else
+            {
+                return View("Erro", new MensagemViewModel("Você não possui permissão")
+                {
+                    NomeView = "Login"
+                });
+            }
+
+        }
+
         
         public IActionResult Pendentes()
         {

@@ -36,7 +36,7 @@ namespace RoleTopMVC.Controllers
                 System.Console.WriteLine("====================================");
 
                 var user = form["email"];
-                var senha = form["senha"];
+                var senha =  ClienteRepository.ComputeSha256Hash(form["senha"]);
 
                 var c = clienteRepository.ObterCliente(user);
                 if (c != null)
