@@ -38,7 +38,7 @@ namespace RoleTopMVC.Controllers
                 var user = form["email"];
                 var senha = form["senha"];
 
-                var c = clienteRepository.ObterInfo(user);
+                var c = clienteRepository.ObterCliente(user);
                 if (c != null)
                 {
                     if (c.Senha.Equals(senha))
@@ -58,6 +58,12 @@ namespace RoleTopMVC.Controllers
                                 HttpContext.Session.SetString(SESSION_CLIENTE_NOME, c.Nome);
                                 HttpContext.Session.SetString(SESSION_CLIENTE_TIPO, c.TipoUsuario.ToString());
                                 return RedirectToAction("Index", "Adm");
+
+                            case (uint) TipoUsuario.BANIDO:
+
+                                return View("Erro", new MensagemViewModel("Essa conta esta Banida! Ligue (11) 3454-2321"){
+                                    NomeView = "Login"
+                                });
                             
                             default :
 
@@ -71,7 +77,7 @@ namespace RoleTopMVC.Controllers
                     }
                     else
                     {
-                        return View("Erro", new MensagemViewModel("Senha Incorreta!"){
+                        return View("Erro", new MensagemViewModel("Senha Incorreta"){
                         
                         NomeView = "Login",
 
@@ -80,7 +86,7 @@ namespace RoleTopMVC.Controllers
                 }
                 else
                 {
-                    return View("Erro", new MensagemViewModel($"Usuario {user} não encontrado."){
+                    return View("Erro", new MensagemViewModel($"Usuario {user} não encontrado"){
                     
                     NomeView = "Login",
 
@@ -91,7 +97,7 @@ namespace RoleTopMVC.Controllers
             catch (Exception e)
             {
                 System.Console.WriteLine(e.StackTrace);
-                return View("Erro", new MensagemViewModel("Falha em Logar!"){
+                return View("Erro", new MensagemViewModel("Falha em Logar"){
                     NomeView = "Login",
 
                 });

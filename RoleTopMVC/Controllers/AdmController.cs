@@ -11,6 +11,7 @@ namespace RoleTopMVC.Controllers
     {
 
         EventoRepository eventoRepository = new EventoRepository();
+        ClienteRepository clienteRepository = new ClienteRepository();
         
 
         public DashboardViewModel DashboardEvento()
@@ -174,6 +175,26 @@ namespace RoleTopMVC.Controllers
                 });
             }
             
+        }
+
+
+        // todo : ==========================    Area de Usuarios =================================================
+
+        public IActionResult Usuario()
+        {
+            if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.ADMINISTRADOR == uint.Parse(ObterUsuarioTipoSession()))
+            {
+                
+                var usuarios = clienteRepository.ObterTodosClientes(); 
+                return View();
+
+            }else
+            {
+                return View("Erro", new MensagemViewModel("Você não possui permissão")
+                {
+                    NomeView = "Login"
+                });
+            }
         }
 	
     }

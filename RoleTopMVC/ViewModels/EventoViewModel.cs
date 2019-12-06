@@ -8,8 +8,8 @@ namespace RoleTopMVC.ViewModels
         public List<Evento> Eventos {get;set;}
         public string Vazio  {get;set;}
         public string Stats {get;set;}
-        public uint Status {get;set;}
-        public int NumeroDeStatus {get;set;}
+        public uint NumeroDeApagados {get;set;}
+        public uint NumeroDeEventos {get;set;}
 
     }
 }

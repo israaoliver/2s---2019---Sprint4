@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Net;
 using System.IO;
 using RoleTopMVC.Models;
@@ -49,7 +50,7 @@ namespace RoleTopMVC.Repositories
             return resultado;
         }
 
-        public Cliente ObterInfo(string email)
+        public Cliente ObterCliente(string email)
         {
             var linhas = File.ReadAllLines(PATH);
             foreach (var item in linhas)
@@ -69,6 +70,26 @@ namespace RoleTopMVC.Repositories
             }
             return null;
     }
+
+        public List<Cliente> ObterTodosClientes()
+        {
+            var usuariosLinhas = File.ReadAllLines(PATH);
+            List<Cliente> usuarios = new List<Cliente>();
+            foreach (var l in usuariosLinhas)
+            {
+                    Cliente c = new Cliente();      
+                    c.Nome = ExtrairValorDoCampo("nome", l);
+                    c.TipoUsuario = uint.Parse(ExtrairValorDoCampo("tipo_usuario", l));
+                    c.Email = ExtrairValorDoCampo("email", l);
+                    c.Senha = ExtrairValorDoCampo("senha", l);
+                    c.Telefone = ExtrairValorDoCampo("telefone", l);
+                    c.CPF = ExtrairValorDoCampo("cpf", l);
+
+                    usuarios.Add(c);
+            }
+
+            return usuarios;
+        }
 
         private string Preparar(Cliente c)
         {

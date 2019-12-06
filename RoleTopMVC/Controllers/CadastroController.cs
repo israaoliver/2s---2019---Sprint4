@@ -34,6 +34,7 @@ namespace RoleTopMVC.Controllers
 
                 HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, c.Email);
                 HttpContext.Session.SetString(SESSION_CLIENTE_NOME, c.Nome);
+                HttpContext.Session.SetString(SESSION_CLIENTE_NOME, c.TipoUsuario.ToString());
 
                 return View("Sucesso", new MensagemViewModel(){
                     NomeView = "Cadastro",

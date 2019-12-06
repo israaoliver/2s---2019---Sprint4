@@ -21,25 +21,42 @@ namespace RoleTopMVC.Controllers
 
         public IActionResult Index()
         {
-            return View(new MensagemViewModel(){
-                NomeView ="User_Home",
-                UsuarioNome = ObterUsuarioNomeSession(),
-                UsuarioEmail = ObterUsuarioSession()
-            });
+            if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.CLIENTE == uint.Parse(ObterUsuarioTipoSession()))
+            {
+                return View(new MensagemViewModel(){
+                    NomeView ="User_Home",
+                    UsuarioNome = ObterUsuarioNomeSession(),
+                    UsuarioEmail = ObterUsuarioSession()
+                });
+            }else{
+                return View("Erro", new MensagemViewModel("Sua Conecção acabou.")
+                {
+                    NomeView = "Login"
+                });
+            }
         }
         
         // todo : Comesso do Cadastro de evento ==================================================================
 
         public IActionResult EventoCadastro()
         {
+            if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.CLIENTE == uint.Parse(ObterUsuarioTipoSession()))
+            {
+                var servicos = servicosRepository.ObterTodos();
 
-            var servicos = servicosRepository.ObterTodos();
+                return View(new ServicoViewModel(servicos){
+                    NomeView ="Usuario",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });  
+            } else{
+                return View("Erro", new MensagemViewModel("Sua Conecção acabou.")
+                {
+                    NomeView = "Login"
+                });
+                
+            }
 
-            return View(new ServicoViewModel(servicos){
-                NomeView ="Usuario",
-                UsuarioEmail = ObterUsuarioSession(),
-                UsuarioNome = ObterUsuarioNomeSession()
-            });
         }
 
         public IActionResult CadastrarEvento(IFormCollection form)
@@ -47,7 +64,7 @@ namespace RoleTopMVC.Controllers
             try
             {
                 Evento e = new Evento();
-                e.Cliente = clienteRepository.ObterInfo(ObterUsuarioSession());
+                e.Cliente = clienteRepository.ObterCliente(ObterUsuarioSession());
                 e.NomeEvento = form["nomeEvento"];
                 e.TipoEvento = form["tipo"];
                 e.Quantidade = form["numero"];
@@ -97,74 +114,75 @@ namespace RoleTopMVC.Controllers
             // todo: Fim do Cadastro de Evento ==============================================================================
         public IActionResult Eventos()
         {
-            
-            var eventoCliente = eventoRepository.ObeterEventoPorCliente(ObterUsuarioSession());
-            string vazio ;
-            uint stats = 0 ;
-            var numeroStatus = 0;
-            foreach (var e in eventoCliente)
+            if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.CLIENTE == uint.Parse(ObterUsuarioTipoSession()))
             {
-                if (e.Status == 3)
-                {
-                    stats = e.Status;
-                    numeroStatus ++;
+                var eventoCliente = eventoRepository.ObeterEventoPorCliente(ObterUsuarioSession());
+                string vazio ;
+                uint numeroApagado = 0;
+                uint numeroEventos = 0;
+                foreach (var e in eventoCliente){
+                    if (e.Status == 3){
+                        numeroApagado ++;
+                    }
+                    numeroEventos ++;
                 }
+                if (eventoCliente == null){
+                    vazio = "" ;
+                }else{
+                    vazio = "§";
+                }
+                return View(new EventoViewModel(){ NumeroDeApagados = numeroApagado,NumeroDeEventos = numeroEventos, Stats = "", Vazio = vazio, Eventos = eventoCliente, NomeView ="Usuario", UsuarioEmail = ObterUsuarioSession(), UsuarioNome = ObterUsuarioNomeSession()});
+                
+            } else{
+                return View("Erro", new MensagemViewModel("Sua Conecção acabou.")
+                {
+                    NomeView = "Login"
+                });
             }
-
-
-
-            if (eventoCliente == null)
-            {
-                vazio = "" ;
-            }else
-            {
-                vazio = "tem";
-            }
-
-
-            return View(new EventoViewModel()
-            {
-                Status = stats,
-                NumeroDeStatus = numeroStatus,
-                Stats = "",
-                Vazio = vazio,
-                Eventos = eventoCliente,
-                NomeView ="Usuario",
-                UsuarioEmail = ObterUsuarioSession(),
-                UsuarioNome = ObterUsuarioNomeSession(),
-            });
+            
         }
         // todo: Informações do usuario ============================================
 
         public IActionResult Informacoes()
         {
-            var c = clienteRepository.ObterInfo(ObterUsuarioSession());
+            if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.CLIENTE == uint.Parse(ObterUsuarioTipoSession())){
 
-            return View(new BaseViewModel(){
-                Cliente = c,
-                NomeView ="Usuario",
-                UsuarioEmail = ObterUsuarioSession(),
-                UsuarioNome = ObterUsuarioNomeSession(),
-
-            });
+                var c = clienteRepository.ObterCliente(ObterUsuarioSession());
+                return View(new BaseViewModel(){
+                    Cliente = c,
+                    NomeView ="Usuario",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()});
+            }
+            else{
+                return View("Erro", new MensagemViewModel("Sua Conecção acabou.")
+                {
+                    NomeView = "Login"
+                });
+            }
         }
 
         public IActionResult InfoAlterar()
         {
-            var c = clienteRepository.ObterInfo(ObterUsuarioSession());
-
+            if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.CLIENTE == uint.Parse(ObterUsuarioTipoSession())){
+                
+            var c = clienteRepository.ObterCliente(ObterUsuarioSession());
             return View(new BaseViewModel(){
                 Cliente = c,
                 NomeView ="Usuario",
                 UsuarioEmail = ObterUsuarioSession(),
-                UsuarioNome = ObterUsuarioNomeSession(),
-
-            });
+                UsuarioNome = ObterUsuarioNomeSession()});
+            }else{
+                return View("Erro", new MensagemViewModel("Sua Conecção acabou.")
+                {
+                    NomeView = "Login"
+                });
+            }
         }
 
-        public IActionResult AlterarInforamacoUsuario(IFormCollection form)
+        public IActionResult AlterarInformacaoUsuario(IFormCollection form)
         {
-            var C2 = clienteRepository.ObterInfo(ObterUsuarioSession());
+            var C2 = clienteRepository.ObterCliente(ObterUsuarioSession());
             Cliente c = new Cliente();
             c.TipoUsuario = (uint) TipoUsuario.CLIENTE;
             c.Nome = form["nome"];
@@ -204,17 +222,23 @@ namespace RoleTopMVC.Controllers
 
         public IActionResult InfoSenha()
         {
-            return View(new BaseViewModel()
-            {
-                NomeView="Usuario",
-                UsuarioNome = ObterUsuarioNomeSession(),
-                UsuarioEmail = ObterUsuarioSession(),
-            });
+            if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.CLIENTE == uint.Parse(ObterUsuarioTipoSession())){
+                return View(new BaseViewModel()
+                {
+                    NomeView="Usuario",
+                    UsuarioNome = ObterUsuarioNomeSession(),
+                    UsuarioEmail = ObterUsuarioSession()});
+            }else{
+                return View("Erro", new MensagemViewModel("Sua Conecção acabou.")
+                {
+                    NomeView = "Login"
+                });
+            }
         }
 
         public IActionResult AlterarSenha(IFormCollection form)
         {
-            var c = clienteRepository.ObterInfo(ObterUsuarioSession());
+            var c = clienteRepository.ObterCliente(ObterUsuarioSession());
             string senhaAtual = form["senhaAtual"];
             string senha = form["senha"];
             string repSenha = form["repSenha"];
@@ -259,26 +283,45 @@ namespace RoleTopMVC.Controllers
         // todo: Suporte =====================
         public IActionResult Suporte()
         {
-            return View(new MensagemViewModel(){
-                NomeView ="Usuario",
-                UsuarioEmail = ObterUsuarioSession(),
-                UsuarioNome = ObterUsuarioNomeSession()
-            });
+            if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.CLIENTE == uint.Parse(ObterUsuarioTipoSession())){
+                return View(new MensagemViewModel(){
+                    NomeView ="Usuario",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }else{
+                return View("Erro", new MensagemViewModel("Sua Conecção acabou.")
+                {
+                    NomeView = "Login"
+                });
+            }
         }
         
 
         public IActionResult SuporteMensagem(IFormCollection form)
         {
             
-            Suporte msg = new Suporte(clienteRepository.ObterInfo(ObterUsuarioSession()),form["problema"],form["descricao"], DateTime.Now);
-            
-            suporteRepository.Inserir(msg);
-            return View("Sucesso", new MensagemViewModel(){
-                NomeView ="Usuario",
-                NomeView2 = "Suporte",
-                UsuarioEmail = ObterUsuarioSession(),
-                UsuarioNome = ObterUsuarioNomeSession()
-            });
+            try
+            {
+                Suporte msg = new Suporte(clienteRepository.ObterCliente(ObterUsuarioSession()),form["problema"],form["descricao"], DateTime.Now);
+                suporteRepository.Inserir(msg);
+                return View("Sucesso", new MensagemViewModel(){
+                    NomeView ="Usuario",
+                    NomeView2 = "Suporte",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+                
+            }
+            catch (Exception e)
+            {
+                System.Console.WriteLine(e.StackTrace);
+                return View ("Erro", new MensagemViewModel("Falha em Enviar Mensagem"){
+                NomeView = "Usuario",
+                UsuarioNome = ObterUsuarioNomeSession(),
+                UsuarioEmail = ObterUsuarioSession()
+                });
+            }
 
 
         }

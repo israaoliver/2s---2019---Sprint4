@@ -65,7 +65,7 @@
                 <tbody>
                     @foreach (var e in Model.Eventos)
                     {
-                        if (e.Status == 2)
+                        if ((e.Status == 2) || (e.Status == 3))
                         {
                             <tr>
                                 <td>@e.NomeEvento</td>
