@@ -34,14 +34,16 @@ namespace RoleTopMVC.Controllers
                 c.Senha = ClienteRepository.ComputeSha256Hash(form["senha"]);
                 c.Telefone = form["telefone"];
                 c.CPF = form["cpf"];
-
-
                 c.TipoUsuario = (uint) TipoUsuario.CLIENTE;
                 clienteRepository.Inserir(c);
+                
+                string userEmail = c.Email;
+                string userNome = c.Nome;
+                string userTipo = c.TipoUsuario.ToString();
 
-                HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, c.Email);
-                HttpContext.Session.SetString(SESSION_CLIENTE_NOME, c.Nome);
-                HttpContext.Session.SetString(SESSION_CLIENTE_NOME, c.TipoUsuario.ToString());
+                HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, userEmail);
+                HttpContext.Session.SetString(SESSION_CLIENTE_NOME, userNome);
+                HttpContext.Session.SetString(SESSION_CLIENTE_TIPO, userTipo);
 
                 return View("Sucesso", new MensagemViewModel(){
                     NomeView = "Cadastro",

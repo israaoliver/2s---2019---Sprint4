@@ -122,6 +122,7 @@ namespace RoleTopMVC.Controllers
                 uint numeroEventos = 0;
                 if(!(eventoCliente == null))
                 {
+
                     foreach (var e in eventoCliente){
                         if (e.Status == 3){
                             numeroApagado ++;
@@ -242,9 +243,9 @@ namespace RoleTopMVC.Controllers
         public IActionResult AlterarSenha(IFormCollection form)
         {
             var c = clienteRepository.ObterCliente(ObterUsuarioSession());
-            string senhaAtual = form["senhaAtual"];
-            string senha = form["senha"];
-            string repSenha = form["repSenha"];
+            string senhaAtual = ClienteRepository.ComputeSha256Hash(form["senhaAtual"]);
+            string senha = ClienteRepository.ComputeSha256Hash(form["senha"]);
+            string repSenha = ClienteRepository.ComputeSha256Hash(form["repSenha"]);
 
             if (c.Senha == senhaAtual)
             {

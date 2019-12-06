@@ -3,46 +3,10 @@
     <main class="flex geral">
         <div class="flex icon-2"><a asp-controller="Adm" asp-action="Index"><i class="back fas fa-backward fa-2x"></i></a></div>
         <div class="flex cima ">
-            <h1>DashBoard</h1>
+            <h1>Historico Geral</h1>
         </div>
-        <section class="flex central-container">
 
-            <div class="flex event-container">
-                <a asp-controller="Adm" asp-action="Pendentes">
-                    <div class="flex pend-container">
-                        <img src="../img/icones/Adm/copy.png" alt="">
-                    </div>
-                </a>
-                <h2>Pendentes</h2>
-                <br>
-                <p>@Model.EventosPendentes
-                </p>
-            </div>
-            <div class="flex event-container">
-                <a asp-controller="Adm" asp-action="Aprovados">
-                    <div class="flex black-container">
-                        <img src="../img/icones/Adm/check_box_black_192x192.png" alt="">
-                    </div>
-                </a>
-                <h2>Aprovados</h2>
-                <br>
-                <p>@Model.EventosAprovados
-                </p>
-            </div>
-            <div class="flex event-container">
-                <a asp-controller="Adm" asp-action="Recusados">
-                    <div class="flex recuse-container">
-                        <img src="../img/icones/Adm/recuse.png" alt="">
-                    </div>
-                </a>
-                <h2>Recusados</h2>
-                <br>
-                <p>@Model.EventosReprovados
-                </p>
-            </div>
-        </section>
         <section>
-
             <table>
                 <thead>
                     <tr>
@@ -53,7 +17,7 @@
                         <th>Tipo</th>
                         <th>Quantidade</th>
                         <th>Pagamento</th>
-                        <th>Cancelar</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -66,19 +30,29 @@
                 <tbody>
                     @foreach (var e in Model.Eventos)
                     {
-                        if (e.Status == 1)
-                        {
-                            <tr>
-                                <td>@e.NomeEvento</td>
-                                <td>@e.DiaDoEvento</td>
-                                <td>@e.Cliente.Email</td>
-                                <td>@e.Servicos.Nome</td>
-                                <td>@e.TipoEvento</td>
-                                <td>@e.Quantidade</td>
-                                <td>  </td>
-                                <td class="rec"><a href='@Url.Action("Reprovar", "Adm", new {id = @e.Id})'><i class="fas fa-times"></i></a></td>
-                            </tr>                    
-                        }
+                        <tr>
+                            <td>@e.NomeEvento</td>
+                            <td>@e.DiaDoEvento</td>
+                            <td>@e.Cliente.Email</td>
+                            <td>@e.Servicos.Nome</td>
+                            <td>@e.TipoEvento</td>
+                            <td>@e.Quantidade</td>
+                            <td>  </td>
+                            @if(e.Status == 0){
+                                <td>Pendente</td>
+                            }
+                            @if(e.Status == 1)
+                            {
+                                <td>Aprovado</td>
+                            }
+                            @if(e.Status == 2){
+                                <td>Reprovado</td>
+                            }
+                            @if (e.Status == 3)
+                            {
+                                <td>Apagado</td>
+                            }
+                        </tr>                    
                     }
                 </tbody>
             </table>
