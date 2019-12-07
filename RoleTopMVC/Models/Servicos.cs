@@ -1,12 +1,15 @@
-using System.Net.NetworkInformation;
-using System.IO;
 namespace RoleTopMVC.Models
 {
-    public class Servicos : Tipos
+    public class Servicos
     {
-        public Servicos()
-        {
+        public string Nome {get;set;}
 
+        public double Preco {get;set;}
+
+        public Servicos(){
+            
         }
+
+
     }
 }

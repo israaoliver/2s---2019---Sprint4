@@ -366,6 +366,10 @@ label{
 .local p {
   font-size: 1.8em;
 }
+.link{
+  margin-left: 1em;
+  text-decoration: none;
+}
 
 /*===============================================================================================
                         INFORMAÇOES

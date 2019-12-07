@@ -71,6 +71,7 @@ namespace RoleTopMVC.Controllers
                 e.Descricao = form["descricao"];
                 e.DiaDoEvento = DateTime.Parse(form["dataDoEvento"]);
                 e.DataRegistro = DateTime.Now;
+                e.Pago = false;
 
                 var nomeServico = form["servico"];
                 Servicos s = new Servicos();
@@ -135,7 +136,7 @@ namespace RoleTopMVC.Controllers
                 }else{
                     vazio = "§";
                 }
-                return View(new EventoViewModel(){ NumeroDeApagados = numeroApagado,NumeroDeEventos = numeroEventos, Stats = "", Vazio = vazio, Eventos = eventoCliente, NomeView ="Usuario", UsuarioEmail = ObterUsuarioSession(), UsuarioNome = ObterUsuarioNomeSession()});
+                return View(new EventoViewModel(){ NumeroDeApagados = numeroApagado,NumeroDeEventos = numeroEventos,Vazio = vazio, Eventos = eventoCliente, NomeView ="Usuario", UsuarioEmail = ObterUsuarioSession(), UsuarioNome = ObterUsuarioNomeSession()});
                 
             } else{
                 return View("Erro", new MensagemViewModel("Sua Conecção acabou.")

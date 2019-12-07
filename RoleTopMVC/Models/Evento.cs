@@ -13,6 +13,7 @@ namespace RoleTopMVC.Models
         public DateTime DiaDoEvento{get;set;}
         public DateTime DataRegistro{get;set;}
         public uint Status {get;set;}
+        public bool Pago{get;set;}
 
         public Evento()
         {

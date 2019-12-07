@@ -12,86 +12,76 @@
                 {
                     if (!(e.Status == 3))
                     {
+                        <table>
 
-                        
-                    
-                            if (e.Status == 0)
-                            {
-                                Model.Stats = "Pendente";
-                            }
-                            if (e.Status == 1)
-                            {
-                                Model.Stats = "Aprovado";
-                            }
-                            if (e.Status == 2)
-                            {
-                                Model.Stats = "Reprovado";
-                            }
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Data</th>
+                                <th>Serviços</th>
+                                <th>Tipo</th>
+                                <th>Quantidade de Pessoas</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7">
+                                    <p>Esse evento foi atualizado em @e.DataRegistro</p>
+                                </td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td>@e.NomeEvento</td>
+                                <td>@e.DiaDoEvento</td>
+                                <td>@e.Servicos.Nome</td>
+                                <td>@e.TipoEvento</td>
+                                <td>@e.Quantidade</td>
+                                @if (e.Status == 0)
+                                {<td>Pendente</td>}
+                                @if (e.Status == 1)
+                                {<td>Aprovado</td>}
+                                @if (e.Status == 2)
+                                {<td>Reprovado</td>}
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <br>
+                    <div class="flex last">
 
-                                <table>
+                        <div>
 
-                                <thead>
-                                    <tr>
-                                        <th>Nome</th>
-                                        <th>Data</th>
-                                        <th>Serviços</th>
-                                        <th>Tipo</th>
-                                        <th>Quantidade de Pessoas</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="7">
-                                            <p>Esse evento foi atualizado em @e.DataRegistro</p>
-                                        </td>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                    <tr>
-                                        <td>@e.NomeEvento</td>
-                                        <td>@e.DiaDoEvento</td>
-                                        <td>@e.Servicos.Nome</td>
-                                        <td>@e.TipoEvento</td>
-                                        <td>@e.Quantidade</td>
-                                        <td>@Model.Stats</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <br>
-                            <br>
-                            <div class="flex last">
+                            <div class="flex descricao">
+                                <p> Descrição</p>
 
-                                <div>
-
-                                    <div class="flex descricao">
-                                        <p> Descrição</p>
-
-                                        <textarea id="descricao" disabled>@e.Descricao</textarea>
-                                    </div>
-                                </div>
-                                <div class="flex edit-container">
-                                    <a>
-                                    <div class="flex">
-                                            <i class="icon fas fa-edit fa-2x"></i>
-                                        <p>Editar Informações.</p>
-                                    </div>
-                                    </a>
-                                    <a href='@Url.Action("Remover", "Cliente", new {id = @e.Id})'>
-                                        <div class="flex">
-                                                <i class="icon fas fa-trash-alt fa-2x"></i>
-                                            <p>Remover Evento</p>
-                                        </div>
-                                    </a>
-                                </div>
+                                <textarea id="descricao" disabled>@e.Descricao</textarea> 
                             </div>
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <hr />
-                        }
-                    }
+                        </div>
+                        <div class="flex edit-container">
+                            <a>
+                            <div class="flex">
+                                    <i class="icon fas fa-edit fa-2x"></i>
+                                <p>Editar Informações.</p>
+                            </div>
+                            </a>
+
+                            <a class="link" href='@Url.Action("Remover", "Cliente", new {id = @e.Id})' onclick="return confirmacao()">
+                                <div class="flex">
+                                    <i class="icon fas fa-trash-alt fa-2x"></i>
+                                    <p>Remover Evento</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <hr />
+                }
+            }
             
                     
             }
@@ -108,12 +98,20 @@
                 </div>
             
             }
-            
-
-            
-                    
-
 
     </section>
 
 </main>
+
+<script>
+function confirmacao()
+{   
+if (confirm("Tem Certeza?")){
+
+    alert("Removido")
+    return true;
+}else{
+
+    return false;}
+}
+</script>

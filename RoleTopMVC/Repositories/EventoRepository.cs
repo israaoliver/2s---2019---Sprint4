@@ -125,7 +125,7 @@ namespace RoleTopMVC.Repositories
             Servicos s = e.Servicos;
             Cliente c = e.Cliente;
 
-            return $"id={e.Id};statusEvento={e.Status};data_registro={e.DataRegistro};email_cliente={c.Email};nome_evento={e.NomeEvento};tipo_evento={e.TipoEvento};data_evento={e.DiaDoEvento};servico_nome={s.Nome};servicos_preco={s.Preco};qtde={e.Quantidade};descricao={e.Descricao};";
+            return $"id={e.Id};statusEvento={e.Status};data_registro={e.DataRegistro};pago={e.Pago};email_cliente={c.Email};nome_evento={e.NomeEvento};tipo_evento={e.TipoEvento};data_evento={e.DiaDoEvento};servico_nome={s.Nome};servicos_preco={s.Preco};qtde={e.Quantidade};descricao={e.Descricao};";
         }
     }
 }
