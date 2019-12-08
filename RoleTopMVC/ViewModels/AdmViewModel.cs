@@ -5,6 +5,7 @@ namespace RoleTopMVC.ViewModels
 {
     public class  AdmViewModel : DashboardViewModel 
     {
+        public List<Cliente> ListaUsuario {get;set;}
         public uint EventosTotal {get;set;}
         public uint Usuarios {get;set;}
         public uint UsuariosBanidos {get;set;}

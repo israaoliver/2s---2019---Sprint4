@@ -68,6 +68,7 @@ namespace RoleTopMVC.Controllers
                         totalBanidos ++;
                     }
                 }
+                totalBanidos = totalBanidos - 1;
                 foreach (var s in suporteRepository.ObterTodos())
                 {
                     totalSuporte++;
@@ -232,13 +233,35 @@ namespace RoleTopMVC.Controllers
 
         // todo : ==========================    Area de Usuarios =================================================
 
-        public IActionResult Usuario()
+        public IActionResult Usuarios()
         {
             if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.ADMINISTRADOR == uint.Parse(ObterUsuarioTipoSession()))
             {
+                AdmViewModel avm = new AdmViewModel();
+                var usuarios = clienteRepository.ObterTodosClientes();
+                var totalUsuarios = 0;
+                var totalBanidos = 0;
+                foreach (var e in usuarios)
+                {
+                    if (e.TipoUsuario == (uint) TipoUsuario.CLIENTE)
+                    {
+                        totalUsuarios ++;
+                    }else
+                    {
+                        totalBanidos ++;
+                    }
+                }
+                totalBanidos = totalBanidos - 1;
+
+                avm.ListaUsuario = usuarios;
+                avm.Usuarios = (uint) totalUsuarios;
+                avm.UsuariosBanidos = (uint) totalBanidos;
+                avm.NomeView = "Adm";
+                avm.NomeView2 = "dashboard";
+                avm.UsuarioEmail = ObterUsuarioSession();
                 
-                var usuarios = clienteRepository.ObterTodosClientes(); 
-                return View();
+                
+                return View(avm);
 
             }else
             {
@@ -248,6 +271,83 @@ namespace RoleTopMVC.Controllers
                 });
             }
         }
+        public IActionResult UsuariosBan()
+        {
+            if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.ADMINISTRADOR == uint.Parse(ObterUsuarioTipoSession()))
+            {
+                AdmViewModel avm = new AdmViewModel();
+                var usuarios = clienteRepository.ObterTodosClientes();
+                var totalUsuarios = 0;
+                var totalBanidos = 0;
+                foreach (var e in usuarios)
+                {
+                    if (e.TipoUsuario == (uint) TipoUsuario.CLIENTE)
+                    {
+                        totalUsuarios ++;
+                    }else
+                    {
+                        totalBanidos ++;
+                    }
+                }
+                totalBanidos = totalBanidos - 1;
+
+                avm.ListaUsuario = usuarios;
+                avm.Usuarios = (uint) totalUsuarios;
+                avm.UsuariosBanidos = (uint) totalBanidos;
+                avm.NomeView = "Adm";
+                avm.NomeView2 = "dashboard";
+                avm.UsuarioEmail = ObterUsuarioSession();
+                
+                
+                return View(avm);
+
+            }else
+            {
+                return View("Erro", new MensagemViewModel("Você não possui permissão")
+                {
+                    NomeView = "Login"
+                });
+            }
+        }
+
+        public IActionResult Banir(string email)
+        {
+            var c = clienteRepository.ObterCliente(email);
+            c.TipoUsuario = (uint) TipoUsuario.BANIDO;
+
+            if (clienteRepository.Atualizar(c, email))
+            {
+                return RedirectToAction ("Usuarios", "Adm");
+            }
+            else
+            {
+                return View ("Erro", new MensagemViewModel("Não foi possivel Bannir essa conta")
+                {
+                    NomeView = "Adm",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
+        } 
+        public IActionResult Recuperar(string email)
+        {
+            var c = clienteRepository.ObterCliente(email);
+            c.TipoUsuario = (uint) TipoUsuario.CLIENTE;
+
+            if (clienteRepository.Atualizar(c, email))
+            {
+                return RedirectToAction ("UsuariosBan", "Adm");
+            }
+            else
+            {
+                return View ("Erro", new MensagemViewModel("Não foi possivel Recuperar essa Conta")
+                {
+                    NomeView = "Adm",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
+        } 
 	
     }
 

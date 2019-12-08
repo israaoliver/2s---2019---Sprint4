@@ -97,4 +97,5 @@ C:\Users\Junior\Documents\Docs\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcorea
 C:\Users\44346823858\Documents\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Adm\Historico.g.cshtml.cs
 C:\Users\Junior\Documents\Docs\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Adm\Historico.cshtml.g.cs
 C:\Users\Junior\Documents\Docs\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Usuario\Pagamento.cshtml.g.cs
-C:\Users\Junior\Documents\Docs\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Adm\Eventos.cshtml.g.cs
+C:\Users\Junior\Documents\Docs\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Adm\Usuarios.cshtml.g.cs
+C:\Users\Junior\Documents\Docs\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Adm\UsuariosBan.cshtml.g.cs

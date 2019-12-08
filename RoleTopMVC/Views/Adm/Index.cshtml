@@ -52,14 +52,14 @@
                 </section>
             </a>
             <section id="Usuarios" class="flex">
-                <a>
+                <a asp-controller="Adm" asp-action="Usuarios">
                     <div class="flex user-adm">
                         <i class="icon-user fas fa-users fa-5x"></i>
                         <h4>Usuarios Ativos</h4>
                         <p>@Model.Usuarios</p>
                     </div>
                 </a>
-                <a>
+                <a asp-controller="Adm" asp-action="UsuariosBan">
                     <div class="flex user-adm">
                         <i class="icon-ban fas fa-user-alt-slash fa-5x"></i>
                         <h4>Usuarios Banidos</h4>

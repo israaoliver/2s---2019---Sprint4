@@ -102,13 +102,19 @@ a {
 
 #Usuarios
 {
+    text-align: none;
     color: white;
     width: 500px;
     height: 250px;
     justify-content: space-between;
     font-family: 'Roboto', sans-serif;
     align-items: center;
+}
 
+.flex > a
+{
+    text-decoration: none;
+    color: white;
 }
 .user-adm
 {

@@ -1,0 +1,65 @@
+@model RoleTopMVC.ViewModels.AdmViewModel
+
+<main class="flex geral">
+    <div class="flex icon-2"><a asp-controller="Adm" asp-action="Index"><i class="back fas fa-backward fa-2x"></i></a></div>
+    <div class="flex cima ">
+            <h5>Usuarios</h5>
+    </div>
+    <section class="flex central-user-adm">
+        <div class="flex margin-user user-container ">
+        <a asp-controller="Adm" asp-action="Usuarios">
+                <div>
+                        <p>@Model.Usuarios</p>
+                        <p>Usuário <br/> Registrados</p>
+                    </div>
+                    <i class="icon-1 fas fa-users fa-5x"></i>        
+                </div>
+        </a> 
+
+            <div class=" flex user-container margin-user dentro">
+                <div>
+                    <p>@Model.UsuariosBanidos</p>
+                    <p>Usuário <br> Banidos</p>
+                </div>
+                <i class="icon-3 fas fa-user-alt-slash fa-5x"></i>
+                
+            </div>           
+    </section>
+    <section>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF/CNPJ</th>
+                        <th>Celular</th>
+                        <th>Email cliente</th>
+                        <th colspan="1">Bannir</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="9">
+                            <p>Usuarios atualizados em @DateTime.Now</p>
+                        </td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var users in @Model.ListaUsuario)
+                    {
+                        if (users.TipoUsuario == 2)
+                        {
+                            <tr>
+                                <td>@users.Nome</td>
+                                <td>@users.CPF</td>
+                                <td>@users.Telefone</td>
+                                <td>@users.Email</td>
+                                <td class="read"><a href='@Url.Action("Recuperar", "Adm", new {email = @users.Email})'><i class="fas fa-reply"></i></a></td>
+                            </tr>                                                    
+                            
+                        }
+                    }
+                </tbody>
+            </table>
+        </section>
+    </main>
