@@ -97,8 +97,8 @@ namespace RoleTopMVC.Repositories
             foreach (var l in usuariosLinhas)
             {
                     Cliente c = new Cliente();      
-                    c.Nome = ExtrairValorDoCampo("nome", l);
                     c.TipoUsuario = uint.Parse(ExtrairValorDoCampo("tipo_usuario", l));
+                    c.Nome = ExtrairValorDoCampo("nome", l);
                     c.Email = ExtrairValorDoCampo("email", l);
                     c.Senha = ExtrairValorDoCampo("senha", l);
                     c.Telefone = ExtrairValorDoCampo("telefone", l);

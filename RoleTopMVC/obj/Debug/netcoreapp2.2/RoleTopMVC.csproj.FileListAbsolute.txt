@@ -96,3 +96,5 @@ C:\Users\Junior\Documents\Docs\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcorea
 C:\Users\Junior\Documents\Docs\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.csproj.CopyComplete
 C:\Users\44346823858\Documents\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Adm\Historico.g.cshtml.cs
 C:\Users\Junior\Documents\Docs\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Adm\Historico.cshtml.g.cs
+C:\Users\Junior\Documents\Docs\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Usuario\Pagamento.cshtml.g.cs
+C:\Users\Junior\Documents\Docs\2s---2019---Sprint4\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Adm\Eventos.cshtml.g.cs

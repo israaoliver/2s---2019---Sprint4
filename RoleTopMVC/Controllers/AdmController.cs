@@ -10,8 +10,10 @@ namespace RoleTopMVC.Controllers
     public class AdmController : AbstractController
     {
 
-        EventoRepository eventoRepository = new EventoRepository();
-        ClienteRepository clienteRepository = new ClienteRepository();
+        private EventoRepository eventoRepository = new EventoRepository();
+        private ClienteRepository clienteRepository = new ClienteRepository();
+        private SuporteRepository suporteRepository = new SuporteRepository();
+
         
 
         public DashboardViewModel DashboardEvento()
@@ -31,10 +33,10 @@ namespace RoleTopMVC.Controllers
                     break;
                     default:
                         dashboardViewModel.EventosPendentes++;
-                        dashboardViewModel.Eventos.Add(evento);
                     break;
 
                 }
+                dashboardViewModel.Eventos.Add(evento);
             }
                 dashboardViewModel.Eventos = eventos;
                 dashboardViewModel.NomeView ="Adm";
@@ -48,9 +50,42 @@ namespace RoleTopMVC.Controllers
 
             if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.ADMINISTRADOR == uint.Parse(ObterUsuarioTipoSession()))
             {
-                
+                var totalUsuarios = 0;
+                var totalSuporte = 0;
+                var totalEventos = 0;
+                var totalBanidos = 0;
+                foreach (var e in eventoRepository.ObterTodos())
+                {
+                    totalEventos ++;
+                }
+                foreach (var e in clienteRepository.ObterTodosClientes())
+                {
+                    if (e.TipoUsuario == (uint) TipoUsuario.CLIENTE)
+                    {
+                        totalUsuarios ++;
+                    }else
+                    {
+                        totalBanidos ++;
+                    }
+                }
+                foreach (var s in suporteRepository.ObterTodos())
+                {
+                    totalSuporte++;
+                }
+                AdmViewModel avm = new AdmViewModel();
                 var dashboard = DashboardEvento(); 
-                return View(dashboard);
+                avm.EventosTotal = (uint) totalEventos ;
+                avm.Usuarios = (uint) totalUsuarios;
+                avm.UsuariosBanidos = (uint) totalBanidos;
+                avm.Suportes = (uint) totalSuporte;
+                avm.EventosAprovados = dashboard.EventosAprovados;
+                avm.EventosReprovados = dashboard.EventosReprovados;
+                avm.EventosPendentes = dashboard.EventosPendentes;
+                avm.NomeView = "Adm";
+                avm.NomeView2 = "AdmHome";
+                avm.UsuarioEmail = ObterUsuarioSession();
+
+                return View(avm);
 
             }else
             {
@@ -60,7 +95,6 @@ namespace RoleTopMVC.Controllers
                 });
             }
         }
-
         public IActionResult Historico()
         {
             if (!string.IsNullOrEmpty(ObterUsuarioSession()) && (uint)TipoUsuario.ADMINISTRADOR == uint.Parse(ObterUsuarioTipoSession()))

@@ -30,16 +30,6 @@ h2{
 }
 
 
-.icon-2{
-    width: 30px;
-    height: 30px;
-    align-items: center;
-    justify-content: center;
-    align-self: flex-start;
-    margin-left: 2.5em;
-    margin-top: -18em;
-    position: fixed;
-}
 
 .flex.icon-3 > a{
     text-decoration: none;
@@ -174,6 +164,31 @@ tfoot td {
     text-align: center;
     color: #fff;
     background-color: #000;
+}
+
+.aprovado{
+    background-color: #13ec61;
+    justify-content: center;
+    color: #000;
+
+}
+.pendente{
+    background-color: #e1ca1e;
+    justify-content: center;
+    color: #000;
+
+}
+.reprovado{
+    background-color: red;
+    justify-content: center;
+    color: #000;
+
+}
+.apagado{
+    background-color: #085ef7;
+    justify-content: center;
+    color: #000;
+
 }
 
 /*================================================================================================================================================================================

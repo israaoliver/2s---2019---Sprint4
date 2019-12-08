@@ -74,7 +74,14 @@
                                 <td>@e.Servicos.Nome</td>
                                 <td>@e.TipoEvento</td>
                                 <td>@e.Quantidade</td>
-                                <td>  </td>
+                                @if (e.Pago)
+                                {
+                                    <td class="aprovado">Pagou</td>
+                                }
+                                else
+                                {
+                                    <td class="pendente">Pendente</td>
+                                }
                                 <td class="read"><a href='@Url.Action("Readimitir", "Adm", new {id = @e.Id})'><i class="fas fa-reply"></i></a></td>
                             </tr>
                             

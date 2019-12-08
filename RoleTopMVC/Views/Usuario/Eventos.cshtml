@@ -21,6 +21,7 @@
                                 <th>Serviços</th>
                                 <th>Tipo</th>
                                 <th>Quantidade de Pessoas</th>
+                                <th>Pagamento</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -38,12 +39,16 @@
                                 <td>@e.Servicos.Nome</td>
                                 <td>@e.TipoEvento</td>
                                 <td>@e.Quantidade</td>
+                                @if (e.Pago)
+                                {<td class="flex pagado"><span >Pago</span></td>}
+                                @if(!e.Pago)
+                                {<td class="flex pendente">Pendente</td>}                                 
                                 @if (e.Status == 0)
-                                {<td>Pendente</td>}
+                                {<td class="pendente">Pendente</td>}
                                 @if (e.Status == 1)
-                                {<td>Aprovado</td>}
+                                {<td class="pagado">Aprovado</td>}
                                 @if (e.Status == 2)
-                                {<td>Reprovado</td>}
+                                {<td class="reprovado">Reprovado</td>}
                             </tr>
                         </tbody>
                     </table>
@@ -60,19 +65,27 @@
                             </div>
                         </div>
                         <div class="flex edit-container">
-                            <a>
+                            <a class="link">
                             <div class="flex">
                                     <i class="icon fas fa-edit fa-2x"></i>
-                                <p>Editar Informações.</p>
+                                    <p>Editar Informações.</p>
                             </div>
                             </a>
-
                             <a class="link" href='@Url.Action("Remover", "Cliente", new {id = @e.Id})' onclick="return confirmacao()">
                                 <div class="flex">
                                     <i class="icon fas fa-trash-alt fa-2x"></i>
                                     <p>Remover Evento</p>
                                 </div>
                             </a>
+                            @if (!e.Pago)
+                            {
+                                <a class="link" href='@Url.Action("Pagamento", "Usuario", new {id = @e.Id})'>
+                                    <div class="flex">
+                                        <i class="icon far fa-credit-card fa-2x"></i>
+                                        <p>Pagar Evento</p>
+                                    </div>
+                                </a>    
+                            }
                         </div>
                     </div>
                     <br />

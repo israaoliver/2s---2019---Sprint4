@@ -1,0 +1,75 @@
+@model RoleTopMVC.ViewModels.PagamentoViewModel
+<main class="informa flex" >
+<section id="informacao">
+<div class="flex form-info">
+<form method="POST" action='@Url.Action("Pagar", "Cliente")'>
+    <div>
+        <label for="nome">Nome do Titular:</label>
+        <br>
+        <input class="lab" id="nome" type="text" maxlength="30" minlength="5" name="nome" placeholder="Nome como impresso no cartão">
+    </div>
+    <div>
+        <label for="numero">Numéro:</label>
+        <br>
+        <input class="lab" id="numero" type="text" name="numero" placeholder="0000 0000 0000">
+    </div>
+        <label for="validade">Validade MÊS/ANO</label>
+    <div class="flex valid">
+        
+        <div>
+            <select id="validadeMes" name="validadeMes" required>
+                <option value="" disabled selected> Mês</option>
+                <option value="01">01</option>  
+                <option value="02">02</option>  
+                <option value="03">03</option>  
+                <option value="04">04</option>  
+                <option value="05">05</option>  
+                <option value="06">06</option>  
+                <option value="07">07</option>  
+                <option value="08">08</option>  
+                <option value="09">09</option>  
+                <option value="10">10</option>  
+                <option value="11">11</option>  
+                <option value="12">12</option>  
+            </select>
+        </div>
+        <p>/</p>
+        <div>
+            <select id="validadeAno" name="validadeAno" required>
+                <option value="" disabled selected> Ano</option>
+                <option value="2019">19</option>
+                <option value="2019">20</option>
+                <option value="2019">21</option>
+                <option value="2019">22</option>
+                <option value="2019">23</option>
+                <option value="2019">24</option>
+                <option value="2019">25</option>
+                <option value="2019">26</option>
+                <option value="2019">27</option>
+                <option value="2019">28</option>
+                <option value="2019">29</option>
+                <option value="2019">30</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="flex pago">
+        <div>
+
+        <label for="cvv">CVV</label>
+        <br>
+        <input class="lab" id="cvv" name="cvv" type="number" placeholder="000">
+        </div>
+        <div class = "paga">
+            <h3>Valor do Pagamento</h3>
+            <p>@Model.Evento.Servicos.Preco</p>
+        </div>
+    </div>
+    <input class="input-hidden" name = "id" value="@Model.Evento.Id" >
+    <input type="submit" value="Pagar">
+
+</form>
+</div>
+
+</section>
+</main>

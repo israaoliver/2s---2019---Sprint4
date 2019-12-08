@@ -1,0 +1,134 @@
+main{
+    height: 800px;
+    background-image: linear-gradient(#4e015b,#44014f,#1e0023,#000000);
+}
+/*=============================== divs central =====================*/
+.home-Adm{
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+a {
+    text-decoration: none;
+}
+.admcent{
+    justify-content: space-around;
+    align-items: center;
+    height: 600px;
+    width: 1000px;
+}
+/*=============================================*/
+
+#Historico h3{
+    font-size: 3em;
+    font-family: 'Roboto', sans-serif;
+}
+#Historico p {
+    font-size: 2em;
+}
+
+#Historico{
+    width: 500px;
+    color: #fff;
+    height: 200px;
+    border: 5px double white ;
+    background-color: rgba(220,220,220,0.2);  
+    margin-top: 2em;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+#Historico:hover
+{
+    background-color: black;
+}
+
+/*================================   Parte dos containers de eventos==============================*/
+.event-Adm{
+    flex-direction: column;
+}
+
+.event-container{
+    width: 310px;
+    height: 150px;
+    margin-bottom: 1em;
+    background-color: rgba(220,220,220,0.2);  
+    border: 5px double #fff;
+    border-radius: 10px ;
+    text-align: center;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.event-container:hover
+{
+    background-color: black;  
+}
+.letra {
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+.event-container > img {
+    
+    width: 34%;
+}
+/*======================================================================*/
+/*=================== container de Mensagens =========================*/
+#Mensagens{
+    border: 5px double white;
+    color: white;
+    background-color: rgba(220,220,220,0.2);  
+    border-radius: 12px;
+    font-family: 'Roboto', sans-serif;
+    width: 500px;
+    height: 200px;
+}
+#Mensagens:hover {
+    background-color: black;
+}
+.msg
+{
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+/*============================ Containers de Usuario ======================*/
+
+#Usuarios
+{
+    color: white;
+    width: 500px;
+    height: 250px;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+
+}
+.user-adm
+{
+    width: 230px;
+    height: 160px;
+    border-radius: 12px;
+    border: 5px double white;
+    background-color: rgba(220,220,220,0.2);  
+    flex-direction: column;
+}
+.user-adm:hover{
+    background-color: black;
+}
+.icon
+{
+    color: white;
+}
+.icon-user{
+    color: rgb(0, 209, 0);
+}
+.icon-ban{
+    color: red;
+}

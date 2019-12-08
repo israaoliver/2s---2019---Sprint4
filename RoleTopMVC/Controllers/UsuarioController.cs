@@ -81,7 +81,9 @@ namespace RoleTopMVC.Controllers
 
                 if (eventoRepository.Inserir(e))
                 {
-                    return View("Sucesso", new MensagemViewModel(){
+                    return View("Sucesso", new PagamentoViewModel(){
+
+                        Evento = e,
                         NomeView = "Usuario",
                         NomeView2 = "Cadastro",
                         UsuarioEmail = ObterUsuarioSession(),
@@ -107,9 +109,17 @@ namespace RoleTopMVC.Controllers
                     UsuarioEmail = ObterUsuarioSession(),
                     UsuarioNome = ObterUsuarioNomeSession()
                 });
-
             }
-
+        }
+        public IActionResult Pagamento(ulong id)
+        {
+            var e = eventoRepository.ObterPor(id);
+            return View(new PagamentoViewModel(){
+                Evento = e,
+                NomeView ="Usuario",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+            });
         }
 
             // todo: Fim do Cadastro de Evento ==============================================================================
@@ -121,6 +131,14 @@ namespace RoleTopMVC.Controllers
                 string vazio ;
                 uint numeroApagado = 0;
                 uint numeroEventos = 0;
+                
+                foreach (var item in eventoCliente)
+                {
+                    System.Console.WriteLine("==============================================");
+                    System.Console.WriteLine(item.Pago);
+                    System.Console.WriteLine("==============================================");
+                }
+
                 if(!(eventoCliente == null))
                 {
 
@@ -206,7 +224,7 @@ namespace RoleTopMVC.Controllers
                 HttpContext.Session.SetString(SESSION_CLIENTE_NOME, c.Nome);
 
 
-                return View ("Sucesso", new MensagemViewModel("Informações Alteradas"){
+                return View ("Sucesso", new PagamentoViewModel("Informações Alteradas"){
                 NomeView = "Usuario",
                 NomeView2 = "Informacao",
                 UsuarioEmail = ObterUsuarioSession(),
@@ -310,7 +328,7 @@ namespace RoleTopMVC.Controllers
             {
                 Suporte msg = new Suporte(clienteRepository.ObterCliente(ObterUsuarioSession()),form["problema"],form["descricao"], DateTime.Now);
                 suporteRepository.Inserir(msg);
-                return View("Sucesso", new MensagemViewModel(){
+                return View("Sucesso", new PagamentoViewModel(){
                     NomeView ="Usuario",
                     NomeView2 = "Suporte",
                     UsuarioEmail = ObterUsuarioSession(),

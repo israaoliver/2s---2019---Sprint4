@@ -1,4 +1,4 @@
-﻿@model RoleTopMVC.ViewModels.MensagemViewModel
+﻿@model RoleTopMVC.ViewModels.PagamentoViewModel
 <main>
     
     <section class="flex conf">
@@ -8,7 +8,13 @@
         <br>
         <p>Obrigado!!!! <br> Você concluiu seu cadastro, <br> siga para o seu perfil.</p>
         <a href='@Url.Action("Index", "Usuario")'><button class="margin">Continuar</button></a>
-
+    }
+    @if("Pagar".Equals(Model.NomeView2))
+    {
+        <img src="~/img/icones/Suc_cadastro.png">
+        <br>
+        <p>Obrigado!!!! <br> Você concluiu seu pagamento</p>
+        <a href='@Url.Action("Index", "Usuario")'><button class="margin">Continuar</button></a>
     }
     @if("Suporte".Equals(Model.NomeView2))
     {
@@ -19,8 +25,13 @@
     @if("Cadastro".Equals(Model.NomeView2))
     {
         <img src="~/img/icones/Suc_cadastro.png">
-        <p>Voce conclui o cadastro do seu evento Obrigado! </p>
-        <a href='@Url.Action("Eventos", "Usuario")'><button class="margin">Continuar</button></a>
+        <p>Voce conclui o cadastro do seu evento Obrigado! <br /><br />
+                    PAGAR AGORA OU MAIS TARDE
+        </p>
+        <div class="flex lado">
+            <a href='@Url.Action("Eventos", "Usuario")'><button class="margin">Continuar</button></a>
+            <a  href='@Url.Action("Pagamento", "Usuario", new {id = @Model.Evento.Id})'><button class="margin">PAGAR</button></a>
+        </div>
     }
     @if("Informacao".Equals(Model.NomeView2))
     {

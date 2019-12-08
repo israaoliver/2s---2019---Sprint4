@@ -37,20 +37,29 @@
                             <td>@e.Servicos.Nome</td>
                             <td>@e.TipoEvento</td>
                             <td>@e.Quantidade</td>
-                            <td>  </td>
-                            @if(e.Status == 0){
-                                <td>Pendente</td>
+                            @if (e.Pago)
+                            {
+                                <td class="aprovado">Pagou</td>
+                            }
+                            else
+                            {
+                                <td class="pendente">Pendente</td>
+                            }
+                            @if(e.Status == 0)
+                            {
+                                <td class="flex pendente">Pendente</td>
                             }
                             @if(e.Status == 1)
                             {
-                                <td>Aprovado</td>
+                                <td class="flex aprovado">Aprovado</td>
                             }
-                            @if(e.Status == 2){
-                                <td>Reprovado</td>
+                            @if(e.Status == 2)
+                            {
+                                <td class="flex reprovado">Reprovado</td>
                             }
                             @if (e.Status == 3)
                             {
-                                <td>Apagado</td>
+                                <td class="flex apagado">Apagado</td>
                             }
                         </tr>                    
                     }

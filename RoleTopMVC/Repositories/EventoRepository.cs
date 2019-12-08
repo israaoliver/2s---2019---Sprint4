@@ -64,6 +64,7 @@ namespace RoleTopMVC.Repositories
 
                 e.Id = ulong.Parse(ExtrairValorDoCampo("id", l));
                 e.Status = uint.Parse(ExtrairValorDoCampo("statusEvento", l));
+                e.Pago = bool.Parse(ExtrairValorDoCampo("pago", l));
                 e.NomeEvento = ExtrairValorDoCampo("nome_evento", l);
                 e.TipoEvento = ExtrairValorDoCampo("tipo_evento", l);
                 e.Cliente.Email = ExtrairValorDoCampo("email_cliente", l);
@@ -73,6 +74,7 @@ namespace RoleTopMVC.Repositories
                 e.Descricao = e.Descricao.Replace("#αßπΣ#", "\r\n");
                 e.DataRegistro = DateTime.Parse(ExtrairValorDoCampo("data_registro", l));
                 e.Servicos.Nome = ExtrairValorDoCampo("servico_nome", l);
+                e.Servicos.Preco = double.Parse(ExtrairValorDoCampo("servicos_preco", l));
 
                 eventos.Add(e);
             }

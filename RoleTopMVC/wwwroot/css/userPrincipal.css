@@ -146,24 +146,6 @@ h1{
   1px  1px 0 #000;
 }
 
-/*================================================================
-                            Suporte
-=========================================================*/
-#problema{
-  width: 300px;
-}
-.sup{
-  height: 100%;
-  text-align: left;
-
-}
-.suporte{
-  width: 100%;
-  height: 300px;
-  text-align: left;
-  justify-content: space-between;
-}
-
 
 /*======================================================================
                           CadastrarEventos
@@ -220,10 +202,12 @@ form label{
 /* flex-box de todos os inputs */
 #cadastro{
   display: flex;
-  width: 500px;
+  width: 600px;
+  background-color: rgba(220,220,220,0.2);  
+  border: 5px double white;
   height: 700px;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column; 
   margin-top: 5em;
   border-radius: 50px;
@@ -279,7 +263,7 @@ form input[type="submit"] {
   border: 1px solid #fff;
   color: #fff;
   margin: 20px 0;
-  width: 4em;
+  width: 10em;
   height: 2em;
   border-radius: 10px;
   font-weight: bold;
@@ -294,6 +278,51 @@ form input[type="submit"]:hover{
 }
 .submit{
   justify-content: flex-end;
+}
+
+/*======================================================================
+Paga
+=======================================================================*/
+.valid
+{
+  width: 18em;
+  align-self: center;
+  justify-content: space-evenly;
+}
+.valid p {
+  margin-top: 1em;
+}
+.paga {
+  color: white;
+  font-size: 1em;
+}
+.pagado
+{
+  background-color: #13ec61;
+  justify-content: center;
+  color: #000;
+}
+.pendente
+{
+  background-color: #e1ca1e ;
+  justify-content: center;
+  color: #000;
+}
+.reprovado
+{
+  background-color: red;
+}
+.paga > p {
+  border: 3px outset white;
+}
+.pago{
+  justify-content: space-between;
+}
+.input-hidden{
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  padding: 0;
 }
 /*===============================================
 Tabela de Eventos
@@ -367,8 +396,10 @@ label{
   font-size: 1.8em;
 }
 .link{
-  margin-left: 1em;
   text-decoration: none;
+}
+.link p {
+  margin-left: 1em;
 }
 
 /*===============================================================================================
@@ -439,6 +470,25 @@ h4{
   height: 450px;
   align-items: center;
   justify-content: space-around;
+}
+
+/*===============================================================================================
+                        Suporte
+==============================================================================================*/
+#problema{
+  width: 300px;
+}
+#Suporte
+{
+  height: 450px;
+  width: 500px;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  border: 9px double #fff;
+  margin-top: 15em;
+  border-radius: 10px ;
+  margin-bottom: 10em;
 }
 
 

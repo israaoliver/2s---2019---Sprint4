@@ -45,7 +45,7 @@ namespace RoleTopMVC.Controllers
                 HttpContext.Session.SetString(SESSION_CLIENTE_NOME, userNome);
                 HttpContext.Session.SetString(SESSION_CLIENTE_TIPO, userTipo);
 
-                return View("Sucesso", new MensagemViewModel(){
+                return View("Sucesso", new PagamentoViewModel(){
                     NomeView = "Cadastro",
                     UsuarioEmail = ObterUsuarioSession(),
                     UsuarioNome = ObterUsuarioNomeSession()

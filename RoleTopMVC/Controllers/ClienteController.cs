@@ -133,5 +133,33 @@ namespace RoleTopMVC.Controllers
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
         }
+
+        public IActionResult Pagar(IFormCollection form)
+        {
+            var id = ulong.Parse(form["id"]);
+            var e = eventoRepository.ObterPor(id); 
+            e.Pago = true;
+
+            if (eventoRepository.Atualizar(e))
+            {                
+                return View("Sucesso", new PagamentoViewModel()
+                {
+                    NomeView = "Usuario",
+                    NomeView2 = "Pagar",
+                    UsuarioNome = ObterUsuarioNomeSession(),
+                    UsuarioEmail = ObterUsuarioSession()
+                });
+            }else{
+                return View ("Erro", new MensagemViewModel("Erro ao Pagar o evento")
+                {
+                    NomeView = "Usuario",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
+
+            
+
+        }
     }
 }

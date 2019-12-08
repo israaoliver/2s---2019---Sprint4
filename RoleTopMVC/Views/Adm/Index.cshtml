@@ -1,39 +1,74 @@
-@model RoleTopMVC.ViewModels.DashboardViewModel
+@model RoleTopMVC.ViewModels.AdmViewModel
 
-<main class="flex geral">
-            <h1>DashBoard</h1>
-        <section class="flex central-container">
+<main class="flex home-Adm">
+    <a asp-controller="Adm" asp-action="Historico">
+    <section id="Historico" class="flex">
+            <h3>Historico</h3>
+            <p>@Model.EventosTotal
+            </p>
+    </section>
+    </a>
+    <div class="flex admcent">
 
+        <section id="EventosAdm" class="flex event-Adm">
+            <a asp-controller="Adm" asp-action="Pendentes">
             <div class="flex event-container">
-                <a asp-controller="Adm" asp-action="Pendentes">
-                    <div class="flex pend-container">
-                        <img src="../img/icones/Adm/copy.png" alt="">
-                    </div>
-                </a>
-                <h2>Pendentes</h2>
-                <br>
-                <p>@Model.EventosPendentes</p>
+                <img src="../img/icones/Adm/copy.png">
+                <div class="flex letra">
+                    <h4>Pendentes</h4>
+                    <p>@Model.EventosPendentes</p>
+                </div>
             </div>
+            </a>
+            <a asp-controller="Adm" asp-action="Aprovados">
             <div class="flex event-container">
-                <a asp-controller="Adm" asp-action="Aprovados">
-                    <div class="flex check-container">
-                        <img src="../img/icones/Adm/check_box_black_192x192.png" alt="">
-                    </div>
-                </a>
-                <h2>Aprovados</h2>
-                <br>
+                <img src="../img/icones/Adm/check_box_black_192x192.png">
+                <div class="flex letra">
+                <h4>Aprovados</h4>
                 <p>@Model.EventosAprovados</p>
+                </div>
             </div>
+            </a>
+            <a asp-controller="Adm" asp-action="Recusados">
             <div class="flex event-container">
-                <a asp-controller="Adm" asp-action="Recusados">
-                    <div class="flex recuse-container">
-                        <img src="../img/icones/Adm/recuse.png" alt="">
+                <img src="../img/icones/Adm/recuse.png">
+                <div class="flex letra">
+                    <h4>Reprovados</h4>
+                    <p>@Model.EventosReprovados</p>
+                </div>
+            </div>
+            </a>
+            
+
+        </section>
+        <div>
+            <a>
+                <section id="Mensagens" class="flex msg">
+                    <i class="icon fas fa-envelope-open fa-5x"></i>
+                    <h4>Mensagens Recebidas</h4>
+                    <p>
+                        @Model.Suportes
+                    </p>
+                </section>
+            </a>
+            <section id="Usuarios" class="flex">
+                <a>
+                    <div class="flex user-adm">
+                        <i class="icon-user fas fa-users fa-5x"></i>
+                        <h4>Usuarios Ativos</h4>
+                        <p>@Model.Usuarios</p>
                     </div>
                 </a>
-                <h2>Recusados</h2>
-                <br>
-                <p>@Model.EventosReprovados</p>
-            </div>
-        </section>
-            <a asp-controller="Adm" asp-action="Historico"><h2>Hsitorico geral</h2></a>
-    </main>
+                <a>
+                    <div class="flex user-adm">
+                        <i class="icon-ban fas fa-user-alt-slash fa-5x"></i>
+                        <h4>Usuarios Banidos</h4>
+                        <p>@Model.UsuariosBanidos</p>
+                    </div>
+                </a>
+
+            </section>
+        </div>
+    </div>
+
+</main>

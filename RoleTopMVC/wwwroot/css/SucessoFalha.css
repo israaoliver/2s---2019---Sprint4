@@ -28,3 +28,9 @@ border: #000;
 .margin{
 margin-top: 2em;
 }
+
+.lado
+{
+    width: 500px;
+    justify-content: space-around;
+}
