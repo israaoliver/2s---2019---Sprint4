@@ -485,7 +485,7 @@ h4{
   align-items: center;
   justify-content: center;
   text-align: left;
-  border: 9px double #fff;
+  border: 9px inset #fff;
   margin-top: 15em;
   border-radius: 10px ;
   margin-bottom: 10em;

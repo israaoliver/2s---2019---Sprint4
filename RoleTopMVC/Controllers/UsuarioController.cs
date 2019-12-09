@@ -131,13 +131,7 @@ namespace RoleTopMVC.Controllers
                 string vazio ;
                 uint numeroApagado = 0;
                 uint numeroEventos = 0;
-                
-                foreach (var item in eventoCliente)
-                {
-                    System.Console.WriteLine("==============================================");
-                    System.Console.WriteLine(item.Pago);
-                    System.Console.WriteLine("==============================================");
-                }
+
 
                 if(!(eventoCliente == null))
                 {
@@ -252,7 +246,7 @@ namespace RoleTopMVC.Controllers
                     UsuarioNome = ObterUsuarioNomeSession(),
                     UsuarioEmail = ObterUsuarioSession()});
             }else{
-                return View("Erro", new MensagemViewModel("Sua Conecção acabou.")
+                return View("Erro", new PagamentoViewModel("Sua Conecção acabou.")
                 {
                     NomeView = "Login"
                 });
@@ -272,7 +266,7 @@ namespace RoleTopMVC.Controllers
                 {
                     c.Senha = senha;
                     clienteRepository.Atualizar(c, ObterUsuarioSession());
-                    return View("Sucesso", new  MensagemViewModel("Senha Alterada")
+                    return View("Sucesso", new  PagamentoViewModel("Senha Alterada")
                     {
                         NomeView = "Usuario",
                         NomeView2 = "Informacao",

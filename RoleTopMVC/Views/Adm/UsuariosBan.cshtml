@@ -6,15 +6,17 @@
             <h5>Usuarios</h5>
     </div>
     <section class="flex central-user-adm">
-        <div class="flex margin-user user-container ">
         <a asp-controller="Adm" asp-action="Usuarios">
-                <div>
-                        <p>@Model.Usuarios</p>
-                        <p>Usuário <br/> Registrados</p>
-                    </div>
-                    <i class="icon-1 fas fa-users fa-5x"></i>        
-                </div>
+        <div class="flex user-container margin-user ">
+            <div>
+                <p>@Model.Usuarios</p>
+                <p>Usuário <br/> Registrados</p>
+            </div>
+            <i class="icon-1 fas fa-users fa-5x"></i>
+            
+        </div>      
         </a> 
+
 
             <div class=" flex user-container margin-user dentro">
                 <div>
