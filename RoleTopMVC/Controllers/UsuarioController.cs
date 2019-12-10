@@ -208,6 +208,23 @@ namespace RoleTopMVC.Controllers
             c.Telefone = form["telefone"];
             c.CPF = form["cpf"];
             
+            if(!(c.Email == ObterUsuarioSession()))
+            {
+                var eventoDesseMano = eventoRepository.ObeterEventoPorCliente(ObterUsuarioSession());
+                
+                if (!(eventoDesseMano == null))
+                {
+                    
+                    foreach (var e in eventoDesseMano)
+                    {
+                        e.Cliente.Email = c.Email;
+
+                        eventoRepository.Atualizar(e);
+
+                    }
+                }
+
+            }
 
             if (clienteRepository.Atualizar(c, ObterUsuarioSession()))
             {
