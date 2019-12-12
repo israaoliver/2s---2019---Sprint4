@@ -27,6 +27,29 @@ namespace RoleTopMVC.Repositories
             return true;
         }
 
+        public bool VerificarEmail(string email)
+        {
+            var clientes = ObterTodosClientes();
+
+            bool emailExiste = false ;
+
+            foreach (var c in clientes)
+            {
+                if (c.Email == email)
+                {
+                    emailExiste = true;
+                    break;
+                }
+            }
+
+            if (!(emailExiste))
+            {
+                emailExiste = false;
+            }
+            return emailExiste;
+
+        }
+
         public bool Atualizar(Cliente c, string email)
         {
             var clienteTotais = File.ReadAllLines(PATH);

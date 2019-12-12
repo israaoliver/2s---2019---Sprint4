@@ -9,10 +9,16 @@ main{
 .geral{
     width: 100%;
     justify-content: space-around;
-    flex-direction: column;   
+    flex-direction: column;  
+    height: auto; 
 }
-
-.flex.geral h1{
+.tabela
+{
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: column;  
+}
+.flex.tab h1{
     color:#000;
     font-size: 2.5em;
     font-family: 'Comfortaa', cursive;
@@ -21,6 +27,8 @@ main{
                 -2px  2px 0 #fff,
                     2px  2px 0 #fff; 
 }
+
+
 h2{
     color: #000;
     font-family: 'Luckiest Guy', cursive;

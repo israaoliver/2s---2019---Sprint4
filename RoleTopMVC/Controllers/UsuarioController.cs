@@ -207,50 +207,64 @@ namespace RoleTopMVC.Controllers
             c.Senha = C2.Senha;
             c.Telefone = form["telefone"];
             c.CPF = form["cpf"];
-            
-            if(!(c.Email == ObterUsuarioSession()))
-            {
-                var eventoDesseMano = eventoRepository.ObeterEventoPorCliente(ObterUsuarioSession());
-                
-                if (!(eventoDesseMano == null))
-                {
-                    
-                    foreach (var e in eventoDesseMano)
-                    {
-                        e.Cliente.Email = c.Email;
 
-                        eventoRepository.Atualizar(e);
+                
+                    // todo : metodo de atualizar email dos clientes nos eventos dele, so vai ser ativado caso o usuario mude o email
+                    if(!(c.Email == ObterUsuarioSession()))
+                    {
+                        //todo : verifica se o email ja existe no database
+                        if (!(clienteRepository.VerificarEmail(c.Email)))
+                        {
+                            var eventoDesseMano = eventoRepository.ObeterEventoPorCliente(ObterUsuarioSession());
+                            
+                            if (!(eventoDesseMano == null))
+                            {
+                                
+                                foreach (var e in eventoDesseMano)
+                                {
+                                    e.Cliente.Email = c.Email;
+
+                                    eventoRepository.Atualizar(e);
+
+                                }
+                            }
+                        }
+                        else
+                        {
+                            return View ("Erro", new MensagemViewModel($"O email {c.Email} ja existe"){
+                            NomeView = "Usuario",
+                            UsuarioEmail = ObterUsuarioSession(),
+                            UsuarioNome = ObterUsuarioNomeSession()
+                            });
+                        }
 
                     }
-                }
 
-            }
+                    if (clienteRepository.Atualizar(c, ObterUsuarioSession()))
+                    {
+                        HttpContext.Session.Remove(SESSION_CLIENTE_EMAIL);
+                        HttpContext.Session.Remove(SESSION_CLIENTE_NOME);
 
-            if (clienteRepository.Atualizar(c, ObterUsuarioSession()))
-            {
-                HttpContext.Session.Remove(SESSION_CLIENTE_EMAIL);
-                HttpContext.Session.Remove(SESSION_CLIENTE_NOME);
-
-                HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, c.Email);
-                HttpContext.Session.SetString(SESSION_CLIENTE_NOME, c.Nome);
+                        HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, c.Email);
+                        HttpContext.Session.SetString(SESSION_CLIENTE_NOME, c.Nome);
 
 
-                return View ("Sucesso", new PagamentoViewModel("Informações Alteradas"){
-                NomeView = "Usuario",
-                NomeView2 = "Informacao",
-                UsuarioEmail = ObterUsuarioSession(),
-                UsuarioNome = ObterUsuarioNomeSession()
+                        return View ("Sucesso", new PagamentoViewModel("Informações Alteradas"){
+                        NomeView = "Usuario",
+                        NomeView2 = "Informacao",
+                        UsuarioEmail = ObterUsuarioSession(),
+                        UsuarioNome = ObterUsuarioNomeSession()
 
-            });
-            }else
-            {
-                return View ("Erro", new MensagemViewModel("Falha em alterar informações!"){
-                NomeView = "Usuario",
-                UsuarioEmail = ObterUsuarioSession(),
-                UsuarioNome = ObterUsuarioNomeSession()
+                    });
+                    }else
+                    {
+                        return View ("Erro", new MensagemViewModel("Falha em alterar informações!"){
+                        NomeView = "Usuario",
+                        UsuarioEmail = ObterUsuarioSession(),
+                        UsuarioNome = ObterUsuarioNomeSession()
 
-            });
-            }
+                    });
+                    }
 
         }
 

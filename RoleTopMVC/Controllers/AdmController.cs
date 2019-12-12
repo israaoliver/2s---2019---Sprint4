@@ -189,14 +189,14 @@ namespace RoleTopMVC.Controllers
             
         }
 
-        public IActionResult Reprovar(ulong id)
+        public IActionResult Reprovar(ulong id, string pagina)
         {
             var e = eventoRepository.ObterPor(id);
             e.Status = (uint) StatusEvento.REPROVADO;
 
             if (eventoRepository.Atualizar(e))
             {
-                return RedirectToAction ("Pendentes", "Adm");
+                return RedirectToAction (pagina, "Adm");
             }
             else
             {
