@@ -1,10 +1,11 @@
 @model RoleTopMVC.ViewModels.AdmViewModel
 
-<main class="flex geral">
+<main class="flex geral user-central-container">
     <div class="flex icon-2"><a asp-controller="Adm" asp-action="Index"><i class="back fas fa-backward fa-2x"></i></a></div>
     <div class="flex cima ">
             <h5>Usuarios</h5>
     </div>
+    <div class ="rola">
     <section class="flex central-user-adm">
         <a asp-controller="Adm" asp-action="Usuarios">
         <div class="flex user-container margin-user ">
@@ -64,4 +65,5 @@
                 </tbody>
             </table>
         </section>
+    </div>
     </main>

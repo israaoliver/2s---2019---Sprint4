@@ -10,6 +10,7 @@ namespace RoleTopMVC.Models
         public Servicos Servicos {get;set;}
         public string Quantidade {get;set;}
         public string Descricao{get;set;}
+        public bool Pub_priv {get;set;}
         public DateTime DiaDoEvento{get;set;}
         public DateTime DataRegistro{get;set;}
         public uint Status {get;set;}

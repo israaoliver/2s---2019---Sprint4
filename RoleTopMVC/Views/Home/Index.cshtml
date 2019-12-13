@@ -1,4 +1,4 @@
-﻿@model RoleTopMVC.ViewModels.BaseViewModel
+﻿@model RoleTopMVC.ViewModels.EventoViewModel
 <div>
             <div id="banner-area" class="banner">
                 <h2>Espaco para festas Rolêtop</h2>
@@ -128,16 +128,6 @@
             <div class="flex mento-container">
 
                 <div>
-                    @if (!string.IsNullOrEmpty(Model.UsuarioEmail))
-                    {                         
-                        <a> href='@Url.Action("Login" , "Cliente")'>
-                        <div class="flex plano">
-
-                                <h4>Plano simples com Limpeza </h4>
-                            </div>
-                        </a>
-                        <p>R$10.000</p>
-                    }else{
                         <a href='@Url.Action("EventoCadastro", "Usuario")'>
                             <div class="flex plano">
 
@@ -145,8 +135,6 @@
                             </div>
                         </a>
                         <p>R$10.000</p>
-
-                    }
                 </div>
                 <div>
                     <a href="login-cadastro.html">
@@ -183,16 +171,33 @@
         </section>
 
         <section id="calendario">
-            <h1>Calendario dos</h1>
-            <img src="img/Futuro/principal.png" alt="uma foto laranja escrita proximos eventos">
-            <div class="flex calendario-container">
-                <div><img src="img/Futuro/futuro1.jpg" alt=""></div>
-                <div><img src="img/Futuro/futuro2.jpg" alt=""></div>
-                <div><img src="img/Futuro/Futuro3.jpg" alt=""></div>
-                <div><img src="img/Futuro/futuro4.jpg" alt=""></div>
-                <div><img src="img/Futuro/futuro5.jpg" alt=""></div>
-                <div><img src="img/Futuro/futuro6.jpeg" alt=""></div>
-            </div>
+            <h1>Calendario dos Proximos Eventos</h1>
+            <div class="flex central-calendar">
+            @foreach (var e in Model.Eventos)
+            {
+                if(e.Pub_priv)
+                {
+                    <div class="flex calendar-evento">
+                        <div class= "flex data-quant">
+                            <div class= "data">
+                                <h3>Data</h3>
+                                <p>@e.DiaDoEvento</p>
+                            </div> 
+                            <div class = "quant">
+                                <h3>Quantidade</h3>
+                                <p>@e.Quantidade</p>
+                            </div>
+                        </div>
+                        <div class = "flex calendar-name">
+                            <h4>@e.NomeEvento</h4>                    
+                        </div>
+                        <div class = "calendar-tipo">
+                            <h4>@e.TipoEvento</h4>                    
+                        </div>
+                    </div>
+                }
+
+            }
 
         </section>
         <section id="FAQ">

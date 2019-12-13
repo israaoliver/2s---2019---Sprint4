@@ -16,13 +16,14 @@
                         <th>Serviços</th>
                         <th>Tipo</th>
                         <th>Quantidade</th>
+                        <th>Publico/Privado</th>
                         <th>Pagamento</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <td colspan="8">
+                        <td colspan="9">
                             <p>Eventos atualizados em @DateTime.Now</p>
                         </td>
                     </tr>
@@ -37,6 +38,13 @@
                             <td>@e.Servicos.Nome</td>
                             <td>@e.TipoEvento</td>
                             <td>@e.Quantidade</td>
+                            @if(e.Pub_priv)
+                            {
+                                <td>Publico</td>
+                            }else
+                            {
+                                <td>Privado</td>
+                            }
                             @if (e.Pago)
                             {
                                 <td class="aprovado">Pagou</td>

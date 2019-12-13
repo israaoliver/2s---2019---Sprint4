@@ -69,6 +69,7 @@ namespace RoleTopMVC.Controllers
                 e.TipoEvento = form["tipo"];
                 e.Quantidade = form["numero"];
                 e.Descricao = form["descricao"];
+                e.Pub_priv = bool.Parse(form["pub_priv"]);
                 e.DiaDoEvento = DateTime.Parse(form["dataDoEvento"]);
                 e.DataRegistro = DateTime.Now;
                 e.Pago = false;

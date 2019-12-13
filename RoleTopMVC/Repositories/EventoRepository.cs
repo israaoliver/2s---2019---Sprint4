@@ -65,6 +65,7 @@ namespace RoleTopMVC.Repositories
                 e.Id = ulong.Parse(ExtrairValorDoCampo("id", l));
                 e.Status = uint.Parse(ExtrairValorDoCampo("statusEvento", l));
                 e.Pago = bool.Parse(ExtrairValorDoCampo("pago", l));
+                e.Pub_priv = bool.Parse(ExtrairValorDoCampo("pub_priv", l));
                 e.NomeEvento = ExtrairValorDoCampo("nome_evento", l);
                 e.TipoEvento = ExtrairValorDoCampo("tipo_evento", l);
                 e.Cliente.Email = ExtrairValorDoCampo("email_cliente", l);
@@ -127,7 +128,7 @@ namespace RoleTopMVC.Repositories
             Servicos s = e.Servicos;
             Cliente c = e.Cliente;
 
-            return $"id={e.Id};statusEvento={e.Status};data_registro={e.DataRegistro};pago={e.Pago};email_cliente={c.Email};nome_evento={e.NomeEvento};tipo_evento={e.TipoEvento};data_evento={e.DiaDoEvento};servico_nome={s.Nome};servicos_preco={s.Preco};qtde={e.Quantidade};descricao={e.Descricao};";
+            return $"id={e.Id};statusEvento={e.Status};data_registro={e.DataRegistro};pago={e.Pago};pub_priv={e.Pub_priv};email_cliente={c.Email};nome_evento={e.NomeEvento};tipo_evento={e.TipoEvento};data_evento={e.DiaDoEvento};servico_nome={s.Nome};servicos_preco={s.Preco};qtde={e.Quantidade};descricao={e.Descricao};";
         }
     }
 }

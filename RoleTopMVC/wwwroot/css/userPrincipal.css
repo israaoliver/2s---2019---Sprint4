@@ -241,7 +241,7 @@ form input[type="number"]{
 /*texto do Publicopriv.*/
 .flex.pub-priv > p{
   font-size: 1.2em;
-  margin-left: 0.5em;
+  margin-right: 10em;
 }
 .flex.pub-priv{
   align-items: center;
@@ -275,6 +275,10 @@ form input[type="submit"]:hover{
   border: 3px solid #000;
   color: #000;
 
+}
+.decer
+{
+  margin-top: 30em;
 }
 .submit{
   justify-content: flex-end;

@@ -312,26 +312,83 @@ h2{
 #calendario{
   background-color: #000;
   width: 100%;
-}                           
-#calendario > img{
-  width: 50%;
-  border-radius: 20px;
-} 
-
-.calendario-container{
-  width: 80%;
   height: 100%;
-  margin: 0 auto;
+}   
+
+
+.central-calendar
+{
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: space-around;
-  flex-flow: wrap row;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 80%;
+  margin-bottom: 5em;
+  margin-top: 2em;
+
+
 }
-.flex.calendario-container img{
-  width: 30em;
-  height: 20em;
-  border-radius: 1em;
-  margin-bottom: 1em;
+.calendar-evento
+{
+  width: 350px;
+  height: 200px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333135;
+  border: 3px ridge white;
+  margin-bottom: 5em;
+  border-radius: 9px;
 }
+
+
+.data-quant{
+  width: 100%;
+  justify-content: space-between;
+}
+
+.data >  p 
+{
+  text-align: left;
+  font-size: 1.3em;
+}
+.data-quant  h3
+{
+  text-align: left;
+  color: white;
+}
+
+.calendar-name > h4
+{
+  color: #fff;
+  font-size: 2em;
+
+}
+.calendar-name
+{
+  justify-content: center;
+  width: 250px;
+  height: 50px;
+  border: 3px ridge white;
+  border-radius: 9px;
+}
+.calendar-tipo > h4
+{
+  color: #fff;
+  font-size: 1.3em;
+
+}
+.calendar-tipo
+{
+  justify-content: center;
+  width: 50%;
+  height: 30px;
+  border: 3px ridge white;
+  border-radius: 9px;
+}
+
+
 /*===========================================================================================
                                         Parte de FAQ 
 =============================================================================================*/

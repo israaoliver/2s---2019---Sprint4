@@ -1,7 +1,7 @@
 tipo_usuario=0;nome=adminadmin;email=admin@email.com;senha=489cd5dbc708c7e541de4d7cd91ce6d0f1613573b7fc5b40d3942ccb9555cf35;telefone=12345678999;cpf=12345678945
 tipo_usuario=1;nome=Andre Azevedo;email=AndreAzevedoCoder@gmail.com;senha=8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92;telefone=11988870095;cpf=44346823858
 tipo_usuario=1;nome=Edison Ferreira;email=Edizon2007@boll.com;senha=688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6;telefone=6969692469;cpf=99045678912
-tipo_usuario=2;nome=Kimino Otobi;email=Kimino@outlook.com;senha=489cd5dbc708c7e541de4d7cd91ce6d0f1613573b7fc5b40d3942ccb9555cf35;telefone=98382919288;cpf=32132132131
+tipo_usuario=1;nome=Kimino Otobi;email=Kimino@outlook.com;senha=489cd5dbc708c7e541de4d7cd91ce6d0f1613573b7fc5b40d3942ccb9555cf35;telefone=98382919288;cpf=32132132131
 tipo_usuario=1;nome=João da Silva Neto;email=joaozinho@bool.com;senha=489cd5dbc708c7e541de4d7cd91ce6d0f1613573b7fc5b40d3942ccb9555cf35;telefone=4524-2356;cpf=51651329684
 tipo_usuario=1;nome=Merda Do Ceu;email=Merdadoceu@bool.com;senha=657f18518eaa2f41307895e18c3ba0d12d97b8a23c6de3966f52c6ba39a07ee4;telefone=4524-2356;cpf=99045678912
 tipo_usuario=1;nome=Israel Ribeiro de Oliveira;email=israel.peichim@gmail.com;senha=688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6;telefone=11940313232;cpf=44346832858
@@ -11,4 +11,4 @@ tipo_usuario=1;nome=Danielly Vitoria;email=Danny@yahoo.com;senha=688787d8ff144c5
 tipo_usuario=1;nome=Lucas Castilho;email=Lucascastilho@gmail.com;senha=688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6;telefone=23421232323;cpf=45414651814
 tipo_usuario=1;nome=Diogo botton;email=Diogueira@gmail.com;senha=688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6;telefone=4524-2356;cpf=99045678912
 tipo_usuario=1;nome=Josezinho da Silva ;email=Josezinho@yahoo.com;senha=688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6;telefone=4524-2356;cpf=12345678901
-tipo_usuario=2;nome=Juresklewison da Silva;email=Juresklewison_2010@hotmail.com;senha=497c678862692cdb328f1b9b0290380d4b1c44e783ef8be1198e6a9f683981e4;telefone=1145454545;cpf=44444444444
+tipo_usuario=1;nome=Juresklewison da Silva;email=Juresklewison_2010@hotmail.com;senha=497c678862692cdb328f1b9b0290380d4b1c44e783ef8be1198e6a9f683981e4;telefone=1145454545;cpf=44444444444
