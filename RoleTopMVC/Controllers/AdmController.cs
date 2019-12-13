@@ -31,8 +31,8 @@ namespace RoleTopMVC.Controllers
                     case (uint) StatusEvento.REPROVADO:
                         dashboardViewModel.EventosReprovados++;
                     break;
-                    default:
-                        dashboardViewModel.EventosPendentes++;
+                    case (uint) StatusEvento.PENDENTE:
+                    dashboardViewModel.EventosPendentes++;
                     break;
 
                 }
