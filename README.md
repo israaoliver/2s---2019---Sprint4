@@ -114,6 +114,10 @@
 * [Facebook](https://www.facebook.com/israel.peichim)
 
 
+## Licença  :closed_lock_with_key:
+Esse projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE.md](https://github.com/israaoliver/RoleTopMVC/blob/master/LICENSE.md) para mais detalhes.
+
+
 
 
 
