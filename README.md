@@ -11,8 +11,8 @@ Um site de eventos onde o usuario pode visualizar os eventos que ocorreram e ain
 + *Orçamentos*
 + *Serviços* 
 + *Localização*
-+ *Calendario*
-**Funcionalidades**
++ *Calendario* 
+#### Funcionalidades
 + Usuario
   + Cadastro de usuario
   + Login de Usuario
