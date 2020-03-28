@@ -86,7 +86,7 @@ Um site de eventos onde o usuario pode visualizar os eventos que ocorreram e ain
 * ServicoViewModel
 
 ### 4. Views
-> *As views são divididas em pastas e dentro de cada pasta estão as views relacionadas.*
+> *As views são divididas em pastas, e dentro de cada pasta estão as views relacionadas.*
 
 :file_folder: **Adm**
 * Aprovados
@@ -117,7 +117,7 @@ Um site de eventos onde o usuario pode visualizar os eventos que ocorreram e ain
 * Suporte
 
 :file_folder: Shared
-> *Pasta onde fica as view de Sucesso,falha e as padrões do html como header, navs e o layout principal das views.*
+> *Pasta onde fica as views de Sucesso,falha e as padrões do html como header, navs e o layout principal das views.*
 * _HeaderUserHome
 * _Layout
 * _NavAdmPages
