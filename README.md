@@ -3,9 +3,29 @@
 ![RoleTop](https://user-images.githubusercontent.com/54954718/77608567-6398e580-6efc-11ea-88ab-274adddf5a46.png)
 
 ## Sobre o Projeto :blue_book:
-É um site de eventos onde o usuario pode visualizar na pagina principal todas as informações da casa de show **RolêTop** contando com as *imagens do salão, infraestrutura, FAQ, Orçamentos, Serviços, Localização* é os eventos futuros da casa de show **RolêTop**.  
-
-## Instalações, Editor, Extensoes é Linguagens utilizadas :clipboard:
+Um site de eventos onde o usuario pode visualizar os eventos que ocorreram e ainda mais como :  
+**Pagina principal**
++ *Imagens do salão*
++ *Infraestrutura*
++ *FAQ* 
++ *Orçamentos*
++ *Serviços* 
++ *Localização*
++ *Calendario*
+**Funcionalidades**
++ Usuario
+  + Cadastro de usuario
+  + Login de Usuario
+  + Logout de Usuario
+  + Atualização de perfil do usuario
++ Evento
+  + Cadastro de evento
+  + Listagem de evento para um usuario especifico
+  + Remover evento
++ Suporte
+  + Enviar mensagens diretamente para o adm
++ Pagamento
+## Configurações de ambiente :clipboard:
 ####  Instalaçôes
  * Pacotes SDKs  
   >[.Net Core 2.1.4](https://dotnet.microsoft.com/download/dotnet-core/2.1)
@@ -24,7 +44,7 @@
 * eppz!
 * indent-rainbow
 
-#### Linguagens
+## Linguagens
 * C#
 * CSS3
 * HTML5
@@ -47,7 +67,7 @@
 * SuporteRepository
 
 ### 3. Models
-> *Os model estão divididos em dois tipos os Models Comuns e os ViewModels(para enviar informações para as views).*
+> *Os model estão divididos em dois tipos, os Models Comuns e os ViewModels(serve para enviar informações para as views).*
 
 :bookmark: **Models**
 * Cliente
@@ -97,7 +117,7 @@
 * Suporte
 
 :file_folder: Shared
-> *Pasta onde fica as view de Sucesso,falha é os padrões do html como header, navs e o layout principal das views.*
+> *Pasta onde fica as view de Sucesso,falha e as padrões do html como header, navs e o layout principal das views.*
 * _HeaderUserHome
 * _Layout
 * _NavAdmPages
@@ -115,7 +135,7 @@
 
 
 ## Licença  :closed_lock_with_key:
-Esse projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE.md](https://github.com/israaoliver/RoleTopMVC/blob/master/LICENSE.md) para mais detalhes.
+Esse projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE](https://github.com/israaoliver/RoleTopMVC/blob/master/LICENSE) para mais detalhes.
 
 
 
